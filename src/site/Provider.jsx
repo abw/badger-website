@@ -4,7 +4,7 @@ import Context    from './Context.jsx'
 import { ThemeProvider } from '@abw/react-night-and-day'
 import { RouterProvider } from 'react-router-dom'
 
-export const Provider = ({
+export const SiteProvider = ({
   themeStorageKey='theme',
   Router,
   ...props
@@ -15,4 +15,4 @@ export const Provider = ({
     </Context.Provider>
   </ThemeProvider>
 
-export default Provider
+export default SiteProvider

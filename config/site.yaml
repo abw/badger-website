@@ -1,0 +1,32 @@
+title: My Badger Website
+
+uri: my-badger-website
+
+baseUrl: /my-badger-website
+
+domain: https://abw.github.io
+
+# style
+header:
+  height:           42px
+  padding:
+    vertical:       0.25rem
+    horizontal:     1rem
+
+sidebar:
+  width:
+    min:            12rem
+    max:            20rem
+  padding:
+    horizontal:     1rem
+    vertical:       0.5rem
+
+main:
+  width:
+    max:            70rem
+  padding:
+    horizontal:     2rem
+    vertical:       1rem
+
+# $app-width:         $side-width + $main-width;
+# $head-width:        $app-width + $head-padding;

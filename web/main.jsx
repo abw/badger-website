@@ -9,11 +9,6 @@ const pages = import.meta.glob(
   { eager: true }
 )
 
-const Sidebar = () =>
-  <p>
-    My sidebar
-  </p>
-
 ReactDOM
   .createRoot(
     document.getElementById('root')
@@ -23,7 +18,7 @@ ReactDOM
       <Provider
         site={site}
         pages={pages}
-        Sidebar={Sidebar}
+        // Sidebar={Sidebar}
       />
     </React.StrictMode>,
   )

@@ -2,11 +2,13 @@ import { useState, useRef } from 'react'
 import { Generator } from '@abw/react-context'
 import { useTheme } from '@abw/react-night-and-day'
 import { useWindow } from '@abw/badger-react-ui'
-import { defaultSite, smallScreenBreakpoints } from './Config.js'
+import { defaultSite } from './Config.js'
+import { splitHash } from '@abw/badger-utils'
 
-const SiteContext = ({
+const Context = ({
   render,
   site=defaultSite,
+  smallScreenBreakpoints='mobile tablet',
   ...props
 }) => {
   // Sidebar
@@ -22,9 +24,10 @@ const SiteContext = ({
 
   const { theme } = useTheme()
   const { width, breakpoint } = useWindow()
+  const smallScreen = splitHash(smallScreenBreakpoints)
 
   const sidebarIconClick = () => {
-    if (smallScreenBreakpoints[breakpoint]) {
+    if (smallScreen[breakpoint]) {
       toggleSmallScreenSidebar()
     }
     else if (sidebarOpen) {
@@ -53,10 +56,13 @@ const SiteContext = ({
   })
 }
 
-const generated = Generator(SiteContext)
-export const {
-  Context, Provider, Consumer, Children,
-  Use: useSite
-} = generated
+export const SiteContext = Generator(Context)
 
-export default generated
+export const {
+  // Provider: SiteProvider,
+  Consumer: SiteConsumer,
+  Children: SiteChildren,
+  Use:      useSite
+} = SiteContext
+
+export default SiteContext

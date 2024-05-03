@@ -48,6 +48,7 @@
     "@abw/badger-filesystem": "^1.0.6",
     "@abw/badger-react-ui": "^1.1.6",
     "@abw/badger-timestamp": "^1.0.6",
+    "@abw/badger-utils": "^1.1.0",
     "@abw/react-context": "^2.0.4",
     "@abw/react-night-and-day": "^0.0.6",
     "react-router": "^6.23.0",
