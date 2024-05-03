@@ -1,0 +1,13 @@
+$header-height:     42px;
+$theme-transition:  0.5s;
+$side-width:        12rem;
+$side-padding:      1rem;
+$main-width:        70rem;
+$main-padding:      3rem;
+$head-padding:      1rem;
+$app-width:         $side-width + $main-width;
+$head-width:        $app-width + $head-padding;
+
+:root {
+  --header-height: #{$header-height};
+}
