@@ -14,7 +14,7 @@ export const SidebarDetails = ({
   const resolved = useResolvedPath()
   const open = openPath && resolved.pathname.slice(0, openPath.length) === openPath
   if (openPath) {
-    console.log(`openPath: ${openPath} vs [${resolved.pathname.slice(0, openPath.length)}]`)
+    // console.log(`openPath: ${openPath} vs [${resolved.pathname.slice(0, openPath.length)}]`)
   }
 
   return (
@@ -30,3 +30,4 @@ export const SidebarDetails = ({
 }
 
 export default SidebarDetails
+// export default SiteConsumer(SidebarDetails)

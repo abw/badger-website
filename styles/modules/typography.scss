@@ -13,3 +13,6 @@ body {
     color: var(--link-hover)
   }
 }
+#{$headings} {
+  color: var(--heading-color);
+}

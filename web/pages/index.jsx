@@ -1,8 +1,11 @@
 import React from 'react'
 import Link from '@/ui/Link.jsx'
+import Badger from '../svg/badger-website.svg?react'
 
-const Index = () =>
-  <div className="flow">
+export const Index = () =>
+  <div className="conform-tablet">
+    <Badger className="brw-logo"/>
+
     <h1>Hello World!</h1>
     <p>
       This is the main index page.

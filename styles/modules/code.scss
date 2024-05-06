@@ -1,0 +1,235 @@
+$source-radius:            4px;
+$source-back-light:      $grey-95;
+$source-back-dark:       $grey-5;
+$source-back-light-from:  rgba($source-back-light, 0);
+$source-back-light-to:    rgba($source-back-light, 0.9);
+$source-back-dark-from:   rgba($source-back-dark, 0);
+$source-back-dark-to:     rgba($source-back-dark, 0.9);
+
+:where(html) {
+  // code
+  --code-back:            var(--grey20-100);
+  --code-text:            var(--grey20-20);
+  --code-border:          var(--grey20-80);
+  --code-link-back:       var(--brand-95);
+  --code-link-text:       var(--grey40-40);
+  --code-link-border:     var(--grey40-80);
+  --code-hover-back:      var(--brand-90);
+  --code-hover-text:      var(--brand-30);
+  --code-hover-border:    var(--brand-70);
+    // source code block
+  --source-back:          var(--grey-100);
+  --source-text:          var(--grey40-30);
+  --source-caption:       var(--grey-20);
+  --source-border:        var(--grey20-75);
+  --source-back-from:     #{$source-back-light-from};
+  --source-back-to:       #{$source-back-light-to};
+  --output-back:          var(--grey-100);
+  --output-border:        var(--source-border);
+  --output-text:          var(--grey-30);
+  --expand-back:          var(--brand-85);
+  --expand-text:          var(--grey40-30);
+  --expand-hover-back:    var(--brand-80);
+  --copied-back:          var(--green-40);
+  --copied-text:          var(--green-90);
+}
+#{$dark-theme} {
+  // code
+  --code-back:            var(--grey20-10);
+  --code-text:            var(--grey20-80);
+  --code-border:          var(--grey20-30);
+  --code-link-back:       var(--grey40-20);
+  --code-link-text:       var(--grey40-70);
+  --code-link-border:     var(--grey40-10);
+  --code-hover-back:      var(--brand-30);
+  --code-hover-text:      var(--brand-90);
+  --code-hover-border:    var(--brand-30);
+  // source code block
+  --source-back:          var(--grey-5);
+  --source-text:          var(--grey40-80);
+  --source-caption:       var(--grey-70);
+  --source-border:        var(--grey20-20);
+  --source-back-from:     #{$source-back-dark-from};
+  --source-back-to:       #{$source-back-dark-to};
+  --output-back:          var(--grey-0);
+  --output-border:        var(--source-border);
+  --output-text:          var(--grey-70);
+  --expand-back:          var(--grey40-25);
+  --expand-text:          var(--brand-70);
+  --expand-hover-back:    var(--brand-35);
+  --copied-back:          var(--green-40);
+  --copied-text:          var(--green-90);
+}
+
+code:not(.source code):not(.toc code), a.code {
+  --color: var(--code-text);
+  --background: var(--code-back);
+  --border: var(--code-border);
+  color: var(--color);
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  padding: 0 4px;
+  border-radius: 4px;
+}
+div.alert {
+  code:not(.source code):not(.toc code), a.code {
+    --color: var(--color-20);
+    --background: var(--color-100);
+    --border: var(--color-80);
+  }
+}
+
+a.code {
+  color: var(--code-link-text);
+  background-color: var(--code-link-back);
+  border-color: var(--code-link-border);
+  font-family: var(--font-mono);
+  transition: all 300ms;
+  &:hover {
+    color: var(--code-hover-text);
+    background-color: var(--code-hover-back);
+    border-color: var(--code-hover-border);
+  }
+}
+
+div.example {
+  margin-bottom: 2rem;
+  div.source {
+    max-width: 100%;
+  }
+  div.interim {
+    margin-block-start: 2rem;
+    margin-block-end: 1rem;
+  }
+}
+
+div.source {
+  overflow: visible;
+  overflow-x: scroll;
+  // box-shadow: var(--shadow-3);
+}
+div.source,
+div.output {
+  position: relative;
+  border-radius: 4px;
+  // max-width: 50%;
+  // box-shadow: var(--shadow-3);
+  h4.caption {
+    position: absolute;
+    font-size: 0.8rem;
+    font-weight: normal;
+    top: 0.25rem;
+    right: 0.75rem;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+  }
+}
+
+div.source {
+  font-size: 0.9rem;
+  // padding: 0.5rem;
+  padding-bottom: 1.5rem;
+  overflow: visible;
+  color: var(--source-text);
+  background-color: var(--source-back);
+  border: 1px solid var(--source-border);
+  &.expandable {
+    //background-color: rgba(43, 43, 43);
+  }
+  pre {
+    border-radius: $source-radius;
+    margin: 0 !important;
+    max-height: 18rem;
+    overflow-y: scroll;
+    overscroll-behavior: contain;
+    transition: all 0.5s;
+  }
+  h4.caption {
+    color: var(--source-caption);
+  }
+  div.controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, var(--source-back-from) 0%, var(--source-back-to) 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0;
+    // margin: 0 -1px -1px -1px;
+    border-radius: 0 0 $source-radius $source-radius;
+    padding: 2rem 0 0 0;
+  }
+  .expand, .clipboard {
+    font-size: 0.8rem;
+    color: var(--source-caption);
+    // background-color: hsla(var(--brand-hue), 90%, 30%, 0.8);
+    color: var(--expand-text);
+    background-color: var(--expand-back);
+    opacity: 0.7;
+    padding: 0.25em 0.5em;
+    margin: 0;
+    min-width: 11ch;
+    text-align: center;
+    transition: all 1s;
+    user-select: none;
+    &:hover {
+      opacity: 1;
+      transition: all 0.2s;
+      background-color: var(--expand-hover-back);
+      // background-color: hsla(var(--brand-hue), 50%, 50%, 0.9);
+      cursor: pointer;
+    }
+  }
+  .expand {
+    left: 0%;
+    border-radius: 0 $source-radius 0 $source-radius;
+  }
+  .clipboard {
+    right: 0rem;
+    border-radius: $source-radius 0 $source-radius 0;
+    transition: all 1s;
+    &.copied {
+      color: var(--copied-text);
+      background-color: var(--copied-back);
+      cursor: pointer;
+    }
+  }
+  &.fixed-open {
+    .expand {
+      visibility: hidden;
+    }
+  }
+  &.expanded {
+    padding-bottom: 1.5rem;
+    // overflow: visible;
+    div.controls {
+      background: transparent;
+    }
+    pre {
+      max-height: 250rem;
+      transition: all 0.5s;
+    }
+  }
+}
+div.output {
+  position: relative;
+  // box-shadow: var(--shadow-3);
+  background-color: var(--output-back);
+  border: 1px solid var(--output-border);
+  padding: 2rem 2rem;
+  h4.caption {
+    color: var(--output-text);
+    // hsl($dev-hue, 40%, 30%);
+  }
+}
+
+#{$dark-theme} div.alert {
+  code:not(.source code):not(.toc code), a.code {
+    --color: var(--color-80);
+    --background: var(--color-10);
+    --border: var(--color-30);
+  }
+}

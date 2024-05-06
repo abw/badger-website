@@ -23,8 +23,8 @@
   // --sidebar-padding:  #{$sidebar-padding};
   // --sidebar-margin-left: 0;
   position: relative;
-  color: var(--body-text);
-  background-color: var(--body-back);
+  color: var(--body-color);
+  background-color: var(--body-background);
   &[data-sidebar="closed"] {
     --side-margin: calc(0px - max(var(--side-total), var(--side-width)));
     --main-total: 100%;

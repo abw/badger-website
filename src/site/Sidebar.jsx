@@ -2,7 +2,7 @@ import React from 'react'
 import Title from '@/sidebar/Title.jsx'
 import Menu from '@/sidebar/Menu.jsx'
 import Sections from '@/sidebar/Sections.jsx'
-import { SiteConsumer } from './Context.jsx'
+import { SiteConsumer } from '@/site/Context.jsx'
 
 export const SiteSidebar = SiteConsumer(
   ({

@@ -51,6 +51,7 @@ const Context = ({
     smallScreenSidebarOpen, setSmallScreenSidebarOpen,
     openSmallScreenSidebar, closeSmallScreenSidebar, toggleSmallScreenSidebar,
     sidebarIconClick,
+    sidebarClick: closeSmallScreenSidebar,
     contentRef,
     ...props
   })

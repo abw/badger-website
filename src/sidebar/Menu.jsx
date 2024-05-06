@@ -1,28 +1,34 @@
 import React from 'react'
 import UILink from '@/ui/Link.jsx'
 import { classes } from '@abw/badger-react-ui'
+import { useSite } from '@/site/Context.jsx'
 // import Context from './Context.jsx'
 // import MenuTOC from './MenuTOC.jsx'
 // import { useResolvedPath } from 'react-router-dom'
 
 
 export const Menu = ({
-  // title, path, tocs, closeSidebar,
+  // title, path, tocs,
   items,
   Link=UILink
-}) =>
-  <div className="menu border bdr-1">
-    { items.map(
-      ({ className, ...item }) =>
-        <Link
-          key={item.to}
-          className={classes(className, 'item')}
-          {...item}
-        >
-          {item.display}
-        </Link>
-    )}
-  </div>
+}) => {
+  const { sidebarClick } = useSite()
+  return (
+    <div className="menu border bdr-1" onClick={sidebarClick}>
+      { items.map(
+        ({ className, ...item }) =>
+          <Link
+            key={item.to}
+            className={classes(className, 'item')}
+            {...item}
+          >
+            {item.display}
+          </Link>
+      )}
+    </div>
+  )
+}
+
 
 export default Menu
 

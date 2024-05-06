@@ -6,6 +6,7 @@ export const Sidebar = {
       menu: [
         { to: '/', text: 'Home' },
         { to: '/about', text: 'About' },
+        { to: '/code', text: 'Code' },
       ]
     },
     {

@@ -1,0 +1,14 @@
+.brw-logo {
+  --badger: var(--brand-30);
+  --website: var(--brand-60);
+  .badger {
+    fill: var(--badger);
+  }
+  .website {
+    fill: var(--website);
+  }
+}
+#{$dark-theme} .brw-logo {
+  --badger: var(--brand-50);
+  --website: var(--brand-70);
+}

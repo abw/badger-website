@@ -1,0 +1,53 @@
+.source .shiki {
+  --shiki-foreground: var(--codeblock-text);
+  --shiki-background: var(--codeblock-back);
+  --shiki-token-constant: var(--blue-50);
+  --shiki-token-string: var(--brand-60);
+  --shiki-token-string-expression: var(--shiki-token-string);
+  --shiki-token-comment: var(--grey-60);
+  --shiki-token-keyword: var(--grey40-60);
+  --shiki-token-parameter: var(--indigo-40);
+  --shiki-token-function: var(--indigo-40);
+  --shiki-token-punctuation: var(--grey20-70);
+  --shiki-token-link: var(--blue-60);
+  --shiki-highlight-background: var(--grey-95);
+  --shiki-highlight-foreground: var(--brand-30);
+  --shiki-highlight-border: var(--grey20-85);
+  --padding: 1rem;
+  --highlight-border-width: 0rem;
+  font-family: var(--font-mono);
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  padding: var(--padding);
+  span.line {
+    display: block;
+  }
+  span.line.highlighted {
+    background-color: var(--shiki-highlight-background);
+    margin: 0 calc(0rem - var(--padding));
+    padding: 0 calc(var(--padding) - var(--highlight-border-width));
+    border-left: var(--highlight-border-width) solid var(--shiki-highlight-border);
+  }
+}
+
+#{$dark-theme} {
+  .source .shiki {
+    --shiki-foreground: var(--codeblock-text);
+    --shiki-background: var(--codeblock-back);
+    --shiki-token-constant: var(--blue-50);
+    --shiki-token-string: var(--brand-60);
+    --shiki-token-string-expression: var(--shiki-token-string);
+    --shiki-token-comment: var(--grey-40);
+    --shiki-token-keyword: var(--grey40-50);
+    --shiki-token-parameter: var(--indigo-60);
+    --shiki-token-function: var(--indigo-70);
+    --shiki-token-punctuation: var(--grey20-40);
+    --shiki-token-link: var(--blue-40);
+    --shiki-highlight-background: var(--grey20-15);
+    --shiki-highlight-foreground: var(--brand-70);
+    --shiki-highlight-border: var(--brand-50);
+  }
+}
