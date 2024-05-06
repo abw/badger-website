@@ -1,0 +1,31 @@
+// NOTE: not used, just here for references
+
+// Custom version of the badger-css.scss file which loads our palette
+
+// CSS selector for dark theme
+// $dark-theme: '#site.dark, .dark';
+
+// Brand colors
+// $brand-color: 'purple';
+// $cherry-hue:  345;
+// $brand-hue:   $purple-hue;
+// $grey-hue:    $brand-hue;
+// $grey10-hue:  $brand-hue;
+// $grey20-hue:  $brand-hue;
+// $grey40-hue:  $brand-hue;
+
+// Set this to change the color used for selectable items, e.g. menus,
+// datatables, data trees, etc.
+// $selectable-color: 'orange';
+
+// Load the default helpers and configuration files
+@import '@abw/badger-css/styles/helpers/all.scss';
+@import '@abw/badger-css/styles/config/all.scss';
+
+// Load the custom palette
+@import "../color/palette.scss";
+
+// Then the default utilities, form styles and other components
+@import "@abw/badger-css/styles/utilities/all.scss";
+@import "@abw/badger-css/styles/forms/all.scss";
+@import "@abw/badger-css/styles/components/all.scss";

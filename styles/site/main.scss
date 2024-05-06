@@ -1,0 +1,5 @@
+#app > main {
+  & > h1:first-child, & > div:first-child > h1:first-child {
+    margin-top: 0;
+  }
+}

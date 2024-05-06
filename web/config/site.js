@@ -2,6 +2,8 @@
 // root directory where they are defined.  They are included as the define
 // options in vite.config.js
 
+// TODO: most of these can come out of the package.json
+
 /* eslint-disable no-undef */
 export const site = {
   version:    VITE_SITE_VERSION,

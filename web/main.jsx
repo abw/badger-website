@@ -1,8 +1,9 @@
 import React    from 'react'
 import ReactDOM from 'react-dom/client'
-import Provider from '@/Site/Provider.jsx'
+import Provider from '@/site/Provider.jsx'
 import site     from './config/site.js'
-import './styles/badger-website.scss'
+import sidebar  from './config/sidebar.jsx'
+import '../styles/badger-website.scss'
 
 const pages = import.meta.glob(
   './pages/**/[a-z_]*.jsx',
@@ -18,6 +19,7 @@ ReactDOM
       <Provider
         site={site}
         pages={pages}
+        sidebar={sidebar}
         // Sidebar={Sidebar}
       />
     </React.StrictMode>,

@@ -1,0 +1,15 @@
+/*-- components/typography --*/
+html {
+  font-family: var(--font-sans);
+}
+body {
+  color: var(--body-color);
+  background-color: var(--body-background);
+}
+:any-link, .hover {
+  text-decoration: none;
+  color: var(--link-color);
+  &:hover {
+    color: var(--link-hover)
+  }
+}

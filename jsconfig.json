@@ -3,7 +3,8 @@
     "baseUrl": ".",
     "paths": {
       "@/src/*":        ["./src/*"],
-      "@/Site/*":       ["./src/Site/*"],
+      "@/site/*":       ["./src/site/*"],
+      "@/sidebar/*":    ["./src/sidebar/*"],
       "@/ui/*":         ["./src/ui/*"],
       "@/web/*":        ["./web/*"],
     }

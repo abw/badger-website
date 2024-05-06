@@ -1,6 +1,7 @@
 :root {
   --side-width:     #{$side-width};
   --side-padding:   #{$side-padding};
+
   --main-width:     #{$main-width};
   --main-padding:   #{$main-padding};
   --app-width:      calc(var(--main-width) + var(--side-width));
@@ -84,91 +85,6 @@
     line-height: 1.2;
     margin: 0 0 0.5em;
     text-align: left;
-  }
-}
-
-#app > aside {
-  details.menu {
-    border: 0;
-    margin-bottom: 1rem;
-    summary {
-      margin-bottom: 0rem;
-      color: var(--menu-head);
-      &:hover {
-        color: var(--menu-head-hover);
-      }
-    }
-    ul {
-      margin: 0;
-      padding-left: 1.25em;
-      li {
-        list-style: none;
-      }
-    }
-    a {
-      display: block;
-      font-size: $size-small;
-      line-height: 1.25;
-      margin-bottom: 0.25em;
-      padding: 0.25rem 0.5rem;
-      color: var(--menu-item-text);
-      background-color: var(--menu-item-back);
-      transition: all 0.5s;
-      text-decoration: none;
-      border-radius: 4px;
-      cursor: pointer;
-      &:hover {
-        transition: all 0.2s;
-        color: var(--menu-hover-text);
-        background-color: var(--menu-hover-back);
-      }
-      &.active {
-        color: var(--menu-active-text);
-        background-color: var(--menu-active-back);
-      }
-    }
-    .menu {
-      font-size: 0.8rem;
-      padding-left: 0.5rem;
-      margin-bottom: 0;
-      a {
-        line-height: 1.5;
-      }
-    }
-    .toc {
-      font-size: 0.8em;
-      margin-left: 0.5rem;
-      padding-left: 0rem;
-      margin-bottom: 0.25rem;
-      margin-top: 0.25rem;
-      li:not(.heading) {
-        padding-left: 0.5rem;
-        border-radius: 4px;
-        color: var(--menu-item-text);
-        background-color: var(--submenu-back);
-        line-height: 1.5;
-        margin-bottom: 0.25rem;
-        &:hover {
-          transition: all 0.2s;
-          color: var(--menu-hover-text);
-          background-color: var(--menu-hover-back);
-          cursor: pointer;
-        }
-        &:active {
-          color: var(--menu-active-text);
-          background-color: var(--menu-active-back);
-        }
-      }
-      li.heading {
-        margin-top: 0.5rem;
-        h4 {
-          font-weight: 500;
-          font-size: $size-smaller;
-          margin: 0 0 0.25rem 0;
-          cursor: pointer;
-        }
-      }
-    }
   }
 }
 

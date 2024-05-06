@@ -23,7 +23,8 @@
     "build:css": "bin/build-css.sh",
     "build:docs": "vite build --config vite.docs.js",
     "build:lib": "vite build",
-    "build": "$npm_execpath build:css && $npm_execpath build:lib && $npm_execpath build:docs",
+    "build": "$npm_execpath build:lib && $npm_execpath build:docs",
+    "build:TODO": "$npm_execpath build:css && $npm_execpath build:lib && $npm_execpath build:docs",
     "preview": "vite preview --config vite.docs.js",
     "lint": "eslint 'web/**/*.{js,jsx}' 'src/**/*.{js,jsx}'"
   },
@@ -44,9 +45,9 @@
   },
   "dependencies": {
     "@abw/badger": "^1.2.4",
-    "@abw/badger-css": "^1.1.0",
+    "@abw/badger-css": "^1.1.4",
     "@abw/badger-filesystem": "^1.0.6",
-    "@abw/badger-react-ui": "^1.1.6",
+    "@abw/badger-react-ui": "^1.1.10",
     "@abw/badger-timestamp": "^1.0.6",
     "@abw/badger-utils": "^1.1.0",
     "@abw/react-context": "^2.0.4",

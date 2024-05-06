@@ -1,0 +1,12 @@
+// Vite expects this to NOT have the /dist/ segment when running the dev
+// server, but sass invoked on the command line (via bin/build-css.sh) barfs
+// if it's not there.
+// Ah pants!  This is bjorken anyway.  badger-react-ui is loading stuff from
+// badger-css and that doesn't have the .../dist/... bit
+@import '@abw/react-night-and-day/dist/styles/night-and-day.css';
+@import '@abw/badger-react-ui/dist/styles/badger-css-react-ui.scss';
+@import '@abw/badger-css/dist/styles/config/all.css';
+@import "../config/all.scss";
+@import "../site/all.scss";
+@import "../modules/all.scss";
+

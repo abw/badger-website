@@ -1,0 +1,25 @@
+$header-height:     42px;
+$theme-transition:  0.5s;
+$side-width:        14rem;    // old
+$side-padding:      1rem;
+
+
+$main-width:        70rem;
+$main-padding:      3rem;
+$head-padding:      1rem;
+$app-width:         $side-width + $main-width;
+$head-width:        $app-width + $head-padding;
+
+// TODO: new
+$sidebar-min-width:    12rem;
+$sidebar-max-width:    20rem;
+$sidebar-gutter:       1rem;
+
+
+:root {
+  --header-height:      #{$header-height};
+  --sidebar-min-width:  #{$sidebar-min-width};
+  --sidebar-max-width:  #{$sidebar-max-width};
+  --sidebar-gutter:     #{$sidebar-gutter};
+
+}

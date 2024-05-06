@@ -1,10 +1,12 @@
+// Brand colors
+$brand-color: 'olive';
+$olive-hue:   68;
+$brand-hue:   $olive-hue;
+$grey-hue:    $brand-hue;
+
 @import '@abw/react-night-and-day/styles/night-and-day.css';
 @import '@abw/badger-react-ui/styles/badger-css-react-ui.scss';
 @import "config/all.scss";
 @import "site/all.scss";
 @import "modules/all.scss";
 
-.flex.baseline svg.icon {
-  position: relative;
-  top: .125em;
-}
