@@ -1,3 +1,5 @@
+export * from './Details.jsx'
 export * from './Menu.jsx'
 export * from './Section.jsx'
+export * from './Sections.jsx'
 export * from './Title.jsx'

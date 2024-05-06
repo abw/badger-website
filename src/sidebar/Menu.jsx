@@ -7,7 +7,7 @@ import { useSite } from '@/site/Context.jsx'
 // import { useResolvedPath } from 'react-router-dom'
 
 
-export const Menu = ({
+export const SidebarMenu = ({
   // title, path, tocs,
   items,
   Link=UILink
@@ -30,7 +30,7 @@ export const Menu = ({
 }
 
 
-export default Menu
+export default SidebarMenu
 
 /*
 const Menu = ({title, path, items, tocs, closeSidebar}) => {
