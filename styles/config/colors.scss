@@ -1,8 +1,8 @@
 :where(html) {
   --body-color:        var(--grey-20);
   --body-background:   var(--grey-100);
-  --link-color:        var(--brand-50);
-  --link-hover:        var(--brand-40);
+  --link-color:        var(--brand-40);
+  --link-hover:        var(--brand-60);
 
   --heading-color:     var(--grey-10);
   --side-shadow:      rgba(0, 0, 0, 0.04);
@@ -41,8 +41,8 @@
 #{$dark-theme}, .dark {
   --body-color:       var(--grey20-80);
   --body-background:  var(--grey20-0);
-  --link-color:       var(--brand-60);
-  --link-hover:       var(--brand-70);
+  --link-color:       var(--brand-50);
+  --link-hover:       var(--brand-60);
 
   --heading-color:    var(--grey20-90);
   --side-shadow:      rgba(0, 0, 0, 0.2);

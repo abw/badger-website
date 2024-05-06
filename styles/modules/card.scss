@@ -1,0 +1,6 @@
+.card.hover {
+  border-color: var(--link-color);
+  &:hover {
+    border-color: var(--link-hover);
+  }
+}

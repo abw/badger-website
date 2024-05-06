@@ -8,6 +8,7 @@
       "@/sidebar/*":    ["./src/sidebar/*"],
       "@/ui/*":         ["./src/ui/*"],
       "@/web/*":        ["./web/*"],
+      "@/svg/*":        ["./web/svg/*"],
     }
   }
 }

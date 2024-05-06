@@ -1,6 +1,11 @@
 # Badger Website
 
-This is a website builder.
+Badger Website is a framework / template which I use to generate the
+documentation websites for various other badger projects.
+
+You're welcome to use it, but please bear in mind that I wrote it for me to
+get a particular job done.  It's a work in progress, lacks documentation and
+is subject to change without notice.
 
 ## Documentation Website
 
@@ -10,7 +15,7 @@ https://abw.github.io/badger-website/
 
 ## Getting Started
 
-TODO
+Probably best if you don't.
 
 ## Notes for Maintainers
 
