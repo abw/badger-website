@@ -30,9 +30,9 @@ export const Index = () =>
     <Warning title="Warning!" border shadow="2" icon="exclamation">
       <p>
         This is Open Source Software and you&apos;re welcome to use it.
-        But be warned that it is also Opiniated and Selfish Software.
+        But be warned that it is also Opinionated and Selfish Software.
         I wrote it for me and if you want to use it then you do so at your
-        own risk.  You will need to get your hands dirsty.  It&apos;s still
+        own risk.  You will need to get your hands dirty.  It&apos;s still
         very much a work in progress. It&apos;s not complete, not well
         documented and is likely to change without notice.
       </p>
