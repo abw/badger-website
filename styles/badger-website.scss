@@ -1,10 +1,14 @@
 // Brand colors
-$brand-color: 'pink';
-$brand-hue:   313;
-$grey-hue:    $brand-hue;
+$brand-color: 'pink' !default;
+$brand-hue:   313 !default;
+$grey-hue:    $brand-hue !default;
 
 @import '@abw/react-night-and-day/styles/night-and-day.css';
-@import '@abw/badger-react-ui/styles/badger-css-react-ui.scss';
+@import '@abw/badger-css/styles/badger.scss';
+// @import '@abw/badger-react-ui/styles/badger-css-react-ui.scss';
+@import '@abw/badger-react-ui/styles/badger-react-ui.scss';
+
+
 @import "config/all.scss";
 @import "site/all.scss";
 @import "modules/all.scss";
