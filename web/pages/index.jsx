@@ -18,16 +18,13 @@ export const Index = () =>
       documentation websites for various other badger projects.
     </p>
     <Tiles gap="4" minWidth="10rem">
-      <CardLink href="https://abw.github.io/badger-react-ui/" Picture={BadgerReactUI}/>
-      <CardLink href="https://abw.github.io/badger-form/" Picture={BadgerForm}/>
-      <CardLink href="https://abw.github.io/badger-css/" Picture={BadgerCSS}/>
-      <CardLink href="https://abw.github.io/badger-icon/" Picture={BadgerIcon}/>
+      <CardLink href="https://badgerpower.com/badger-react-ui/" Picture={BadgerReactUI}/>
+      <CardLink href="https://badgerpower.com/badger-form/" Picture={BadgerForm}/>
+      <CardLink href="https://badgerpower.com/badger-css/" Picture={BadgerCSS}/>
+      <CardLink href="https://badgerpower.com/badger-icon/" Picture={BadgerIcon}/>
       {/* <CardLink href="https://abw.github.io/badger-color/" Picture={BadgerColor}/> */}
     </Tiles>
-    <div className="flex center mar-t-12 mar-b-4">
-      <OSS className="width-10rem"/>
-    </div>
-    <Warning title="Warning!" border shadow="2" icon="exclamation">
+    <Warning title="Warning!" border shadow="2" icon="exclamation" className="mar-t-8">
       <p>
         This is Open Source Software and you&apos;re welcome to use it.
         But be warned that it is also Opinionated and Selfish Software.
@@ -37,6 +34,9 @@ export const Index = () =>
         documented and is likely to change without notice.
       </p>
     </Warning>
+    <div className="flex center mar-t-12 mar-b-4">
+      <OSS className="width-10rem"/>
+    </div>
   </div>
 
 const CardLink = ({ href, Picture }) =>
