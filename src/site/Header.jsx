@@ -6,7 +6,7 @@ import { SiteConsumer } from './Context.jsx'
 import { Icon } from '@abw/badger-react-ui'
 import { Toggle } from '@abw/react-night-and-day'
 
-export const SiteHeader = SiteConsumer(
+export const Header = SiteConsumer(
   ({
     sidebarIconClick,
     site,
@@ -32,4 +32,4 @@ export const SiteHeader = SiteConsumer(
     </header>
 )
 
-export default SiteHeader
+export default Header

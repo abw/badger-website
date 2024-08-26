@@ -1,7 +1,7 @@
 import React from 'react'
 import { SiteConsumer } from './Context.jsx'
 
-export const SiteAuthor = SiteConsumer(
+export const Author = SiteConsumer(
   ({ site }) =>
     site.author
       ? site.authorLink
@@ -19,5 +19,5 @@ export const SiteAuthor = SiteConsumer(
       : null
 )
 
-export default SiteAuthor
+export default Author
 

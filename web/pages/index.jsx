@@ -10,12 +10,27 @@ import OSS            from '../svg/oss.svg?react'
 import { Tiles, Warning }      from '@abw/badger-react-ui'
 
 export const Index = () =>
-  <div className="conform-tablet">
-    <Badger className="brw-logo"/>
-
-    <p className="larger">
-      Badger Website is a framework / template which I use to generate the
-      documentation websites for various other badger projects.
+  <div>
+    <div className="grid-2 gap-12 start stack-laptop">
+      <div>
+        <Badger className="brw-logo"/>
+      </div>
+      <div>
+        <h1 className="mar-v-none">
+          Badger Website Builder
+        </h1>
+        <h2 className="mar-t-none small mar-b-2">
+          Powered by Badgers
+        </h2>
+        <p className="larger">
+          Badger Website is a framework / template which I use to generate the
+          documentation websites for various other badger projects.
+        </p>
+      </div>
+    </div>
+    <h2>See it in action</h2>
+    <p>
+      These are some of the site that have been built using this framework.
     </p>
     <Tiles gap="4" minWidth="10rem">
       <CardLink href="https://badgerpower.com/badger-react-ui/" Picture={BadgerReactUI}/>

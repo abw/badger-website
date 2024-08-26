@@ -11,11 +11,23 @@ export const Sidebar = {
     },
     {
       details: {
-        summary: 'Section 1',
-        openPath: '/section1/',
+        summary: 'Getting Started',
+        openPath: '/getting-started/',
         menu: [
-          { to: '/section1/foo', text: 'Foo' },
-          { to: '/section1/bar', text: 'Bar' },
+          { to: '/getting-started/installation', text: 'Installation' },
+          { to: '/getting-started/setup', text: 'Basic Setup' },
+        ]
+      }
+    },
+    {
+      details: {
+        summary: 'Configuration',
+        openPath: '/configuration/',
+        menu: [
+          { to: '/configuration/site', text: 'Site' },
+          { to: '/configuration/sidebar', text: 'Sidebar' },
+          { to: '/configuration/components', text: 'Components' },
+          { to: '/configuration/theme', text: 'Theme' },
         ]
       }
     },

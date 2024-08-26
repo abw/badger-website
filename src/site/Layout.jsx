@@ -7,7 +7,7 @@ import { SiteConsumer } from './Context.jsx'
 import { CLOSED, OPEN } from './Constants.js'
 //import ScrollToTop  from '@/utils/ScrollToTop.js'
 
-export const SiteLayout = SiteConsumer(
+export const Layout = SiteConsumer(
   ({
     contentRef,
     theme,
@@ -37,4 +37,4 @@ export const SiteLayout = SiteConsumer(
     </div>
 )
 
-export default SiteLayout
+export default Layout

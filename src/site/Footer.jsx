@@ -5,7 +5,7 @@ import SitePowered      from './BadgerPowered.jsx'
 import SiteRelease      from './Release.jsx'
 import { SiteConsumer } from './Context.jsx'
 
-export const SiteFooter = SiteConsumer(
+export const Footer = SiteConsumer(
   ({
     Copyright=SiteCopyright,
     Author=SiteAuthor,
@@ -28,5 +28,5 @@ export const SiteFooter = SiteConsumer(
     </footer>
 )
 
-export default SiteFooter
+export default Footer
 

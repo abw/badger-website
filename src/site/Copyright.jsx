@@ -1,7 +1,7 @@
 import React from 'react'
 import { SiteConsumer } from './Context.jsx'
 
-export const SiteCopyright = SiteConsumer(
+export const Copyright = SiteConsumer(
   ({ site }) =>
     Boolean(site.copyright) &&
       <span className="copyright">
@@ -9,5 +9,5 @@ export const SiteCopyright = SiteConsumer(
       </span>
 )
 
-export default SiteCopyright
+export default Copyright
 

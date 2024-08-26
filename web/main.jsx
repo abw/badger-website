@@ -1,14 +1,7 @@
 import React    from 'react'
 import ReactDOM from 'react-dom/client'
-import Provider from '@/site/Provider.jsx'
-import site     from './config/site.js'
-import sidebar  from './config/sidebar.jsx'
+import App      from './App.jsx'
 import './styles/badger-website.scss'
-
-const pages = import.meta.glob(
-  './pages/**/[a-z_]*.jsx',
-  { eager: true }
-)
 
 ReactDOM
   .createRoot(
@@ -16,11 +9,6 @@ ReactDOM
   )
   .render(
     <React.StrictMode>
-      <Provider
-        site={site}
-        pages={pages}
-        sidebar={sidebar}
-        // Sidebar={Sidebar}
-      />
+      <App/>
     </React.StrictMode>,
   )

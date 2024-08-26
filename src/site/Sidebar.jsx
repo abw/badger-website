@@ -4,7 +4,7 @@ import Menu from '@/sidebar/Menu.jsx'
 import Sections from '@/sidebar/Sections.jsx'
 import { SiteConsumer } from '@/site/Context.jsx'
 
-export const SiteSidebar = SiteConsumer(
+export const Sidebar = SiteConsumer(
   ({
     sidebar={},
     SidebarTitle=Title,
@@ -24,4 +24,4 @@ export const SiteSidebar = SiteConsumer(
     </div>
 )
 
-export default SiteSidebar
+export default Sidebar

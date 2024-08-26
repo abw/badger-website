@@ -2,7 +2,7 @@ import React from 'react'
 import { Icon } from '@abw/badger-react-ui'
 import { SiteConsumer } from './Context.jsx'
 
-export const SiteRepository = SiteConsumer(
+export const Repository = SiteConsumer(
   ({ site }) =>
     Boolean(site.repository) &&
       <a href={site.repository} target="_blank" rel="noreferrer">
@@ -10,5 +10,5 @@ export const SiteRepository = SiteConsumer(
       </a>
 )
 
-export default SiteRepository
+export default Repository
 
