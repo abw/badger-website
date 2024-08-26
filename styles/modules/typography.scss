@@ -8,6 +8,7 @@ body {
 }
 :any-link, .hover {
   text-decoration: none;
+  transition: all var(--unit-transition);
   color: var(--link-color);
   &:hover {
     color: var(--link-hover)
