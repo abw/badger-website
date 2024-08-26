@@ -9,10 +9,12 @@ export const site = {
   version:    VITE_SITE_VERSION,
   date:       VITE_SITE_DATE,
   title:      VITE_SITE_TITLE,
+  copyright:  2024,
   author:     'Andy Wardley',
   authorLink: 'https://github.com/abw',
   repository: 'https://github.com/abw/badger-website',
   repoIcon:   'github',
+  badgerpower: true
 }
 
 export default site

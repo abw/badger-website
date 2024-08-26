@@ -118,6 +118,10 @@
       --sidebar-margin-left: 0px;
       --sidebar-toggle-opacity: 1;
     }
+    & > footer > nav > * {
+      display: block;
+      width: 100%;
+    }
   }
 }
 
