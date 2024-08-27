@@ -95,6 +95,7 @@ export const PageRouter = ({
   }
 
   // console.log(`created routes:`, routes)
+  console.log(`PageRouter basename: `, import.meta.env.BASE_URL)
 
   return createBrowserRouter(
     [
