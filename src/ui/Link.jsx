@@ -1,5 +1,5 @@
 import React from 'react'
-import { WithIcons } from '@abw/badger-react-ui'
+import { classes, WithIcons } from '@abw/badger-react-ui'
 import { NavLink } from 'react-router-dom'
 
 const Link = ({
@@ -9,17 +9,21 @@ const Link = ({
   onClick,
   label,
   style,
+  code,
+  text=code,
   ...props
 }) =>
   <NavLink
     to={to}
     onClick={onClick}
     end={exact && 'end'}
-    className={({ isActive }) => `${className} ${isActive ? 'active' : ''}`}
+    className={
+      ({ isActive }) => classes(className, { active: isActive, 'font-mono': code })
+    }
     aria-label={label}
     style={style}
   >
-    <WithIcons {...props}/>
+    <WithIcons text={text} {...props}/>
   </NavLink>
 
 export default Link
