@@ -15,8 +15,8 @@ dependencies:
     specifier: ^1.1.0
     version: 1.1.0
   '@abw/badger-react-ui':
-    specifier: ^1.3.1
-    version: 1.3.1(react-dom@18.3.1)(react@18.3.1)
+    specifier: ^1.3.2
+    version: 1.3.2(react-dom@18.3.1)(react@18.3.1)
   '@abw/badger-timestamp':
     specifier: ^1.1.0
     version: 1.1.0
@@ -144,8 +144,8 @@ packages:
       react-dom: 18.3.1(react@18.3.1)
     dev: false
 
-  /@abw/badger-react-ui@1.3.1(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-dy0vIGzrTD7C3K00wplcYmOV1lQPOZos++JCkpcTtZrk+D6t5b4EN2eKmuspb3Fe90VJkMjB7a65xkN5333Hyg==}
+  /@abw/badger-react-ui@1.3.2(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-Bs2i7KR6RR1FY9h8B4igzQmoav33Bmte7kMO5ImT8f0j1QZ564a1JByzH7lHpFCBCSwR4NOa6FwtGLY+rHphlA==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
