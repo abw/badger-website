@@ -1,19 +1,28 @@
 import React from 'react'
 import defaultLayout from './Layout.jsx'
 import { createBrowserRouter } from 'react-router-dom'
+import {
+  MATCH_PAGES_PREFIX,
+  MATCH_PAGE_SUFFIX,
+  MATCH_INDEX_PAGE,
+  MATCH_LAYOUT,
+  MATCH_IGNORE,
+  MATCH_PLACEHOLDER
+} from '@/constants/Pages.jsx'
 
 export const PageRouter = ({
   pages,
-  matchPagesPrefix = /^[./]*pages/,
-  matchPageSuffix  = /\.[jt]sx?$/,
-  matchIndexPage   = /index$/,
-  matchLayout      = /\/_layout$/,
-  matchIgnore      = /\/_examples\//,
-  matchPlaceholder = /\[(\w+)\]/,
+  matchPagesPrefix = MATCH_PAGES_PREFIX,
+  matchPageSuffix  = MATCH_PAGE_SUFFIX,
+  matchIndexPage   = MATCH_INDEX_PAGE,
+  matchLayout      = MATCH_LAYOUT,
+  matchIgnore      = MATCH_IGNORE,
+  matchPlaceholder = MATCH_PLACEHOLDER,
   Layout           = defaultLayout,
   site             = { },
   basename         = site.basename || import.meta.env.BASE_URL
 } = { }) => {
+
   // Cleanup the path names, removing the leading ./...etc.../pages prefix,
   // any .js, .jsx, .ts or .tsx suffixes, removing the final 'index' in an
   // index page, and converting any [example] directories into ':example'
@@ -94,11 +103,6 @@ export const PageRouter = ({
     // add the layout page as the new page for the base directory
     // console.log(`inserting new ${base} page as layout`)
     paths[base] = layout
-  }
-
-  // console.log(`created routes:`, routes)
-  if (site.debug) {
-    console.log(`PageRouter basename: `, basename)
   }
 
   return createBrowserRouter(
