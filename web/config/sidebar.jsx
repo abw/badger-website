@@ -25,11 +25,12 @@ export const Sidebar = {
         summary: 'Configuration',
         openPath: '/configuration/',
         menu: [
-          { to: '/configuration/provider', text: 'Provider' },
-          { to: '/configuration/site', text: 'Site' },
-          { to: '/configuration/sidebar', text: 'Sidebar' },
-          { to: '/configuration/components', text: 'Components' },
-          { to: '/configuration/theme', text: 'Theme' },
+          { to: '/configuration/site-provider', code: 'SiteProvider' },
+          { to: '/configuration/pages',         code: 'pages' },
+          { to: '/configuration/site',          code: 'site' },
+          { to: '/configuration/sidebar',       code: 'sidebar' },
+          { to: '/configuration/theme',         code: 'theme' },
+          { to: '/configuration/components',    text: 'Components' },
         ]
       }
     },

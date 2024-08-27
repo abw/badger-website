@@ -11,4 +11,8 @@ const site = {
   basename:    import.meta.env.BASE_URL
 }
 
-export default site
+const App = () =>
+  <SiteProvider
+    site={site}
+    // ...etc...
+  />

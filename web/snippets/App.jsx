@@ -1,16 +1,16 @@
 import React    from 'react'
 import site     from './config/site.js'
 import sidebar  from './config/sidebar.jsx'
-import { Provider } from '@abw/badger-website'
+import { SiteProvider } from '@abw/badger-website'
 import './styles/my-website.scss'
 
 const pages = import.meta.glob(
-  './pages/**/[a-z_]*.jsx',
+  './pages/**/[a-z_]*.[jt]s?(x)',
   { eager: true }
 )
 
 const App = () =>
-  <Provider
+  <SiteProvider
     site={site}
     pages={pages}
     sidebar={sidebar}

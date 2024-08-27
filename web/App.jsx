@@ -4,7 +4,7 @@ import site     from './config/site.js'
 import sidebar  from './config/sidebar.jsx'
 
 const pages = import.meta.glob(
-  './pages/**/[a-z_]*.jsx',
+  './pages/**/[a-z_]*.[jt]s?(x)',
   { eager: true }
 )
 
