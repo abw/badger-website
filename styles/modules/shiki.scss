@@ -13,6 +13,7 @@
   --shiki-highlight-background: var(--grey-95);
   --shiki-highlight-foreground: var(--brand-30);
   --shiki-highlight-border: var(--grey20-85);
+  --shiki-line-numbers: var(--grey20-80);
   --padding: 1rem;
   --highlight-border-width: 0rem;
   font-family: var(--font-mono);
@@ -30,6 +31,24 @@
     margin: 0 calc(0rem - var(--padding));
     padding: 0 calc(var(--padding) - var(--highlight-border-width));
     border-left: var(--highlight-border-width) solid var(--shiki-highlight-border);
+  }
+    code {
+    counter-reset: step;
+    counter-increment: step 0;
+  }
+  code .line::before {
+    content: counter(step);
+    counter-increment: step;
+    width: 1rem;
+    margin-right: 1rem;
+    display: inline-block;
+    text-align: right;
+    // color: rgba(115,138,148,.4)
+    color: var(--shiki-line-numbers);
+  }
+  code .line:empty {
+    // fix for extra blank line appearing after blank lines
+    display: inline-block
   }
 }
 
@@ -49,5 +68,6 @@
     --shiki-highlight-background: var(--grey20-15);
     --shiki-highlight-foreground: var(--brand-70);
     --shiki-highlight-border: var(--brand-50);
+    --shiki-line-numbers: var(--grey20-30);
   }
 }

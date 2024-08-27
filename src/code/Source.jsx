@@ -4,8 +4,8 @@ import { useState } from 'react'
 import { createCssVariablesTheme } from 'shiki'
 import { getHighlighterCore } from 'shiki/core'
 import { transformerNotationHighlight } from '@shikijs/transformers'
-import getWasm from 'shiki/wasm'
 import { lineHighlighter, prepareCode, removeLineEndings } from './Utils.jsx'
+import getWasm from 'shiki/wasm'
 
 const cssvars = 'css-variables'
 const cssVarsTheme = createCssVariablesTheme({
