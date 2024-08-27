@@ -2,7 +2,7 @@ import React from 'react'
 import { classes, WithIcons } from '@abw/badger-react-ui'
 import { NavLink } from 'react-router-dom'
 
-const Link = ({
+export const Link = ({
   to,
   className='',
   exact,
