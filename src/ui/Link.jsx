@@ -1,29 +1,14 @@
-import React from 'react'
-import { classes, WithIcons } from '@abw/badger-react-ui'
-import { NavLink } from 'react-router-dom'
+import React        from 'react'
+import ExternalLink from './Link/External.jsx'
+import InternalLink from './Link/Internal.jsx'
+import { Themed }   from '@abw/badger-react-ui'
 
-export const Link = ({
-  to,
-  className='',
-  exact,
-  onClick,
-  label,
-  style,
-  code,
-  text=code,
+const Link = ({
+  href,
   ...props
 }) =>
-  <NavLink
-    to={to}
-    onClick={onClick}
-    end={exact && 'end'}
-    className={
-      ({ isActive }) => classes(className, { active: isActive, 'font-mono': code })
-    }
-    aria-label={label}
-    style={style}
-  >
-    <WithIcons text={text} {...props}/>
-  </NavLink>
+  href
+    ? <ExternalLink href={href} {...props}/>
+    : <InternalLink {...props}/>
 
-export default Link
+export default Themed(Link, 'Link')
