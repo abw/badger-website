@@ -1,7 +1,6 @@
 export const Sidebar = {
-  title: 'Badger Website',
-  // menuClass: 'menu',
   sections: [
+    /*
     {
       title: 'Main Menu',
       menu: [
@@ -10,6 +9,7 @@ export const Sidebar = {
         { to: '/code', text: 'Code' },
       ]
     },
+    */
     {
       details: {
         summary: 'Getting Started',

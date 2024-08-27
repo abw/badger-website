@@ -7,7 +7,7 @@ const Site = () =>
   <div>
     <h1>Site configuration</h1>
     <p>
-      The <code>site</code> option is passed to the <code>Provider</code> component
+      The <code>site</code> option is passed to the <code>SiteProvider</code> component
       to define site configuration options.
     </p>
     <Source

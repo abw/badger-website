@@ -8,7 +8,7 @@ import { Warning } from '@abw/badger-react-ui'
 
 const Pages = () =>
   <div>
-    <h1>Pages configuration</h1>
+    <h1 className="font-mono">pages</h1>
     <p>
       The <code>pages</code> option is passed to the <code>SiteProvider</code>{' '}
       component as an object mapping paths to component for all the pages in
