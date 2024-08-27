@@ -6,7 +6,9 @@ const site = {
   author:     'Andy Wardley',
   authorLink: 'https://github.com/abw',
   repository: 'https://github.com/abw/my-web-site',
-  badgerpower: true
+  badgerpower: true,
+  // Add this if your site has a URL base define in your Vite config file
+  basename:    import.meta.env.BASE_URL
 }
 
 export default site
