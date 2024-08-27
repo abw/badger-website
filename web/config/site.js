@@ -14,7 +14,8 @@ export const site = {
   authorLink: 'https://github.com/abw',
   repository: 'https://github.com/abw/badger-website',
   repoIcon:   'github',
-  badgerpower: true
+  badgerpower: true,
+  basename:    import.meta.env.BASE_URL
 }
 
 export default site

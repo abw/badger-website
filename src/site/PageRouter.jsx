@@ -10,7 +10,9 @@ export const PageRouter = ({
   matchLayout      = /\/_layout$/,
   matchIgnore      = /\/_examples\//,
   matchPlaceholder = /\[(\w+)\]/,
-  Layout           = defaultLayout
+  Layout           = defaultLayout,
+  site             = { },
+  basename         = site.basename || import.meta.env.BASE_URL
 } = { }) => {
   // Cleanup the path names, removing the leading ./...etc.../pages prefix,
   // any .js, .jsx, .ts or .tsx suffixes, removing the final 'index' in an
@@ -95,7 +97,9 @@ export const PageRouter = ({
   }
 
   // console.log(`created routes:`, routes)
-  console.log(`PageRouter basename: `, import.meta.env.BASE_URL)
+  if (site.debug) {
+    console.log(`PageRouter basename: `, basename)
+  }
 
   return createBrowserRouter(
     [
@@ -106,7 +110,7 @@ export const PageRouter = ({
       },
     ],
     {
-      basename: import.meta.env.BASE_URL
+      basename
     }
   )
 }
