@@ -1,20 +1,18 @@
 import React from 'react'
 import UILink from '@/ui/Link.jsx'
 import { classes } from '@abw/badger-react-ui'
-import { useSite } from '@/site/Context.jsx'
-// import Context from './Context.jsx'
-// import MenuTOC from './MenuTOC.jsx'
-// import { useResolvedPath } from 'react-router-dom'
+import { SiteConsumer } from '@/site/Context.jsx'
 
 
-export const SidebarMenu = ({
-  // title, path, tocs,
-  items,
-  Link=UILink
-}) => {
-  const { sidebarClick } = useSite()
-  return (
-    <div className="menu border bdr-1" onClick={sidebarClick}>
+export const SidebarMenu = SiteConsumer(
+  ({
+    sidebar={},
+    sidebarClick,
+    items,
+    menuClass=sidebar.menuClass ?? 'menu border bdr-1',
+    Link=UILink
+  }) =>
+    <div className={menuClass} onClick={sidebarClick}>
       { items.map(
         ({ className, ...item }) =>
           <Link
@@ -26,9 +24,7 @@ export const SidebarMenu = ({
           </Link>
       )}
     </div>
-  )
-}
-
+)
 
 export default SidebarMenu
 
