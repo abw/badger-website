@@ -4,9 +4,11 @@
     "paths": {
       "@/src/*":        ["./src/*"],
       "@/code/*":       ["./src/code/*"],
+      "@/constants/*":  ["./src/constants/*"],
       "@/site/*":       ["./src/site/*"],
       "@/sidebar/*":    ["./src/sidebar/*"],
       "@/ui/*":         ["./src/ui/*"],
+      "@/utils/*":      ["./src/utils/*"],
       "@/web/*":        ["./web/*"],
       "@/svg/*":        ["./web/svg/*"],
       "@/snippets/*":   ["./web/snippets/*"],
