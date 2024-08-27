@@ -22,7 +22,7 @@ const Context = ({
   const closeSmallScreenSidebar  = () => setSmallScreenSidebarOpen(false)
   const toggleSmallScreenSidebar = () => setSmallScreenSidebarOpen( open => ! open )
 
-  const { theme } = useTheme()
+  const { theme, toggleTheme, isDark, isLight, setDark, setLight } = useTheme()
   const { width, breakpoint } = useWindow()
   const smallScreen = splitHash(smallScreenBreakpoints)
 
@@ -44,7 +44,8 @@ const Context = ({
   const contentRef = useRef()
 
   return render({
-    site, theme,
+    site,
+    theme, toggleTheme, isDark, isLight, setDark, setLight,
     width, breakpoint,
     sidebarOpen, setSidebarOpen,
     openSidebar, closeSidebar, toggleSidebar,
