@@ -12,23 +12,24 @@ const Setup = () =>
     <h2>Site configuration</h2>
     <p>
       Create a configuration file for your site.  In this example we&apos;ll
-      assume it&apos;s in a <code>config/site.js</code> file in your main
-      source directory.
+      assume it&apos;s in a <code>config/site.js</code> file underneath your
+      main <code>src</code> source directory.
     </p>
     <Source
       code={site}
       language="javascript"
+      caption="src/config/site.js"
     />
 
     <h2>Sidebar configuration</h2>
     <p>
       Create a configuration file for the sidebar.  We&apos;ll
-      assume it&apos;s in a <code>config/sidebar.js</code> file in your main
-      source directory.
+      assume it&apos;s in the <code>config/sidebar.js</code> file.
     </p>
     <Source
       code={sidebar}
       language="javascript"
+      caption="src/config/sidebar.js"
     />
 
     <h2>Main application</h2>
@@ -42,6 +43,7 @@ const Setup = () =>
     <Source
       code={App}
       language="jsx"
+      caption="src/App.jsx"
     />
     <p>
       This imports the <code>site</code> and <code>sidebar</code> configurations
@@ -74,12 +76,14 @@ const Setup = () =>
     <Source
       code={stylesheet}
       language="scss"
+      caption="src/styles/my-website.scss"
     />
 
     <h2>Take it for a spin</h2>
     <p>
       You should then be able to start up the development server from the
-      command line: <code>pnpm dev</code>
+      command line by running <code>pnpm dev</code> (or the equivalent for
+      whatever package manager you&apos;re using).
     </p>
   </div>
 
