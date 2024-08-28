@@ -5,6 +5,7 @@
       "@/src/*":        ["./src/*"],
       "@/code/*":       ["./src/code/*"],
       "@/constants/*":  ["./src/constants/*"],
+      "@/content/*":    ["./src/content/*"],
       "@/site/*":       ["./src/site/*"],
       "@/sidebar/*":    ["./src/sidebar/*"],
       "@/ui/*":         ["./src/ui/*"],

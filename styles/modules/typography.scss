@@ -11,7 +11,8 @@ body {
   transition: all var(--unit-transition);
   color: var(--link-color);
   &:hover {
-    color: var(--link-hover)
+    color: var(--link-hover);
+    cursor: pointer;
   }
 }
 #{$headings} {
