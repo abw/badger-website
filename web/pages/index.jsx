@@ -8,6 +8,10 @@ import Hero           from '@/content/Hero.jsx'
 import PeopleWhoShare from '@/content/PeopleWhoShare.jsx'
 import { Tiles }      from '@abw/badger-react-ui'
 
+export const metadata = {
+  // noSidebar: true
+}
+
 export const Index = () =>
   <div>
     <Hero

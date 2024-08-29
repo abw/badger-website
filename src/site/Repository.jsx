@@ -1,13 +1,16 @@
 import React from 'react'
-import { Icon } from '@abw/badger-react-ui'
+import Link from '@/ui/Link.jsx'
 import { SiteConsumer } from './Context.jsx'
 
 export const Repository = SiteConsumer(
-  ({ site }) =>
+  ({ site, className='' }) =>
     Boolean(site.repository) &&
-      <a href={site.repository} target="_blank" rel="noreferrer">
-        <Icon name={site.repoIcon || 'github'}/>
-      </a>
+      <Link
+        href={site.repository}
+        targetBlank
+        className={`repository ${className}`}
+        icon={site.repoIcon || 'github'}
+      />
 )
 
 export default Repository

@@ -2,8 +2,13 @@ import React from 'react'
 import { Button } from '@abw/badger-react-ui'
 import { useSite } from '@/site/Context.jsx'
 
+export const metadata = {
+  message: 'Hello World!'
+}
+
 const Boz = () => {
   const { theme, isDark, isLight, toggleTheme, setDark, setLight } = useSite()
+
   return (
     <div>
       <h1>The Boz Page</h1>

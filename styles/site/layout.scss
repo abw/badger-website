@@ -22,7 +22,7 @@
   position: relative;
   color: var(--body-color);
   background-color: var(--body-background);
-  &[data-sidebar="closed"] {
+  &.no-sidebar, &[data-sidebar="closed"] {
     --side-margin: calc(0px - max(var(--side-total), var(--side-width)));
     --main-total: 100%;
     --main-pad-right: var(--half-pad);
@@ -110,11 +110,11 @@
         transition: background-color $theme-transition ease-in-out;
       }
     }
-    &:not([data-small-screen-sidebar="open"]) {
+    &.no-sidebar, &:not([data-small-screen-sidebar="open"]) {
       --sidebar-margin-left: calc(0rem - var(--sidebar-width));
       --sidebar-toggle-opacity: 0.5;
     }
-    &[data-small-screen-sidebar="open"] {
+    &[data-small-screen-sidebar="open"]:not(.no-sidebar) {
       --sidebar-margin-left: 0px;
       --sidebar-toggle-opacity: 1;
     }

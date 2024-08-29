@@ -1,6 +1,6 @@
-import React from 'react'
-import defaultLayout from './Layout.jsx'
+import defaultLayout from '../Site/Layout.jsx'
 import { createBrowserRouter } from 'react-router-dom'
+import { makeRoute } from './Utils.jsx'
 import {
   MATCH_PAGES_PREFIX,
   MATCH_PAGE_SUFFIX,
@@ -10,7 +10,7 @@ import {
   MATCH_PLACEHOLDER
 } from '@/constants/Pages.jsx'
 
-export const PageRouter = ({
+export const Router = ({
   pages,
   matchPagesPrefix = MATCH_PAGES_PREFIX,
   matchPageSuffix  = MATCH_PAGE_SUFFIX,
@@ -20,29 +20,30 @@ export const PageRouter = ({
   matchPlaceholder = MATCH_PLACEHOLDER,
   Layout           = defaultLayout,
   site             = { },
-  basename         = site.basename || import.meta.env.BASE_URL
+  basename         = site.basename || import.meta.env.BASE_URL,
 } = { }) => {
 
   // Cleanup the path names, removing the leading ./...etc.../pages prefix,
   // any .js, .jsx, .ts or .tsx suffixes, removing the final 'index' in an
   // index page, and converting any [example] directories into ':example'
   // route segments
-  const routes = Object
+  const metas = Object
     .entries(pages)
     .map(
       ([route, module]) => {
-        const path = route
+        const meta = module.metadata || { }
+        meta.uri = meta.path = route
           .replace(matchPagesPrefix, '')
           .replace(matchPageSuffix, '')
           .replace(matchIndexPage, '')
           .replace(matchPlaceholder, ':$1')
-        const Component = module.default
-        return { path, Component }
+        meta.Component = module.default
+        return meta
       }
     )
 
-  // Build a lookup table from path to route
-  const paths = routes
+  // Build a lookup table from path to page
+  const paths = metas
     .filter(
       route => ! route.path.match(matchIgnore)
     )
@@ -68,6 +69,7 @@ export const PageRouter = ({
   // process each layout path
   for (let layoutPath of layoutPaths) {
     const layout = paths[layoutPath]
+    layout.isLayout = true
     delete paths[layoutPath]
     const base  = layoutPath.replace(matchLayout, '/')
     const blen  = base.length
@@ -98,18 +100,20 @@ export const PageRouter = ({
       child = child.slice(blen)
       // console.log(`- child of ${base}: ${route.path}  => ${child}`)
       route.path = child.length ? child : '/'
-      layout.children.push(route)
+      layout.children.push(makeRoute(route))
     }
     // add the layout page as the new page for the base directory
     // console.log(`inserting new ${base} page as layout`)
     paths[base] = layout
   }
 
+  const routes = metas.map(makeRoute)
+
   return createBrowserRouter(
     [
       {
         path:     '/',
-        element:  <Layout/>,
+        Component: Layout,
         children: routes
       },
     ],
@@ -119,4 +123,4 @@ export const PageRouter = ({
   )
 }
 
-export default PageRouter
+export default Router

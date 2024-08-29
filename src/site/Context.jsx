@@ -2,8 +2,15 @@ import { useState, useRef } from 'react'
 import { Generator } from '@abw/react-context'
 import { useTheme } from '@abw/react-night-and-day'
 import { useWindow } from '@abw/badger-react-ui'
-import { defaultSite } from './Config.js'
+// import { defaultSite } from './Config.js'
 import { splitHash } from '@abw/badger-utils'
+import { now } from '@abw/badger-timestamp'
+
+const defaultSite = {
+  version:  '0.0.1',
+  title:    'Badger Website',
+  date:     now().date()
+}
 
 const Context = ({
   render,
@@ -22,7 +29,6 @@ const Context = ({
   const closeSmallScreenSidebar  = () => setSmallScreenSidebarOpen(false)
   const toggleSmallScreenSidebar = () => setSmallScreenSidebarOpen( open => ! open )
 
-  const { theme, toggleTheme, isDark, isLight, setDark, setLight } = useTheme()
   const { width, breakpoint } = useWindow()
   const smallScreen = splitHash(smallScreenBreakpoints)
 
@@ -40,12 +46,18 @@ const Context = ({
     }
   }
 
+  // Page metadata
+  const [page, setPage] = useState({ })
+
   // content ref for scrolling main body
   const contentRef = useRef()
 
+  // Light/Dark theme
+  const { theme, toggleTheme, isDark, isLight, setDark, setLight } = useTheme()
+
   return render({
     site,
-    theme, toggleTheme, isDark, isLight, setDark, setLight,
+    page, setPage,
     width, breakpoint,
     sidebarOpen, setSidebarOpen,
     openSidebar, closeSidebar, toggleSidebar,
@@ -54,6 +66,7 @@ const Context = ({
     sidebarIconClick,
     sidebarClick: closeSmallScreenSidebar,
     contentRef,
+    theme, toggleTheme, isDark, isLight, setDark, setLight,
     ...props
   })
 }

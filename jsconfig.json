@@ -4,8 +4,10 @@
     "paths": {
       "@/src/*":        ["./src/*"],
       "@/code/*":       ["./src/code/*"],
+      "@/config/*":     ["./src/config/*"],
       "@/constants/*":  ["./src/constants/*"],
       "@/content/*":    ["./src/content/*"],
+      "@/router/*":     ["./src/router/*"],
       "@/site/*":       ["./src/site/*"],
       "@/sidebar/*":    ["./src/sidebar/*"],
       "@/ui/*":         ["./src/ui/*"],

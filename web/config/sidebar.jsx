@@ -36,6 +36,21 @@ export const Sidebar = {
     },
     {
       details: {
+        summary: 'Components',
+        openPath: '/components/',
+        menu: [
+          { to: '/components/author',           code: 'Author' },
+          { to: '/components/copyright',        code: 'Copyright' },
+          { to: '/components/hero',             code: 'Hero' },
+          { to: '/components/oss-logo',         code: 'OSSLogo' },
+          { to: '/components/people-who-share', code: 'PeopleWhoShare' },
+          { to: '/components/release',          code: 'Release' },
+          { to: '/components/repository',       code: 'Repository' },
+        ]
+      }
+    },
+    {
+      details: {
         summary: 'Section 2',
         openPath: '/section2/',
         menu: [

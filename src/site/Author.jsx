@@ -1,18 +1,17 @@
 import React from 'react'
+import Link from '@/ui/Link.jsx'
 import { SiteConsumer } from './Context.jsx'
 
 export const Author = SiteConsumer(
   ({ site }) =>
     site.author
       ? site.authorLink
-        ? <a
+        ? <Link
             href={site.authorLink}
             className="author"
-            target="_blank"
-            rel="noreferrer"
-          >
-            {site.author}
-          </a>
+            targetBlank
+            text={site.author}
+          />
         : <span className="author">
             {site.author}
           </span>

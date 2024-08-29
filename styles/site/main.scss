@@ -1,4 +1,4 @@
-#app > main {
+#app > main, #page {
   & > h1:first-child, & > div:first-child > h1:first-child {
     margin-top: 0;
   }

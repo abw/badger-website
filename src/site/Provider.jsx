@@ -1,5 +1,5 @@
 import React       from 'react'
-import PageRouter  from './PageRouter.jsx'
+import PageRouter  from '@/router/Router.jsx'
 import Context     from './Context.jsx'
 import themeConfig from './Theme.jsx'
 import { RouterProvider } from 'react-router-dom'
