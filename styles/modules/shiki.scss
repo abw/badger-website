@@ -14,6 +14,7 @@
   --shiki-highlight-foreground: var(--brand-30);
   --shiki-highlight-border: var(--grey20-85);
   --shiki-line-numbers: var(--grey20-80);
+  --shiki-line-numbers-highlighted: var(--grey-65);
   --padding: 1rem;
   --highlight-border-width: 0rem;
   font-family: var(--font-mono);
@@ -36,7 +37,7 @@
     counter-reset: step;
     counter-increment: step 0;
   }
-  code .line::before {
+  code span.line::before {
     content: counter(step);
     counter-increment: step;
     width: 1rem;
@@ -45,6 +46,9 @@
     text-align: right;
     // color: rgba(115,138,148,.4)
     color: var(--shiki-line-numbers);
+  }
+  code span.line.highlighted::before {
+    color: var(--shiki-line-numbers-highlighted);
   }
   code .line:empty {
     // fix for extra blank line appearing after blank lines
@@ -57,7 +61,7 @@
     --shiki-foreground: var(--codeblock-text);
     --shiki-background: var(--codeblock-back);
     --shiki-token-constant: var(--blue-50);
-    --shiki-token-string: var(--brand-60);
+    --shiki-token-string: var(--brand-70);
     --shiki-token-string-expression: var(--shiki-token-string);
     --shiki-token-comment: var(--grey-40);
     --shiki-token-keyword: var(--grey40-50);
@@ -65,9 +69,10 @@
     --shiki-token-function: var(--indigo-70);
     --shiki-token-punctuation: var(--grey20-40);
     --shiki-token-link: var(--blue-40);
-    --shiki-highlight-background: var(--grey20-15);
+    --shiki-highlight-background: var(--grey-10);
     --shiki-highlight-foreground: var(--brand-70);
     --shiki-highlight-border: var(--brand-50);
     --shiki-line-numbers: var(--grey20-30);
+    --shiki-line-numbers-highlighted: var(--grey20-45);
   }
 }

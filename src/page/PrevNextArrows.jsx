@@ -1,24 +1,23 @@
 import React from 'react'
-import Link from './PrevNextLink'
+import Link from '@/ui/Link.jsx'
 import { SiteConsumer } from '@/site/Context.jsx'
 
-export const PrevNext = SiteConsumer(
+export const PrevNextArrows = SiteConsumer(
   ({
     prevNextPage,
-    PrevNextLink=Link,
-    prevNextClass='prev-next flex space gap-2 middle mar-t-8',
-    className=prevNextClass
+    prevNextArrowsClass='prev-next-arrows flex space gap-2 middle',
+    className=prevNextArrowsClass
   }) => {
     const [prev, next] = prevNextPage()
 
     return (
       <div className={className}>
         { prev
-          ? <PrevNextLink prev {...prev}/>
+          ? <Link to={prev.to} icon="arrow-left"/>
           : <div>&nbsp;</div>
         }
         { next
-          ? <PrevNextLink {...next}/>
+          ? <Link to={next.to} icon="arrow-right"/>
           : <div>&nbsp;</div>
         }
       </div>
@@ -26,4 +25,4 @@ export const PrevNext = SiteConsumer(
   }
 )
 
-export default PrevNext
+export default PrevNextArrows

@@ -5,7 +5,7 @@ import site from '@/snippets/config/site.jsx?raw'
 
 const Site = () =>
   <div>
-    <h1>Site configuration</h1>
+    <h1 className="font-mono">site</h1>
     <p>
       The <code>site</code> option is passed to the <code>SiteProvider</code> component
       to define site configuration options.

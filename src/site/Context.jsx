@@ -15,6 +15,7 @@ const defaultSite = {
 const Context = ({
   render,
   site=defaultSite,
+  sidebar={},
   smallScreenBreakpoints='mobile tablet',
   ...props
 }) => {
@@ -56,10 +57,27 @@ const Context = ({
   const { theme, toggleTheme, isDark, isLight, setDark, setLight } = useTheme()
 
   // build index of all sidebar items
+  const sections = sidebar.sections || [ ]
+  const menuItems = sections.flatMap(
+    section => section.menu || section.details?.menu || [ ]
+  )
+  const prevNextPage = () => {
+    const index = menuItems.findIndex(
+      item => item.to === page.uri
+    )
+    const prev = index > 0
+      ? menuItems[index - 1]
+      : null
+    const next = (index > -1 && index < menuItems.length - 1)
+      ? menuItems[index + 1]
+      : null
+    return [prev, next]
+  }
+
 
   return render({
-    site,
-    page, setPage,
+    site, sidebar,
+    page, setPage, prevNextPage,
     width, breakpoint,
     sidebarOpen, setSidebarOpen,
     openSidebar, closeSidebar, toggleSidebar,

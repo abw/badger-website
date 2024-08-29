@@ -3,7 +3,8 @@ import { Button } from '@abw/badger-react-ui'
 import { useSite } from '@/site/Context.jsx'
 
 export const metadata = {
-  message: 'Hello World!'
+  message: 'Hello World!',
+  prevNext: false,
 }
 
 const Boz = () => {

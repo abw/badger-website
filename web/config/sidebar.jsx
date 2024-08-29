@@ -1,5 +1,6 @@
 export const Sidebar = {
   sections: [
+    /*
     {
       title: 'Main Menu',
       menu: [
@@ -8,7 +9,6 @@ export const Sidebar = {
         { to: '/code', text: 'Code' },
       ]
     },
-    /*
     */
     {
       title: 'Getting Started',
@@ -39,6 +39,7 @@ export const Sidebar = {
       menu: [
         { to: '/context/use-site', code: 'useSite' },
         { to: '/context/site-consumer',    code: 'SiteConsumer' },
+        { to: '/context/metadata',    code: 'metadata' },
         // { to: '/context/provider',    text: 'Provider' },
       ]
     },

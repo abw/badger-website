@@ -19,6 +19,10 @@
     }
   }
 }
+.prev-next-arrows {
+  margin-top: -2rem;
+  margin-bottom: 0.5rem;
+}
 
 #{$dark-theme} .prev-next a {
   --background: var(--grey-10);

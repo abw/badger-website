@@ -1,9 +1,10 @@
 import React from 'react'
 import PrevNext from './PrevNext.jsx'
+import PrevNextArrows from './PrevNextArrows.jsx'
 import { SiteConsumer } from '@/site/Context.jsx'
 
 export const Page = SiteConsumer(
-  ({ isLayout, setPage, page={}, Component }) => {
+  ({ site, isLayout, setPage, page={}, Component }) => {
     React.useEffect(
       () => {
         if (! isLayout) {
@@ -14,12 +15,17 @@ export const Page = SiteConsumer(
       [page]
     )
     return (
-      <div id="page">
-        <Component/>
-        { (page.prevNext ?? true) &&
-          <PrevNext/>
+      <>
+        { (site.prevNextArrows && (page.prevNext ?? true)) &&
+          <PrevNextArrows/>
         }
-      </div>
+        <div id="page">
+          <Component/>
+          { (page.prevNext ?? true) &&
+            <PrevNext/>
+          }
+        </div>
+      </>
     )
   }
 )
