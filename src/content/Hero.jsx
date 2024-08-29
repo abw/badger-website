@@ -1,7 +1,7 @@
 import React from 'react'
 import { toArray } from '@/utils/Coerce.jsx'
 
-const Hero = ({
+export const Hero = ({
   logo,
   title,
   tagline,

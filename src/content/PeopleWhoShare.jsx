@@ -3,7 +3,7 @@ import Link from '@/ui/Link.jsx'
 import OSSLogo from './OSSLogo.jsx'
 import { Icon, Warning } from '@abw/badger-react-ui'
 
-const PeopleWhoShare = ({
+export const PeopleWhoShare = ({
   title='WARNING: People who share their source code do not owe you anything!',
   className,
   logo=true,

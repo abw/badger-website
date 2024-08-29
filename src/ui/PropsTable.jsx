@@ -2,7 +2,7 @@ import React from 'react'
 import { codify } from '@/utils/Markup.jsx'
 import { isString } from '@abw/badger-utils'
 
-const PropsTable = ({items}) =>
+export const PropsTable = ({items}) =>
   <table className="wide shaded striped celled">
     <thead>
       <tr>

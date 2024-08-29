@@ -1,7 +1,7 @@
 import React from 'react'
 import OSS   from '@/svg/oss.svg?react'
 
-const OSSLogo = ({
+export const OSSLogo = ({
   className=''
 }) =>
   <OSS className={`oss-logo ${className}`}/>
