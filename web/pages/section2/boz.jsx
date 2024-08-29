@@ -20,7 +20,7 @@ const Boz = () => {
         Light is {isLight ? 'true' : 'false'}.
         Dark is {isDark ? 'true' : 'false'}.
       </p>
-      <div className="flex gap-2 mar-b-2">
+      <div className="flex gap-2 mar-b-4">
         <Button
           onClick={toggleTheme}
           color="grey"

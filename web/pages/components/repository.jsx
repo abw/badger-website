@@ -10,7 +10,7 @@ const Repository = () =>
     <p>
       The <code>Repository</code> component renders a link to the project
       repository taken from the <code>site.repository</code> property of the{' '}
-      <Link to="/configuration/site" text="site configuration"/>.  The default
+      <Link to="/configuration/site" code="site"/> configuration.  The default
       icon displayed is <code>github</code>.  This can be changed by setting
       the <code>site.repoIcon</code> property.  The icon has the{' '}
       <code>repository</code> CSS class added to it.  You can pass a{' '}

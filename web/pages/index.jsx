@@ -6,6 +6,7 @@ import BadgerIcon     from '@/svg/badger-icon.svg?react'
 import BadgerReactUI  from '@/svg/badger-react-ui.svg?react'
 import Hero           from '@/content/Hero.jsx'
 import PeopleWhoShare from '@/content/PeopleWhoShare.jsx'
+import Link           from '@/ui/Link.jsx'
 import { Tiles }      from '@abw/badger-react-ui'
 
 export const metadata = {
@@ -47,9 +48,9 @@ export const Index = () =>
     </ul>
     <h2>See it in action</h2>
     <p>
-      These are some of the site that have been built using this framework.
+      These are some of the sites that have been built using this framework.
     </p>
-    <Tiles gap="4" minWidth="10rem">
+    <Tiles gap="8" minWidth="10rem">
       <CardLink href="https://badgerpower.com/badger-react-ui/" Picture={BadgerReactUI}/>
       <CardLink href="https://badgerpower.com/badger-form/" Picture={BadgerForm}/>
       <CardLink href="https://badgerpower.com/badger-css/" Picture={BadgerCSS}/>
@@ -65,8 +66,13 @@ export const Index = () =>
   </div>
 
 const CardLink = ({ href, Picture }) =>
-  <a href={href} className="card surface hover border bdr-2 shadow-1 pad-a-4" target="_blank" rel="noreferrer">
+  <Link
+    href={href}
+    targetBlank
+    // className="card surface hover border bdr-2 shadow-1 pad-a-4"
+    className="card"
+  >
     <Picture/>
-  </a>
+  </Link>
 
 export default Index

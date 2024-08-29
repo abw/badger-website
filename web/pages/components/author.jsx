@@ -10,7 +10,7 @@ const Author = () =>
     <p>
       The <code>Author</code> component renders the author name defined in
       the <code>site.author</code> property of the{' '}
-      <Link to="/configuration/site" text="site configuration"/>.
+      <Link to="/configuration/site" code="site"/> configuration.
       If the{' '} <code>site.authorLink</code> is defined then this will be
       a link.
     </p>

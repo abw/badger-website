@@ -26,3 +26,9 @@ svg.oss-logo {
     fill: var(--text-fill);
   }
 }
+#{$dark-theme} .alert svg.oss-logo {
+  --outer-ring-fill: var(--color-35);
+  --outer-ring-stroke: var(--color-65);
+  --inner-disc-fill: var(--color-25);
+  --text-fill: var(--color-75);
+}

@@ -4,19 +4,20 @@ import OSSLogo from './OSSLogo.jsx'
 import { Icon, Warning } from '@abw/badger-react-ui'
 
 export const PeopleWhoShare = ({
-  title='WARNING: People who share their source code do not owe you anything!',
+  title='People who share their source code do not owe you anything!',
   className,
   logo=true,
   short=false,
   freedom=true,
   children
 }) =>
-  <Warning headline={title} border className={className}>
+  <Warning Xheadline={title} border className={className}>
     <div className="side-icon">
       { Boolean(logo) &&
       <OSSLogo className="width-8rem"/>
       }
       <div className="wide">
+        <h2>{title}</h2>
         <p className={short ? '' : 'large'}>
           This is <b>Open Source Software</b> and you&apos;re welcome to use it.
           But be warned that it is also <b>Opinionated and Selfish Software</b>.
@@ -25,8 +26,8 @@ export const PeopleWhoShare = ({
         <p>
           I wrote it for me to help me get my job done.  If you want to use it to
           help you get your job done, then that&apos;s great.  But that&apos;s
-          your job, not mine, and I have no responsibility to help you do it.
-          If you want to use it then you do so at your own risk.
+          your job, not mine. I have no responsibility or obligation to help you
+          do it. If you want to use it then you do so at your own risk.
         </p>
         }
         {children}

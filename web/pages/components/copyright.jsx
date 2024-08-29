@@ -10,7 +10,7 @@ const Copyright = () =>
     <p>
       The <code>Copyright</code> component renders a copyright message
       using the <code>site.copyright</code> property of the{' '}
-      <Link to="/configuration/site" text="site configuration"/>.  If this
+      <Link to="/configuration/site" code="site"/> configuration.  If this
       isn&apos;t defined then it renders nothing.
     </p>
     <Example

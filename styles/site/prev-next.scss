@@ -6,6 +6,9 @@
   background-color: var(--background);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+  &.next {
+    text-align: right;
+  }
   h6 {
     font-weight: 500;
     opacity: 0.6;

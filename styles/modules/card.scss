@@ -1,6 +1,27 @@
-.card.hover {
-  border-color: var(--link-color);
+.card {
+  --background: var(--grey-100);
+  --border: var(--grey-80);
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 1em 1.5em;
+  box-shadow: var(--shadow-1);
+  // border-color: var(--link-color);
   &:hover {
-    border-color: var(--link-hover);
+    // --background: var(--brand-100);
+    --background: white;
+    --border: var(--brand-80);
   }
 }
+
+#{$dark-theme} .card {
+  --background: var(--grey-5);
+  --border: var(--grey-20);
+  &:hover {
+    // --background: var(--brand-100);
+    --background: var(--grey-0);
+    --border: var(--brand-20);
+  }
+
+}
+// card surface hover border bdr-2 shadow-1 pad-a-4"

@@ -11,7 +11,7 @@ const Release = () =>
       The <code>Release</code> component renders the web site version and
       release date, taken from the <code>site.version</code> and{' '}
       <code>site.date</code> properties of the{' '}
-      <Link to="/configuration/site" text="site configuration"/>.
+      <Link to="/configuration/site" code="site"/> configuration.
     </p>
     <Example
       Component={ReleaseCode}
