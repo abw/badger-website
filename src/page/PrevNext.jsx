@@ -10,6 +10,9 @@ export const PrevNext = SiteConsumer(
     className=prevNextClass
   }) => {
     const [prev, next] = prevNextPage()
+    if (! prev && ! next) {
+      return null
+    }
 
     return (
       <div className={className}>

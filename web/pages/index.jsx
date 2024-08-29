@@ -20,6 +20,31 @@ export const Index = () =>
       tagline="Powered by Badgers"
       overview="Badger Website is a framework / template which I use to generate the documentation websites for various other badger projects."
     />
+    <h2>Features</h2>
+    <ul>
+      <li>
+        Written by me, for me.  It has one happy customer and there&apos;s no-one else to please.
+      </li>
+      <li>
+        It allows me to bootstrap a website for a project in no time at all
+      </li>
+      <li>
+        It mostly Just Works&trade; for my definition of &quot;Works&quot;
+      </li>
+      <li>
+        It has a page router (like Next.js et al) so I can just add pages to
+        the <code>pages</code> directory and they&apos;re available
+      </li>
+      <li>
+        Standard layout and styling for all my badger themed sites.
+      </li>
+      <li>
+        Various content components that I use in most sites.
+      </li>
+      <li>
+        Easy generation of menus
+      </li>
+    </ul>
     <h2>See it in action</h2>
     <p>
       These are some of the site that have been built using this framework.
