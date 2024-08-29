@@ -4,7 +4,7 @@ import SiteFooter   from './Footer.jsx'
 import SiteSidebar  from './Sidebar.jsx'
 import { Outlet }   from 'react-router-dom'
 import { SiteConsumer } from './Context.jsx'
-import { CLOSED, OPEN } from '@/constants/Sidebar.js'
+import { CLOSED, OPEN } from '@/constants/Sidebar.jsx'
 //import ScrollToTop  from '@/utils/ScrollToTop.js'
 
 export const Layout = SiteConsumer(

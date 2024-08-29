@@ -18,3 +18,6 @@ body {
 #{$headings} {
   color: var(--heading-color);
 }
+p:first-child {
+  margin-top: 0;
+}

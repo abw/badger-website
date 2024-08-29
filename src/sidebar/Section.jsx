@@ -7,6 +7,7 @@ export const SidebarSection = ({
   title,
   controls,
   className,
+  openPath,
   revealable,
   menu,
   children,
@@ -21,6 +22,7 @@ export const SidebarSection = ({
           title={title}
           menu={menu}
           content={content}
+          openPath={openPath}
         />
       : <>
           { Boolean(title) &&

@@ -7,7 +7,7 @@ export const Page = SiteConsumer(
     React.useEffect(
       () => {
         if (! isLayout) {
-          // console.log(`setting ${path} page: `, page)
+          // console.log(`setting ${page.uri} page: `, page)
           setPage(page)
         }
       },
@@ -16,7 +16,9 @@ export const Page = SiteConsumer(
     return (
       <div id="page">
         <Component/>
-        <PrevNext/>
+        { (page.prevNext ?? true) &&
+          <PrevNext/>
+        }
       </div>
     )
   }

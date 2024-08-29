@@ -33,6 +33,16 @@ export const Sidebar = {
       ]
     },
     {
+      title: 'Context',
+      revealable: true,
+      openPath: '/context/',
+      menu: [
+        { to: '/context/use-site', code: 'useSite' },
+        { to: '/context/site-consumer',    code: 'SiteConsumer' },
+        // { to: '/context/provider',    text: 'Provider' },
+      ]
+    },
+    {
       title: 'Components',
       openPath: '/components/',
       revealable: true,

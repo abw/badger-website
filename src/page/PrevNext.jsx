@@ -24,7 +24,7 @@ export const PrevNext = SiteConsumer(
       ? menuItems[index + 1]
       : null
 
-    // console.log(`index: ${index}`);
+    console.log(`index for ${page.uri}: ${index}`)
 
     return (
       <div className={className}>

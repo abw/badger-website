@@ -25,11 +25,9 @@ const Provider = () =>
         ['theme',   '{ }', <>Theme configuration for Badger React UI - see <Link to="/configuration/theme" code="theme"/></>],
         ['themeStorageKey', 'theme', 'Local storage key for dark/light theme'],
         ['Router', 'PageRouter', 'Site router for pages'],
+        ['*', '', 'Any other properties you want to add to the site provider'],
       ]}
     />
-    <p>
-      TODO: introduction to configuration options
-    </p>
   </div>
 
 export default Provider

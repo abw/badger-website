@@ -36,6 +36,7 @@ export const Router = ({
           .replace(matchPagesPrefix, '')
           .replace(matchPageSuffix, '')
           .replace(matchIndexPage, '')
+          .replace(/(.)\/$/, '$1')
           .replace(matchPlaceholder, ':$1')
         meta.Component = module.default
         return meta
