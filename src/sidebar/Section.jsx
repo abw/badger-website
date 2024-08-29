@@ -33,7 +33,7 @@ export const SidebarSection = ({
           }
           { menu &&
             <SidebarMenu
-              items={menu}
+              menu={menu}
             />
           }
         </>

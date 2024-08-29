@@ -58,9 +58,15 @@ const Context = ({
 
   // build index of all sidebar items
   const sections = sidebar.sections || [ ]
-  const menuItems = sections.flatMap(
-    section => section.menu || section.details?.menu || [ ]
-  )
+  const menuItems = sections
+    .flatMap(
+      section => section.menu || [ ]
+    )
+    .flatMap(
+      item => item.menu || item
+    )
+  // console.log(`menuItems: `, menuItems)
+
   const prevNextPage = () => {
     const index = menuItems.findIndex(
       item => item.to === page.uri

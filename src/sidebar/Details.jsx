@@ -22,7 +22,7 @@ export const SidebarDetails = ({
     <Details summary={summary} open={open}>
       { menu &&
         <SidebarMenu
-          items={menu}
+          menu={menu}
         />
       }
       { content }

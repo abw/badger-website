@@ -48,6 +48,7 @@ export const Sidebar = {
       openPath: '/components/',
       revealable: true,
       menu: [
+        // { title: 'Site Components' },
         { to: '/components/author',           code: 'Author' },
         { to: '/components/copyright',        code: 'Copyright' },
         { to: '/components/hero',             code: 'Hero' },
@@ -65,6 +66,28 @@ export const Sidebar = {
         { to: '/section2/biz', code: 'Biz' },
         { to: '/section2/baz', code: 'Baz' },
         { to: '/section2/boz', code: 'Boz' },
+        {
+          // title: 'Properties',
+          menu: [
+            { to: '/debug/properties/status',       code: 'status'      },
+            { to: '/debug/properties/values',       code: 'values'      },
+          ]
+        },
+        {
+          title: 'Nested Menu',
+          menu: [
+            { to: '/section2/wam', text: 'Wam' },
+            { to: '/section2/bam', text: 'Bam' },
+            {
+              title: 'Other Stuff',
+              menu: [
+                { to: '/debug/properties/thank',       text: 'thank'      },
+                { to: '/debug/properties/you',         text: 'you'      },
+                { to: '/debug/properties/maam',        text: "Ma'am"   },
+              ]
+            },
+          ]
+        }
       ]
     }
   ]

@@ -15,6 +15,13 @@ const sidebar = {
       menu: [
         { to: '/section/foo', text: 'Foo' },
         { to: '/section/bar', text: 'Bar' },
+        {
+          title: 'Nested Menu',
+          menu: [
+            { to: '/section/wiz', text: 'Wiz' },
+            { to: '/section/waz', text: 'Waz' },
+          ]
+        }
       ]
     }
   ]

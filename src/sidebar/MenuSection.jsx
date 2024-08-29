@@ -2,14 +2,17 @@ import React from 'react'
 import Item from './MenuItem.jsx'
 import { SiteConsumer } from '@/site/Context.jsx'
 
-export const SidebarMenu = SiteConsumer(
+export const SidebarMenuSection = SiteConsumer(
   ({
     sidebar={},
-    sidebarClick,
-    menu,
     menuClass=sidebar.menuClass ?? 'menu',
+    title,
+    menu
   }) =>
-    <div className={menuClass} onClick={sidebarClick}>
+    <div className={menuClass}>
+      { Boolean(title) &&
+        <h4>{title}</h4>
+      }
       { menu.map(
         item =>
           <Item
@@ -20,4 +23,4 @@ export const SidebarMenu = SiteConsumer(
     </div>
 )
 
-export default SidebarMenu
+export default SidebarMenuSection

@@ -54,11 +54,19 @@ const Sidebar = () =>
       The <code>code</code> property can be specified as a an alternative to{' '}
       <code>text</code> to render the item in a monospaced font.
     </p>
+    <p>
+      An item in a <code>menu</code> can also have a nested <code>menu</code>{' '}
+      array and an optional <code>title</code> for that sub-menu.  If a{' '}
+      <code>menu</code> property is present then any other properties (except
+      the optional <code>title</code> are ignored).
+    </p>
     <PropsTable
       items={[
         ['to',   '', 'A URL for the page being linked'],
         ['text', '', 'Text for the menu item'],
         ['code', '', 'An alternative to `text` which is rendered in a monospaced font'],
+        ['menu', '', 'A nested menu'],
+        ['title', '', 'A title for the nested menu'],
       ]}
     />
   </div>
