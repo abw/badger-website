@@ -7,8 +7,8 @@ export const SidebarSection = ({
   title,
   controls,
   className,
+  revealable,
   menu,
-  details,
   children,
   content=children,
   SidebarTitle=Title,
@@ -16,19 +16,25 @@ export const SidebarSection = ({
   SidebarMenu=Menu
 }) =>
   <section className={className}>
-    { Boolean(title) &&
-      <SidebarTitle
-        title={title}
-        controls={controls}
-      />
-    }
-    { menu &&
-      <SidebarMenu
-        items={menu}
-      />
-    }
-    { details &&
-      <SidebarDetails {...details}/>
+    { revealable
+      ? <SidebarDetails
+          title={title}
+          menu={menu}
+          content={content}
+        />
+      : <>
+          { Boolean(title) &&
+            <SidebarTitle
+              title={title}
+              controls={controls}
+            />
+          }
+          { menu &&
+            <SidebarMenu
+              items={menu}
+            />
+          }
+        </>
     }
     { content }
   </section>

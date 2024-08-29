@@ -1,0 +1,30 @@
+.prev-next a {
+  --background: var(--grey20-100);
+  --border:     var(--grey-80);
+  --radius:       var(--unit-radius);
+  padding: 0.75em 1.25em;
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  h6 {
+    font-weight: 500;
+    opacity: 0.6;
+    transition: all var(--unit-transition);
+  }
+  &:hover {
+    --background: var(--brand-100);
+    --border:     var(--grey40-80);
+    h6 {
+      opacity: 1;
+    }
+  }
+}
+
+#{$dark-theme} .prev-next a {
+  --background: var(--grey-10);
+  --border:     var(--grey-20);
+  &:hover {
+    --background: var(--brand-0);
+    --border:     var(--grey40-25);
+  }
+}

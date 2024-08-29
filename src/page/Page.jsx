@@ -1,4 +1,5 @@
 import React from 'react'
+import PrevNext from './PrevNext.jsx'
 import { SiteConsumer } from '@/site/Context.jsx'
 
 export const Page = SiteConsumer(
@@ -15,6 +16,7 @@ export const Page = SiteConsumer(
     return (
       <div id="page">
         <Component/>
+        <PrevNext/>
       </div>
     )
   }

@@ -55,6 +55,8 @@ const Context = ({
   // Light/Dark theme
   const { theme, toggleTheme, isDark, isLight, setDark, setLight } = useTheme()
 
+  // build index of all sidebar items
+
   return render({
     site,
     page, setPage,

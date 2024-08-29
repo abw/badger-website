@@ -1,5 +1,5 @@
 import React from 'react'
-import Page from './Page.jsx'
+import Page from '@/page/Page.jsx'
 
 export const makeRoute = ({
   path,

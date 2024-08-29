@@ -1,6 +1,5 @@
 export const Sidebar = {
   sections: [
-    /*
     {
       title: 'Main Menu',
       menu: [
@@ -9,56 +8,53 @@ export const Sidebar = {
         { to: '/code', text: 'Code' },
       ]
     },
+    /*
     */
     {
-      details: {
-        summary: 'Getting Started',
-        openPath: '/getting-started/',
-        menu: [
-          { to: '/getting-started/installation', text: 'Installation' },
-          { to: '/getting-started/setup', text: 'Basic Setup' },
-        ]
-      }
+      title: 'Getting Started',
+      openPath: '/getting-started/',
+      revealable: true,
+      menu: [
+        { to: '/getting-started/installation', text: 'Installation' },
+        { to: '/getting-started/setup',        text: 'Basic Setup' },
+      ]
     },
     {
-      details: {
-        summary: 'Configuration',
-        openPath: '/configuration/',
-        menu: [
-          { to: '/configuration/site-provider', code: 'SiteProvider' },
-          { to: '/configuration/pages',         code: 'pages' },
-          { to: '/configuration/site',          code: 'site' },
-          { to: '/configuration/sidebar',       code: 'sidebar' },
-          { to: '/configuration/theme',         code: 'theme' },
-          { to: '/configuration/components',    text: 'Components' },
-        ]
-      }
+      title: 'Configuration',
+      revealable: true,
+      openPath: '/configuration/',
+      menu: [
+        { to: '/configuration/site-provider', code: 'SiteProvider' },
+        { to: '/configuration/pages',         code: 'pages' },
+        { to: '/configuration/site',          code: 'site' },
+        { to: '/configuration/sidebar',       code: 'sidebar' },
+        { to: '/configuration/theme',         code: 'theme' },
+        { to: '/configuration/components',    text: 'Components' },
+      ]
     },
     {
-      details: {
-        summary: 'Components',
-        openPath: '/components/',
-        menu: [
-          { to: '/components/author',           code: 'Author' },
-          { to: '/components/copyright',        code: 'Copyright' },
-          { to: '/components/hero',             code: 'Hero' },
-          { to: '/components/oss-logo',         code: 'OSSLogo' },
-          { to: '/components/people-who-share', code: 'PeopleWhoShare' },
-          { to: '/components/release',          code: 'Release' },
-          { to: '/components/repository',       code: 'Repository' },
-        ]
-      }
+      title: 'Components',
+      openPath: '/components/',
+      revealable: true,
+      menu: [
+        { to: '/components/author',           code: 'Author' },
+        { to: '/components/copyright',        code: 'Copyright' },
+        { to: '/components/hero',             code: 'Hero' },
+        { to: '/components/oss-logo',         code: 'OSSLogo' },
+        { to: '/components/people-who-share', code: 'PeopleWhoShare' },
+        { to: '/components/release',          code: 'Release' },
+        { to: '/components/repository',       code: 'Repository' },
+      ]
     },
     {
-      details: {
-        summary: 'Section 2',
-        openPath: '/section2/',
-        menu: [
-          { to: '/section2/biz', code: 'Biz' },
-          { to: '/section2/baz', code: 'Baz' },
-          { to: '/section2/boz', code: 'Boz' },
-        ]
-      }
+      title: 'Section 2',
+      openPath: '/section2/',
+      revealable: true,
+      menu: [
+        { to: '/section2/biz', code: 'Biz' },
+        { to: '/section2/baz', code: 'Baz' },
+        { to: '/section2/boz', code: 'Boz' },
+      ]
     }
   ]
 }

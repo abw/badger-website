@@ -1,4 +1,4 @@
-import defaultLayout from '../Site/Layout.jsx'
+import defaultLayout from '@/site/Layout.jsx'
 import { createBrowserRouter } from 'react-router-dom'
 import { makeRoute } from './Utils.jsx'
 import {

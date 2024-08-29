@@ -1,8 +1,8 @@
 :where(html) {
   --body-color:        var(--grey-20);
   --body-background:   var(--grey-100);
-  --link-color:        var(--brand-40);
-  --link-hover:        var(--brand-60);
+  --link-color:        var(--brand-45);
+  --link-hover:        var(--brand-55);
 
   --heading-color:     var(--grey-10);
   --side-shadow:      rgba(0, 0, 0, 0.04);
@@ -32,8 +32,9 @@
   --footer-color:      var(--grey20-55);
   --footer-background: var(--brand-15);
   --footer-border:     var(--brand-20);
-  --footer-link:       var(--grey40-60);
-  --footer-hover:      var(--brand-80);
+  --footer-link:       var(--grey20-60);
+  --footer-hover:      var(--grey40-75);
+
   // section
   --section-underline:var(--grey-80);
 }
@@ -41,8 +42,8 @@
 #{$dark-theme}, .dark {
   --body-color:       var(--grey20-80);
   --body-background:  var(--grey20-0);
-  --link-color:       var(--brand-50);
-  --link-hover:       var(--brand-60);
+  --link-color:       var(--grey40-60);
+  --link-hover:       var(--brand-75);
 
   --heading-color:    var(--grey20-90);
   --side-shadow:      rgba(0, 0, 0, 0.2);
@@ -73,8 +74,8 @@
   --footer-color:      var(--grey20-40);
   --footer-background: var(--brand-10);
   --footer-border:     var(--brand-5);
-  --footer-link:       var(--grey40-50);
-  --footer-hover:      var(--brand-60);
+  --footer-link:       var(--grey20-55);
+  --footer-hover:      var(--grey40-70);
   // section
   --section-underline:var(--grey-25);
 }

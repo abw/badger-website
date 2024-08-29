@@ -7,8 +7,9 @@ const Sidebar = () =>
   <div>
     <h1 className="font-mono">sidebar</h1>
     <p>
-      The <code>sidebar</code> option is passed to the <code>SiteProvider</code> component
-      to define items to appear in the sidebar.
+      The <code>sidebar</code> option is passed to the{' '}
+      <code>SiteProvider</code> component to define items to appear in
+      the sidebar.
     </p>
     <Source
       code={sidebar}
@@ -29,12 +30,23 @@ const Sidebar = () =>
     <h2>Sections</h2>
     <p>
       Each element in the <code>sections</code> array should be an object.  It
-      can contain a <code>title</code> and a <code>menu</code>, or a
-      revealable <code>details</code> component with a <code>summary</code>,
-      an <code>openPath</code> and a <code>menu</code>.  The details
-      component will be revealed for pages whose paths begin with the{' '}
-      <code>openPath</code> prefix.
+      can contain a <code>title</code>, a <code>menu</code> and/or some
+      additional <code>content</code>.  The <code>revealable</code> property
+      can be set <code>true</code> to make it a revealable details component.
+      The <code>openPath</code> property can be used to specify a base URL
+      path. The menu will be revealed by default for pages whose paths begin with that
+      prefix.
     </p>
+    <PropsTable
+      items={[
+        ['title',      '', 'A title for the section'],
+        ['revealable', 'false', 'Boolean flag to indicate if the `menu` and/or `content` should be in a revealable details component'],
+        ['openPath',  '', 'A URL prefix for pages for which the details should be revealed by default'],
+        ['menu',  '', 'An array of menu items'],
+      ]}
+    />
+
+    <h2>Menu Items</h2>
     <p>
       Each item in a <code>menu</code> should be an object containing a{' '}
       <code>to</code> property denoting the path to the page and a <code>text</code>{' '}
@@ -42,6 +54,13 @@ const Sidebar = () =>
       The <code>code</code> property can be specified as a an alternative to{' '}
       <code>text</code> to render the item in a monospaced font.
     </p>
+    <PropsTable
+      items={[
+        ['to',   '', 'A URL for the page being linked'],
+        ['text', '', 'Text for the menu item'],
+        ['code', '', 'An alternative to `text` which is rendered in a monospaced font'],
+      ]}
+    />
   </div>
 
 export default Sidebar

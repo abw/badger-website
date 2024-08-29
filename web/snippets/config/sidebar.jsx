@@ -9,15 +9,14 @@ const sidebar = {
       ]
     },
     {
-      details: {
-        summary: 'Example Section',
-        openPath: '/section/',
-        menu: [
-          { to: '/section/foo', text: 'Foo' },
-          { to: '/section/bar', text: 'Bar' },
-        ]
-      }
-    },
+      title: 'Example Section',
+      openPath: '/section/',
+      revealable: true,
+      menu: [
+        { to: '/section/foo', text: 'Foo' },
+        { to: '/section/bar', text: 'Bar' },
+      ]
+    }
   ]
 }
 

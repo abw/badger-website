@@ -4,7 +4,8 @@ import { Details } from '@abw/badger-react-ui'
 import { useResolvedPath } from 'react-router'
 
 export const SidebarDetails = ({
-  summary,
+  title,
+  summary=title,
   menu,
   children,
   content=children,
