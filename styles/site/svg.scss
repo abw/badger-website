@@ -1,0 +1,28 @@
+svg.oss-logo {
+  .inner-disc {
+    fill: #888;
+  }
+  .outer-ring {
+    fill:#ccc;
+    stroke:black;
+  }
+  .outer-text, .oss, .dot {
+    fill: black;
+  }
+}
+.alert svg.oss-logo {
+  --outer-ring-fill: var(--color-70);
+  --outer-ring-stroke: var(--color-30);
+  --inner-disc-fill: var(--color-75);
+  --text-fill: var(--color-25);
+  .inner-disc {
+    fill: var(--inner-disc-fill);
+  }
+  .outer-ring {
+    fill: var(--outer-ring-fill);
+    stroke: var(--outer-ring-stroke);
+  }
+  .outer-text, .oss, .dot {
+    fill: var(--text-fill);
+  }
+}
