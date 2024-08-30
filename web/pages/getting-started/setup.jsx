@@ -1,9 +1,5 @@
 import React from 'react'
-import Source from '@/code/Source.jsx'
-import site from '@/snippets/config/site.js?raw'
-import sidebar from '@/snippets/config/sidebar.js?raw'
-import App from '@/snippets/App.jsx?raw'
-import stylesheet from '@/snippets/stylesheet.scss?raw'
+import Snippet from '@/code/Snippet.jsx'
 
 const Setup = () =>
   <div>
@@ -15,9 +11,8 @@ const Setup = () =>
       assume it&apos;s in a <code>config/site.js</code> file underneath your
       main <code>src</code> source directory.
     </p>
-    <Source
-      code={site}
-      language="javascript"
+    <Snippet
+      file="config/site.js"
       caption="src/config/site.js"
     />
 
@@ -26,9 +21,8 @@ const Setup = () =>
       Create a configuration file for the sidebar.  We&apos;ll
       assume it&apos;s in the <code>config/sidebar.js</code> file.
     </p>
-    <Source
-      code={sidebar}
-      language="javascript"
+    <Snippet
+      file="config/sidebar.js"
       caption="src/config/sidebar.js"
     />
 
@@ -40,9 +34,8 @@ const Setup = () =>
       (which is highly recommended as all the instructions here assume that)
       then it will be something like <code>src/App.jsx</code>
     </p>
-    <Source
-      code={App}
-      language="jsx"
+    <Snippet
+      file="App.jsx"
       caption="src/App.jsx"
     />
     <p>
@@ -73,9 +66,8 @@ const Setup = () =>
       to better match your desired brand color.  It then imports all the styling
       components from <code>badger-website.scss</code>.
     </p>
-    <Source
-      code={stylesheet}
-      language="scss"
+    <Snippet
+      file="stylesheet.scss"
       caption="src/styles/my-website.scss"
     />
 

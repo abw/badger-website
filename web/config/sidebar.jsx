@@ -59,6 +59,16 @@ export const Sidebar = {
       ]
     },
     {
+      title: 'Displaying Code',
+      openPath: '/code/',
+      revealable: true,
+      menu: [
+        { to: '/code/source',                code: 'Source' },
+        { to: '/code/snippet',               code: 'Snippet' },
+        { to: '/code/example',               code: 'Example' },
+      ]
+    },
+    {
       title: 'Section 2',
       openPath: '/section2/',
       revealable: true,
@@ -67,19 +77,19 @@ export const Sidebar = {
         { to: '/section2/baz', code: 'Baz' },
         { to: '/section2/boz', code: 'Boz' },
         {
-          // title: 'Properties',
+          title: 'Nested Menu #1',
           menu: [
             { to: '/debug/properties/status',       code: 'status'      },
             { to: '/debug/properties/values',       code: 'values'      },
           ]
         },
         {
-          title: 'Nested Menu',
+          title: 'Nested Menu #2',
           menu: [
             { to: '/section2/wam', text: 'Wam' },
             { to: '/section2/bam', text: 'Bam' },
             {
-              title: 'Other Stuff',
+              title: 'Level 2 Nested Menu',
               menu: [
                 { to: '/debug/properties/thank',       text: 'thank'      },
                 { to: '/debug/properties/you',         text: 'you'      },

@@ -2,9 +2,9 @@ import { useState, useRef } from 'react'
 import { Generator } from '@abw/react-context'
 import { useTheme } from '@abw/react-night-and-day'
 import { useWindow } from '@abw/badger-react-ui'
-// import { defaultSite } from './Config.js'
 import { splitHash } from '@abw/badger-utils'
 import { now } from '@abw/badger-timestamp'
+import { prepareSnippets } from '@/utils/Snippets.jsx'
 
 const defaultSite = {
   version:  '0.0.1',
@@ -80,9 +80,12 @@ const Context = ({
     return [prev, next]
   }
 
+  const snippets = prepareSnippets(props)
+  // console.log(`prepared snippets: `, snippets)
 
   return render({
-    site, sidebar,
+    ...props,
+    site, sidebar, snippets,
     page, setPage, prevNextPage,
     width, breakpoint,
     sidebarOpen, setSidebarOpen,
@@ -93,7 +96,6 @@ const Context = ({
     sidebarClick: closeSmallScreenSidebar,
     contentRef,
     theme, toggleTheme, isDark, isLight, setDark, setLight,
-    ...props
   })
 }
 

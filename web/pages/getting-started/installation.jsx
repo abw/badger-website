@@ -1,9 +1,5 @@
 import React from 'react'
-import Source from '@/code/Source.jsx'
-import create from '@/snippets/create?raw'
-import install from '@/snippets/install?raw'
-import jsconfig from '@/snippets/jsconfig.json?raw'
-import vite from '@/snippets/vite.config.js?raw'
+import Snippet from '@/code/Snippet.jsx'
 
 const Installation = () =>
   <div>
@@ -15,9 +11,8 @@ const Installation = () =>
       <a href="https://vitejs.dev/" target="_blank" rel="noreferrer">Vite</a>.
       So the first step is to create a new web site using Vite.
     </p>
-    <Source
-      code={create}
-      language="shell"
+    <Snippet
+      file="create.sh"
       expand
     />
     <p>
@@ -27,9 +22,8 @@ const Installation = () =>
       you&apos;ll also want to add <code>vite-plugin-svgr</code>.  While
       you&apos;re at it, do yourself a favour and add <code>vite-jsconfig-paths</code> too.
     </p>
-    <Source
-      code={install}
-      language="shell"
+    <Snippet
+      file="install.sh"
       expand
     />
     <p>
@@ -38,9 +32,8 @@ const Installation = () =>
       you may need to adjust or add lines based on what you&apos;ve got going
       on in your web site.
     </p>
-    <Source
-      code={jsconfig}
-      language="json"
+    <Snippet
+      file="jsconfig.json"
       caption="jsconfig.json"
       expand
     />
@@ -48,9 +41,8 @@ const Installation = () =>
       You&apos;ll need to add those extra plugins to your <code>vite.config.js</code> file.
       Something like this.
     </p>
-    <Source
-      code={vite}
-      language="javascript"
+    <Snippet
+      file="vite.config.js"
       caption="vite.config.js"
       expand
     />

@@ -32,14 +32,16 @@ const highlighter = getHighlighterCore({
 })
 
 export const Source = ({
-  code,
+  children,
+  code=children,
   language='jsx',
   caption,
   expand=false,
   fixed=expand,
   className='',
   highlightLines,
-  undent=false
+  undent=false,
+  raw=false
 }) => {
   const [copied, setCopied] = useState(false)
   const [expanded, setExpanded] = useState(expand)
@@ -61,7 +63,7 @@ export const Source = ({
       highlighter.then(
         highlighter => setMarkup(
           highlighter.codeToHtml(
-            prepareCode(code, { undent }),
+            raw ? code : prepareCode(code, { undent }),
             {
               lang: language,
               theme: cssvars,

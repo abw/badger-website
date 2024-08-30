@@ -8,11 +8,20 @@ const pages = import.meta.glob(
   { eager: true }
 )
 
+const snippets = import.meta.glob(
+  './snippets/**/*',
+  {
+    query: '?raw',
+    import: 'default',
+  }
+)
+
 export const App = () =>
   <Provider
     site={site}
     pages={pages}
     sidebar={sidebar}
+    snippets={snippets}
   />
 
 export default App
