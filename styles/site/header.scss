@@ -3,11 +3,12 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: var(--header-height);
+  // height: var(--header-height);
   z-index: 1001;
   box-shadow: 0 4px 3px -2px var(--top-shadow);
   background-color: var(--header-back);
   color: var(--header-text);
+  border-bottom: 1px solid var(--header-border);
   & > nav {
     height: var(--header-height);
     max-width: var(--app-width);
@@ -20,7 +21,6 @@
     padding: 0 var(--head-pad, 0);
     font-size: $size-large;
     line-height: 1rem;
-    border-bottom: 1px solid var(--header-border);
     a:not(button, .button), .action, .night-and-day--switcher {
       transition: color 0.5s, opacity 0.3s;
       text-decoration: none;
