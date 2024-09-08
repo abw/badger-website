@@ -1,0 +1,38 @@
+import PeopleCode       from './_examples/People.jsx'
+import PeopleSrc        from './_examples/People.jsx?raw'
+import People2Code      from './_examples/People2.jsx'
+import People2Src       from './_examples/People2.jsx?raw'
+import PeopleShortCode  from './_examples/PeopleShort.jsx'
+import PeopleShortSrc   from './_examples/PeopleShort.jsx?raw'
+import Example          from '@/code/Example.jsx'
+
+# PeopleWhoShare
+
+The `PeopleWhoShare` component renders a warning that you're on your own if
+you want to use this software.
+
+<Example
+  Component={PeopleCode}
+  code={PeopleSrc}
+  expand
+/>
+
+You can add child content if you want to add something extra.
+
+<Example
+  Component={People2Code}
+  code={People2Src}
+  expand
+/>
+
+If you think it's a bit too rambly then the `short` property will cull the
+second paragraph.  Set `freedom` to `false` if you don't want the last bit.
+The `logo` property can also be set to `false` to get rid of that and you
+can set a custom `title`.  But at that point you might as well just create
+your own custom warning.
+
+<Example
+  Component={PeopleShortCode}
+  code={PeopleShortSrc}
+  expand
+/>

@@ -1,0 +1,19 @@
+import RepoCode from './_examples/Repository.jsx'
+import RepoSrc  from './_examples/Repository.jsx?raw'
+import Example  from '@/code/Example.jsx'
+import Link     from '@/ui/Link.jsx'
+
+# Repository
+
+The `Repository` component renders a link to the project repository taken from
+the site.repository` property of the <Link to="/configuration/site" code="site"/>
+configuration.  The default icon displayed is `github`.  This can be changed
+by setting the `site.repoIcon` property.  The icon has the `repository` CSS
+class added to it.  You can pass a `className` property to add another CSS
+class.
+
+<Example
+  Component={RepoCode}
+  code={RepoSrc}
+  expand
+/>

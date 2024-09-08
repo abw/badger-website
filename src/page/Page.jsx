@@ -1,4 +1,6 @@
 import React from 'react'
+import Title from './Title.jsx'
+import Intro from './Intro.jsx'
 import PrevNext from './PrevNext.jsx'
 import PrevNextArrows from './PrevNextArrows.jsx'
 import { SiteConsumer } from '@/site/Context.jsx'
@@ -20,6 +22,8 @@ export const Page = SiteConsumer(
           <PrevNextArrows/>
         }
         <div id="page">
+          <Title/>
+          <Intro/>
           <Component/>
           { (page.prevNext ?? true) &&
             <PrevNext/>

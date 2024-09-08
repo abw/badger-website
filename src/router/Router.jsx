@@ -24,21 +24,29 @@ export const Router = ({
 } = { }) => {
 
   // Cleanup the path names, removing the leading ./...etc.../pages prefix,
-  // any .js, .jsx, .ts or .tsx suffixes, removing the final 'index' in an
-  // index page, and converting any [example] directories into ':example'
-  // route segments
+  // any .js, .jsx, .ts, .tsx, .md or .mdx suffixes, removing the final 'index'
+  // in an index page, and converting any [placeholder] directories into
+  // ':placeholder' route segments
   const metas = Object
     .entries(pages)
     .map(
       ([route, module]) => {
-        const meta = module.metadata || { }
+        const {
+          default: Component,
+          metadata = { },
+          ...rest
+        } = module
+        const meta = {
+          Component,
+          ...rest,
+          ...metadata
+        }
         meta.uri = meta.path = route
           .replace(matchPagesPrefix, '')
           .replace(matchPageSuffix, '')
           .replace(matchIndexPage, '')
           .replace(/(.)\/$/, '$1')
           .replace(matchPlaceholder, ':$1')
-        meta.Component = module.default
         return meta
       }
     )

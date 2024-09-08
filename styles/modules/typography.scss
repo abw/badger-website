@@ -17,7 +17,13 @@ body {
 }
 #{$headings} {
   color: var(--heading-color);
+  margin-top: 2rem;
 }
 p:first-child {
   margin-top: 0;
+}
+.intro {
+  font-size: var(--size-large);
+  // background-color: var(--grey-100);
+  // padding: 0.5rem 0.75rem;
 }

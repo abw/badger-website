@@ -1,0 +1,16 @@
+import AuthorCode from './_examples/Author.jsx'
+import AuthorSrc  from './_examples/Author.jsx?raw'
+import Example    from '@/code/Example.jsx'
+import Link       from '@/ui/Link.jsx'
+
+# Author
+
+The `Author` component renders the author name defined in the `site.author`
+property of the <Link to="/configuration/site" code="site"/> configuration.
+If the `site.authorLink` is defined then this will be a link.
+
+<Example
+  Component={AuthorCode}
+  code={AuthorSrc}
+  expand
+/>

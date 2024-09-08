@@ -1,0 +1,150 @@
+import Text         from './_examples/SourceText.jsx'
+import TextSrc      from './_examples/SourceText.jsx?raw'
+import Load         from './_examples/SourceLoad.jsx'
+import LoadSrc      from './_examples/SourceLoad.jsx?raw'
+import Caption      from './_examples/SourceCaption.jsx'
+import CaptionSrc   from './_examples/SourceCaption.jsx?raw'
+import Highlight    from './_examples/SourceHighlight.jsx'
+import HighlightSrc from './_examples/SourceHighlight.jsx?raw'
+import Undent       from './_examples/SourceUndent.jsx'
+import UndentSrc    from './_examples/SourceUndent.jsx?raw'
+import Source       from '@/code/Source.jsx'
+import Example      from '@/code/Example.jsx'
+import Link         from '@/ui/Link.jsx'
+import { distinct } from '@/utils/Filter.jsx'
+import { LANGUAGE_EXTENSIONS } from '@/src/index.jsx'
+
+# `Source`
+
+The `Source` component can be used to render source code with syntax
+highlighting.
+
+<Example
+  Component={Text}
+  code={TextSrc}
+/>
+
+## `code`
+
+The `code` property should be set to the source code you want to display.
+Vite allows you to import raw text from a file by adding the `?raw` extension
+to an import filename. Note that the `_examples` directory is ignored by the
+<Link to="/configuration/pages" code="pages"/> router so it's a good place to
+put examples.
+
+<Example
+  Component={Load}
+  code={LoadSrc}
+/>
+
+## `language`
+
+The `language`property should be used to define the language for the correct
+syntax highlighting to be applied. The supported languages are shown below.
+
+<table className="shaded striped celled">
+  <thead>
+    <tr>
+      <th>Language</th>
+    </tr>
+  </thead>
+  <tbody>
+    { Object.values(LANGUAGE_EXTENSIONS).filter( distinct() ).map(
+      language =>
+        <tr key={language}>
+          <td className="font-mono">{language}</td>
+        </tr>
+    )}
+  </tbody>
+</table>
+
+## `caption`
+
+The `caption` property allows you to add a caption to the source code.
+
+<Example
+  Component={Caption}
+  code={CaptionSrc}
+/>
+
+## `highlightLines`
+
+The `highlightLines` property allows you to highlight one or more lines or
+ranges of lines.  A single line is represented by a number, e.g. `3`.  A range
+of lines is represented by a hyphenated pair of the start and end lines, e.g.
+`6-7`. Multiple lines or lines ranges should be separated by commas,
+e.g. `3,6-7`.
+
+<Example
+  Component={Highlight}
+  code={HighlightSrc}
+/>
+
+## `undent`
+
+The `undent` property can be used to remove whitespace from the start of lines,
+effectively un-indenting it.  It should be set to the number of spaces you want
+to remove from the start of each line.
+
+<Example
+  Component={Undent}
+  code={UndentSrc}
+/>
+
+## `expand`
+
+The default behaviour is to display the first dozen or so lines of code along
+with an "Expand" button to allow the user to expand it to view the entire
+source code.  Add the `expand` property if you want it expanded by default.
+
+## `raw`
+
+There are some special comment markers that can be added to the source code to
+control what is and isn't displayed. The `raw` property can be added to prevent
+any of the this pre-processing from being applied.
+
+A `/* START */` or `{/* START */}` comment line can be added to the source to
+indicate the start of the code that you want to display.  Anything before this
+comment will be ignored.
+
+An `/* END */` or `{/* END */}` comment line can be added to the source to
+indicate the end of the code that you want to display.  Anything after this
+comment will be ignored.
+
+A line can be prefixed with a `// PRETEND: `&nbsp;comment. The comment will be
+removed and the remainder of the line will be displayed as part of the source
+code.  This is useful when using the <Link to="/code/example" code="Example"/>
+component which displays the source code of a file and renders the output
+alongside it.
+
+This is shown in the example below.  To make this example work I have
+to import the `Source` component from `@/code/Source.jsx`.  But I don't want
+to show that to users because they need to import it from `@abw/badger-website`
+instead.
+
+So I add a `/* START */` comment on line 2 so that line 1 isn't displayed.  I
+then add a `// PRETEND: `&nbsp;comment to line 4 to show them what I want them to
+see.  As far as Javascript/React is concerned, lines 2 and 4 are ignored
+because they're commented out. But when the source code is displayed we see
+that lines 3 and 4 in the raw source appear to be lines 1 and 2 in the
+processed output.
+
+<div className="grid-2 gap-8 stack-tablet">
+  <div>
+    <h4 className="mar-v-1 weight-500">Raw Source</h4>
+    <Source
+      code={TextSrc}
+      highlightLines="2,4"
+      expand
+      raw
+    />
+  </div>
+  <div>
+    <h4 className="mar-v-1 weight-500">Processed Output</h4>
+    <Source
+      code={TextSrc}
+      highlightLines="2"
+      expand
+    />
+  </div>
+</div>

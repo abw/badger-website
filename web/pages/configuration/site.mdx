@@ -1,0 +1,31 @@
+import React from 'react'
+import PropsTable from '@/src/ui/PropsTable.jsx'
+import Snippet from '@/code/Snippet.jsx'
+import site from '@/snippets/config/site.jsx?raw'
+
+# `site`
+
+The `site` option is passed to the `SiteProvider` component
+to define site configuration options.
+
+<Snippet
+  file="config/site.jsx"
+  expand
+  highlightLines="16"
+/>
+
+## Properties
+
+<PropsTable
+  items={[
+    ['title',      '', 'The title for your site or project'],
+    ['author',     '', 'The name of the author of the site or project'],
+    ['authorLink', '', "A link to the author's home page, github repository, etc."],
+    ['repository', '', 'A link to the repository for the site or project'],
+    ['version',    '', 'The version number of the site or project'],
+    ['date',       '', 'The release date for the site or project'],
+    ['copyright',  '', 'The copyright year or range of years as a text string'],
+    ['badgerpower', 'false', 'Flag to add links to https://badgerpower.com in the header and footer'],
+    ['basename',    'import.meta.env.BASE_URL', 'Base URL for the site']
+  ]}
+/>

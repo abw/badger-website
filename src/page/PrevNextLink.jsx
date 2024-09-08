@@ -8,7 +8,7 @@ export const PrevNextLink = SiteConsumer(
     code,
     prev = false,
     codeClass = 'font-mono',
-    prevNextTitleClass = 'mar-t-none mar-b-2',
+    prevNextTitleClass = 'mar-t-none mar-b-none',
     prevTitleClass = prevNextTitleClass,
     nextTitleClass = `${prevNextTitleClass} text-right`,
     prevPageClass = 'prev',

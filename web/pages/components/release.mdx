@@ -1,0 +1,16 @@
+import ReleaseCode from './_examples/Release.jsx'
+import ReleaseSrc  from './_examples/Release.jsx?raw'
+import Example     from '@/code/Example.jsx'
+import Link        from '@/ui/Link.jsx'
+
+# Release
+
+The `Release` component renders the web site version and release date, taken
+from the `site.version` and `site.date` properties of the
+<Link to="/configuration/site" code="site"/> configuration.
+
+<Example
+  Component={ReleaseCode}
+  code={ReleaseSrc}
+  expand
+/>

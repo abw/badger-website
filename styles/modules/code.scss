@@ -64,7 +64,7 @@ $source-back-dark-to:     rgba($source-back-dark, 0.9);
   --copied-text:          var(--green-90);
 }
 
-code:not(.source code):not(.toc code), a.code {
+code:not(.source code):not(.toc code):not(h1 code):not(h2 code):not(h3 code), a.code {
   --color: var(--code-text);
   --background: var(--code-back);
   --border: var(--code-border);

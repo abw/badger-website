@@ -1,0 +1,50 @@
+import Snippet  from '@/code/Snippet.jsx'
+import Example  from '@/code/Example.jsx'
+import Link     from '@/ui/Link.jsx'
+import Hello    from './_examples/Hello.jsx'
+import HelloSrc from './_examples/Hello.jsx?raw'
+
+# `Example`
+
+Many of the examples shown in this documentation are generated using
+the `Example` component.
+
+The end goal is to show the source code for an example alongside the
+generated output from rendering the component. But this is where things
+get fun, inception style. How do we shown an example of using
+the `Example` component without actually using the `Example` component?
+And if we did, would that cause the `Example` component to render the
+`Example` component, which would cause the `Example` component to render the
+`Example` component, and so on.
+
+Let's find out!
+
+There are two properties that must be passed to the `Example` component.
+The first is the `Component` which should be a React component that can be
+imported in the usual way (on line 2 in this example).  The second is the
+`code` property which is the source code of the component.  Vite can import
+this as text from the component file by adding the `?raw` suffix (on line 3).
+
+Any other properties (e.g. `caption`, `language`, `highlightLines`, etc) are
+forwarded onto the <Link to="/code/source" code="Source"/> component.
+
+<Snippet
+  file="code/example.jsx"
+  highlightLines="2-3,8-9"
+  expand
+/>
+
+When this is rendered it displays the source code using the
+<Link to="/code/source" code="Source"/> component along with the output of
+the component alongside it (unless you're using a narrow screen in which case
+it appears below.)
+
+It looks something like this:
+
+<Example
+  Component={Hello}
+  code={HelloSrc}
+  language="jsx"
+  caption="Hello World!"
+  highlightLines="5"
+/>

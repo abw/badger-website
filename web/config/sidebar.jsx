@@ -44,7 +44,7 @@ export const Sidebar = {
       ]
     },
     {
-      title: 'Components',
+      title: 'Site Components',
       openPath: '/components/',
       revealable: true,
       menu: [
@@ -59,7 +59,7 @@ export const Sidebar = {
       ]
     },
     {
-      title: 'Displaying Code',
+      title: 'Code Examples',
       openPath: '/code/',
       revealable: true,
       menu: [
@@ -76,6 +76,7 @@ export const Sidebar = {
         { to: '/section2/biz', code: 'Biz' },
         { to: '/section2/baz', code: 'Baz' },
         { to: '/section2/boz', code: 'Boz' },
+        { to: '/section2/hello', code: 'Hello' },
         {
           title: 'Nested Menu #1',
           menu: [

@@ -1,0 +1,18 @@
+import ConsumerCode from './_examples/Consumer.jsx'
+import ConsumerSrc  from './_examples/Consumer.jsx?raw'
+import Example     from '@/code/Example.jsx'
+import Link        from '@/ui/Link.jsx'
+
+# `SiteConsumer`
+
+The `SiteConsumer()` higher order function can be used to wrap a component as
+an alternative to calling <Link to="/context/use-site" code="useSite()"/>.
+
+The context properties will be added to the properties passed to the component.
+
+<Example
+  Component={ConsumerCode}
+  code={ConsumerSrc}
+  highlightLines="4"
+  expand
+/>

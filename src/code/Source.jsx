@@ -1,10 +1,9 @@
-import React from 'react'
-import { sleep } from '@abw/badger-utils'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { createCssVariablesTheme } from 'shiki'
 import { getHighlighterCore } from 'shiki/core'
 import { transformerNotationHighlight } from '@shikijs/transformers'
 import { lineHighlighter, prepareCode, removeLineEndings } from './Utils.jsx'
+import { sleep } from '@abw/badger-utils'
 import getWasm from 'shiki/wasm'
 
 const cssvars = 'css-variables'
@@ -18,11 +17,13 @@ const cssVarsTheme = createCssVariablesTheme({
 const highlighter = getHighlighterCore({
   themes: [cssVarsTheme],
   langs: [
-    // 'html', 'javascript', 'jsx', 'json', 'css', 'scss', 'bash', 'yaml'
+    // 'html', 'javascript', 'jsx', 'json','markdown', 'mdx', 'css', 'scss', 'bash', 'yaml'
     import('shiki/langs/html.mjs'),
     import('shiki/langs/javascript.mjs'),
     import('shiki/langs/jsx.mjs'),
     import('shiki/langs/json.mjs'),
+    import('shiki/langs/markdown.mjs'),
+    import('shiki/langs/mdx.mjs'),
     import('shiki/langs/css.mjs'),
     import('shiki/langs/scss.mjs'),
     import('shiki/langs/bash.mjs'),

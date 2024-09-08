@@ -1,0 +1,76 @@
+import Snippet      from '@/code/Snippet.jsx'
+import Example      from '@/code/Example.jsx'
+import Link         from '@/ui/Link.jsx'
+import SnippetComp  from './_examples/Snippet.jsx'
+import SnippetSrc   from './_examples/Snippet.jsx?raw'
+import { LANGUAGE_EXTENSIONS } from '@/src/index.jsx'
+
+# Snippets
+
+The `Snippet` component can be used to render snippets of code loaded from
+files.  It uses the <Link to="/code/source" code="Source"/> component to
+render the source code.  The only difference is that it automatically handles
+the loading of the source from a pre-defined directory of snippet files.
+
+To use the `Snippet` component you must first tell the <Link
+to="/configuration/site-provider" code="SiteProvider"/> where to find the
+snippet files.  Add something like this to your main `App.jsx`.
+
+<Snippet
+  file="config/snippets.jsx"
+  highlightLines="1-7,11"
+  expand
+/>
+
+The example above assumes that your snippet files are located in the
+`./snippets` directory relative to the `App.jsx`. If they're located somewhere
+else then you should change the glob pattern that you pass to
+`import.meta.glob` and define the `matchSnippetsPrefix` property as a regular
+expression to remove the prefix.
+
+<Snippet
+  file="config/snippetsPrefix.jsx"
+  highlightLines="2,12"
+  expand
+/>
+
+Then you can import the `Snippet` component and add it to a page where you want
+to embed one of your snippet files.  The only required property is `file` which
+should be the file path relative to your snippets directory.  For example,
+specify `foo/bar.html` for the `./snippets/foo/bar.html` file.
+
+Any other properties set on the `Snippet` component will be forwarded to the
+<Link to="/code/source" code="Source"/> component. e.g. `caption`,
+`highlightLines`, `undent`, etc.
+
+<Example
+  Component={SnippetComp}
+  code={SnippetSrc}
+/>
+
+## `language`
+
+The file extension will be used to determine the language type so that the
+correct syntax highlighting can be applied.  If the file doesn't have a file
+extension or the correct language can't be determined correctly from it then
+you should add the `language` property to specify it.
+
+The supported languages and their corresponding file extensions are shown below.
+
+<table className="shaded striped celled">
+  <thead>
+    <tr>
+      <th>File Extension</th>
+      <th>Language</th>
+    </tr>
+  </thead>
+  <tbody>
+    { Object.entries(LANGUAGE_EXTENSIONS).map(
+      ([ext, language]) =>
+        <tr key={ext}>
+          <td className="font-mono">.{ext}</td>
+          <td className="font-mono">{language}</td>
+        </tr>
+    )}
+  </tbody>
+</table>

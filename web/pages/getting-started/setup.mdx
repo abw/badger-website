@@ -1,0 +1,77 @@
+import Snippet from '@/code/Snippet.jsx'
+
+# Basic setup
+
+## Site configuration
+
+Create a configuration file for your site.  In this example we'll assume it's
+in a `config/site.js` file underneath your main `src` source directory.
+
+<Snippet
+  file="config/site.js"
+  caption="src/config/site.js"
+/>
+
+## Sidebar configuration
+
+Create a configuration file for the sidebar.  We'll assume it's in the
+`config/sidebar.js` file.
+
+<Snippet
+  file="config/sidebar.js"
+  caption="src/config/sidebar.js"
+/>
+
+## Main application
+
+Add the following to your main application file.  If you created the site
+using <a href="https://vitejs.dev/" target="_blank" rel="noreferrer">Vite</a>
+(which is highly recommended as all the instructions here assume that) then it
+will be something like `src/App.jsx`
+
+<Snippet
+  file="App.jsx"
+  caption="src/App.jsx"
+/>
+
+This imports the `site` and `sidebar` configurations from above.  It also
+scans the `pages` directory to find all the main pages in your site.  Routes
+will automatically be added for these pages.
+
+The `App` component simply renders the `SiteProvider` imported from
+`@abw/badger-website`, passing the `site`, `sidebar` and `pages` as properties.
+There are lots of additional properties you can pass in here.  More on that later.
+
+## Styling
+
+The main `App.jsx` component also imports a stylesheet for the site.  In the
+example above this is `./styles/my-website.scss`, but obviously you can call
+it what you like and put it wherever you want.
+
+The stylesheet should look something like this. It should define a
+`$brand-color` SASS variable as one of the color ranges from
+<a href="https://badgerpower.com/badger-css/colors/ranges" target="_blank" rel="noreferrer">Badger CSS</a>,
+along with the `$brand-hue` for that color. You can use the corresponding hue
+from the Badger CSS color range or adjust it slightly to better match your
+desired brand color. It then imports all the styling components from
+`badger-website.scss`.
+
+<Snippet
+  file="stylesheet.scss"
+  caption="src/styles/my-website.scss"
+/>
+
+## Create a Page
+
+Create an `index.mdx` page in your `pages` directory.
+
+<Snippet
+  file="config/index.mdx"
+  caption="src/pages/index.mdx"
+/>
+
+## Take it for a spin
+
+You should then be able to start up the development server from the command
+line by running `pnpm dev` (or the equivalent for whatever package manager
+you're using).

@@ -1,0 +1,16 @@
+import Link           from '@/ui/Link.jsx'
+import Example        from '@/code/Example.jsx'
+import CopyrightCode  from './_examples/Copyright.jsx'
+import CopyrightSrc   from './_examples/Copyright.jsx?raw'
+
+# Copyright
+
+The `Copyright` component renders a copyright message using the `site.copyright`
+property of the <Link to="/configuration/site" code="site"/> configuration.
+If this isn't defined then it renders nothing.
+
+<Example
+  Component={CopyrightCode}
+  code={CopyrightSrc}
+  expand
+/>

@@ -1,5 +1,5 @@
 const pages = import.meta.glob(
-  './pages/**/[a-z_]*.[jt]s?(x)',
+  './pages/**/[a-z_]*.{js,jsx,ts,tsx,md,mdx}',
   { eager: true }
 )
 

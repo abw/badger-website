@@ -6,6 +6,8 @@ export const LANGUAGE_EXTENSIONS = {
   js:   'javascript',
   json: 'json',
   jsx:  'jsx',
+  md:   'markdown',
+  mdx:  'mdx',
   scss: 'scss',
   sh:   'bash',
   yaml: 'yaml',

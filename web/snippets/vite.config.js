@@ -1,13 +1,20 @@
 import react            from '@vitejs/plugin-react'
+import mdx              from '@mdx-js/rollup'
 import svgr             from 'vite-plugin-svgr'
 import jsconfigPaths    from 'vite-jsconfig-paths'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [
-    react(),
+    {
+      enforce: 'pre',
+      ...mdx({/* jsxImportSource: …, otherOptions… */})
+    },
+    react({
+      include: /\.(jsx|js|mdx|md|tsx|ts)$/
+    }),
     svgr(),
-    jsconfigPaths({ root: '../' })
+    jsconfigPaths({ root: '../' }),
   ],
   root: 'web',
   base: '/my-website',

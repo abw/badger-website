@@ -1,0 +1,19 @@
+import UseSiteCode from './_examples/UseSite.jsx'
+import UseSiteSrc  from './_examples/UseSite.jsx?raw'
+import Example     from '@/code/Example.jsx'
+import Link        from '@/ui/Link.jsx'
+
+# `useSite`
+
+The `useSite()` hook can be used to access the site context.
+
+The context contains the `site`, the current `page`, numerous state variable
+and functions, and any other properties that you pass to the
+<Link to="/configuration/site-provider" code="SiteProvider"/>.
+
+<Example
+  Component={UseSiteCode}
+  code={UseSiteSrc}
+  highlightLines="5"
+  expand
+/>
