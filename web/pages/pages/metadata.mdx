@@ -1,0 +1,45 @@
+import Snippet from '@/code/Snippet.jsx'
+import Example from '@/code/Example.jsx'
+import MetaComp from '@/snippets/pages/metadata.mdx'
+import MetaCode from '@/snippets/pages/metadata.mdx?raw'
+import Link from '@/ui/Link.jsx'
+
+# Page Metadata
+
+JSX and MDX files can export a `metadata` object which contains metadata for
+the page.  The `metadata` object is accessible from within the file.  It's
+also accessible to the site layout or page components as the `page` object.
+
+<Example
+  Component={MetaComp}
+  code={MetaCode}
+  language="mdx"
+/>
+
+## Properties
+
+There are a number of special metadata properties that are used in the site
+layout and page componenents.
+
+### `title`
+
+The `title` metadata item can be set to define a title for the page.  The
+default page layout renders this as an `h1` element at the top of the page.
+
+This can be a plain text string or an object containing a `text` property.
+If you want the title to be rendered in a monospaced font then define a
+`title.code` property instead of `title.text`.
+
+### `titleText`
+
+An alias for setting `title.text`.
+
+### `titleCode`
+
+An alias for setting `title.code`.
+
+### `intro`
+
+An introductory section which will be rendered beneath the `title` in a
+slightly larger font.  This can be a single text string or an array of
+strings, each of which will be rendered in a separate paragraph.

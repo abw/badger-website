@@ -33,6 +33,17 @@ export const Sidebar = {
       ]
     },
     {
+      title: 'Pages',
+      revealable: true,
+      openPath: '/pages/',
+      menu: [
+        { to: '/pages/router',    text: 'Page Router' },
+        { to: '/pages/jsx',       text: 'JSX Pages' },
+        { to: '/pages/mdx',       text: 'MDX Pages' },
+        { to: '/pages/metadata',  text: 'Page Metadata' },
+      ]
+    },
+    {
       title: 'Context',
       revealable: true,
       openPath: '/context/',
