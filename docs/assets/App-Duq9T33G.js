@@ -1,6 +1,6 @@
 const e=`import React    from 'react'
 import site     from './config/site.js'
-import sidebar  from './config/sidebar.jsx'
+import sidebar  from './config/sidebar.js'
 import { SiteProvider } from '@abw/badger-website'
 import './styles/my-website.scss'
 
