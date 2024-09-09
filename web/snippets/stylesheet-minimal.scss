@@ -1,0 +1,9 @@
+// If you're already doing something like this...
+@import '@abw/badger-css/styles/badger.scss';
+@import '@abw/badger-react-ui/styles/badger-react-ui.scss';
+@import '@abw/react-night-and-day/styles/night-and-day.css';
+
+// ...then you only need to add this
+@import "@abw/badger-website/styles/badger-website-addon.scss";
+
+// ...any other styles go here...

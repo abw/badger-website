@@ -1,4 +1,5 @@
 import Snippet from '@/code/Snippet.jsx'
+import Link from '@/ui/Link.jsx'
 
 # Basic setup
 
@@ -58,6 +59,25 @@ desired brand color. It then imports all the styling components from
 
 <Snippet
   file="stylesheet.scss"
+  caption="src/styles/my-website.scss"
+/>
+
+The above includes all the SCSS files for
+<Link href="https://badgerpower.com/badger-react-ui/" targetBlank
+text="Badger React UI"/>, which in turn includes those for
+<Link href="https://badgerpower.com/badger-form/" targetBlank text="Badger Form"/> and
+<Link href="https://badgerpower.com/badger-css/" targetBlank text="Badger CSS"/>.
+It also includes the styles for <Link href="https://badgerpower.com/react-night-and-day/"
+targetBlank text="React Night and Day"/> for the light/dark theme switcher.
+
+If you're me (hello me!) or you know what you're doing then you might want
+to roll your own stylesheet that includes custom configuration options
+for any of those modules.  In that case you can import the
+`badger-website-addon.scss` file instead.  This only contains the additional
+styles for Badger Website.
+
+<Snippet
+  file="stylesheet-minimal.scss"
   caption="src/styles/my-website.scss"
 />
 
