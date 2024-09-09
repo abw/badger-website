@@ -1,7 +1,7 @@
 import React    from 'react'
 import Provider from '@/site/Provider.jsx'
 import site     from './config/site.js'
-import sidebar  from './config/sidebar.jsx'
+import sidebar  from './config/sidebar.js'
 
 const pages = import.meta.glob(
   './pages/**/[a-z_]*.{js,jsx,ts,tsx,md,mdx}',
@@ -16,12 +16,29 @@ const snippets = import.meta.glob(
   }
 )
 
+const examples = import.meta.glob(
+  './examples/**/*',
+  {
+    import: 'default',
+  }
+)
+
+const examplesSrc = import.meta.glob(
+  './examples/**/*',
+  {
+    query: '?raw',
+    import: 'default',
+  }
+)
+
 export const App = () =>
   <Provider
     site={site}
     pages={pages}
     sidebar={sidebar}
     snippets={snippets}
+    examples={examples}
+    examplesSrc={examplesSrc}
   />
 
 export default App

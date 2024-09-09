@@ -1,9 +1,9 @@
 import React from 'react'
 import Loading from './Loading.jsx'
 import Source from './Source.jsx'
-import Error from './Error.jsx'
 import { SiteConsumer } from '@/site/Context.jsx'
-import { LANGUAGE_EXTENSIONS } from '@/constants/Snippets.jsx'
+import { LANGUAGE_EXTENSIONS, SNIPPET } from '@/constants/Code.jsx'
+import { InvalidNameError, NoExtensionError, UnknownExtensionError } from './Error.jsx'
 
 export const Snippet = SiteConsumer(
   ({
@@ -18,9 +18,9 @@ export const Snippet = SiteConsumer(
 
     if (! loader) {
       return (
-        <Error
+        <InvalidNameError
           file={file}
-          message="Invalid snippet file specified."
+          type={SNIPPET}
         />
       )
     }
@@ -32,25 +32,20 @@ export const Snippet = SiteConsumer(
         language = LANGUAGE_EXTENSIONS[ext]
         if (! language) {
           return (
-            <Error
+            <UnknownExtensionError
               file={file}
-            >
-              Cannot determine language from snippet file extension{' '}
-              <code>.{ext}</code>. Please specify the <code>language</code>{' '}
-              as a property on the <code>Snippet</code> component.
-            </Error>
+              ext={ext}
+              type={SNIPPET}
+            />
           )
         }
       }
       else {
         return (
-          <Error
+          <NoExtensionError
             file={file}
-          >
-            No file extension to determine language from.  Please add a file
-            extension or specify the <code>language</code> as a property on
-            the <code>Snippet</code> component.
-          </Error>
+            type={SNIPPET}
+          />
         )
       }
     }
@@ -64,8 +59,15 @@ export const Snippet = SiteConsumer(
     )
 
     return code
-      ? <Source code={code} language={language} {...props}/>
-      : <Loading file={file} type="snippet"/>
+      ? <Source
+          code={code}
+          language={language}
+          {...props}
+        />
+      : <Loading
+          file={file}
+          type={SNIPPET}
+        />
   }
 )
 

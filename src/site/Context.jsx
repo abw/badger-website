@@ -4,7 +4,7 @@ import { useTheme } from '@abw/react-night-and-day'
 import { useWindow } from '@abw/badger-react-ui'
 import { splitHash } from '@abw/badger-utils'
 import { now } from '@abw/badger-timestamp'
-import { prepareSnippets } from '@/utils/Snippets.jsx'
+import { prepareSnippets, prepareExamples } from '@/utils/Code.jsx'
 
 const defaultSite = {
   version:  '0.0.1',
@@ -81,11 +81,12 @@ const Context = ({
   }
 
   const snippets = prepareSnippets(props)
+  const examples = prepareExamples(props)
   // console.log(`prepared snippets: `, snippets)
 
   return render({
     ...props,
-    site, sidebar, snippets,
+    site, sidebar, snippets, examples,
     page, setPage, prevNextPage,
     width, breakpoint,
     sidebarOpen, setSidebarOpen,

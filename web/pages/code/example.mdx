@@ -1,23 +1,17 @@
-import Snippet  from '@/code/Snippet.jsx'
-import Example  from '@/code/Example.jsx'
-import Link     from '@/ui/Link.jsx'
-import Hello    from './_examples/Hello.jsx'
-import HelloSrc from './_examples/Hello.jsx?raw'
+import Snippet   from '@/code/Snippet.jsx'
+import Example   from '@/code/Example.jsx'
+import Link      from '@/ui/Link.jsx'
+import Hello     from './_examples/Hello.jsx'
+import HelloSrc  from './_examples/Hello.jsx?raw'
+import HelloHTML from './_examples/Hello.html?raw'
 
 # `Example`
 
 Many of the examples shown in this documentation are generated using
-the `Example` component.
+the `Example` component.  This displays the source code for an example
+alongside the generated output from rendering the component.
 
-The end goal is to show the source code for an example alongside the
-generated output from rendering the component. But this is where things
-get fun, inception style. How do we shown an example of using
-the `Example` component without actually using the `Example` component?
-And if we did, would that cause the `Example` component to render the
-`Example` component, which would cause the `Example` component to render the
-`Example` component, and so on.
-
-Let's find out!
+## `Component` and `code`
 
 There are two properties that must be passed to the `Example` component.
 The first is the `Component` which should be a React component that can be
@@ -26,7 +20,8 @@ imported in the usual way (on line 2 in this example).  The second is the
 this as text from the component file by adding the `?raw` suffix (on line 3).
 
 Any other properties (e.g. `caption`, `language`, `highlightLines`, etc) are
-forwarded onto the <Link to="/code/source" code="Source"/> component.
+forwarded onto the <Link to="/code/source" code="Source"/> component which
+renders the source code complete with syntax highlighting.
 
 <Snippet
   file="code/example.jsx"
@@ -34,12 +29,7 @@ forwarded onto the <Link to="/code/source" code="Source"/> component.
   expand
 />
 
-When this is rendered it displays the source code using the
-<Link to="/code/source" code="Source"/> component along with the output of
-the component alongside it (unless you're using a narrow screen in which case
-it appears below.)
-
-It looks something like this:
+Here's how the above example is rendered.
 
 <Example
   Component={Hello}
@@ -47,4 +37,87 @@ It looks something like this:
   language="jsx"
   caption="Hello World!"
   highlightLines="5"
+/>
+
+## `html`
+
+You can include HTML files as examples but they're handled slightly
+differently.  In this case you only need to load the raw source text and
+then pass it to the `Example` component as the `html` property.
+
+<Snippet
+  file="code/example-html.jsx"
+  highlightLines="2,7"
+  expand
+/>
+
+Here's how that's rendered.
+
+<Example
+  html={HelloHTML}
+  caption="Hello World!"
+/>
+
+## `file`
+
+You can also load examples from a central directory and reference them
+using the `file` property, similar to the way that the <Link
+to="/code/snippet" code="Snippet"/> component works.
+
+To do this you first need to tell the <Link to="/configuration/site-provider"
+code="SiteProvider"/> how to load both the `examples` (code components) and
+the `examplesSrc` (source code for those components).  Both of these are
+done using Vite's `import.meta.glob` function.  Add something like this to
+your main `App.jsx`.
+
+<Snippet
+  file="config/examples.jsx"
+  highlightLines="1-6,8-14,18-19"
+  expand
+/>
+
+The example above assumes that your example files are located in the
+`./examples` directory relative to the `App.jsx`. If they're located somewhere
+else then you should change the glob pattern that you pass to
+`import.meta.glob` and define the `matchExamplesPrefix` property as a regular
+expression to remove the prefix.
+
+<Snippet
+  file="config/examplesPrefix.jsx"
+  highlightLines="2,9,20"
+  expand
+/>
+
+
+You can then display an example using the `file` property to specify the
+location relative to your `./examples` directory.  As with snippets, the
+language for syntax highlighting will be determined from the file extension.
+If you don't have a file extension or it isn't one of the pre-defined
+extensions then you can use the `language` property to set it.
+
+<Snippet
+  file="code/example-file.jsx"
+  highlightLines="6"
+  expand
+/>
+
+This is how the above example is rendered.
+
+<Example
+  file="hello.jsx"
+  caption="Hello World!"
+/>
+
+MDX examples can also be loaded.
+
+<Example
+  file="hello.mdx"
+  caption="Hello World!"
+/>
+
+HTML examples can also be loaded.
+
+<Example
+  file="hello.html"
+  caption="Hello World!"
 />

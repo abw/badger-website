@@ -1,38 +1,13 @@
-import React from 'react'
-import Source from './Source.jsx'
+import React        from 'react'
+import LoadExample  from './LoadExample.jsx'
+import SourceOutput from './SourceOutput.jsx'
 
 export const Example = ({
-  Component,
-  code,
-  html,
-  className='',
-  language='jsx',
+  file,
   ...props
-}) => {
-  return (
-    <div className={`example grid-2 gap-8 stack-desktop ${className}`}>
-      <Source
-        code={code||html}
-        language={html ? 'html' : language}
-        {...props}
-      />
-      { Component
-        ? <div className="output">
-            <h4 className="caption">Output</h4>
-            <Component/>
-          </div>
-        : null
-      }
-      { html
-        ? <div className="output">
-            <h4 className="caption">Output</h4>
-            <div dangerouslySetInnerHTML={{ __html: html }} />
-          </div>
-        : null
-      }
-    </div>
-  )
-}
-
+}) =>
+  file
+    ? <LoadExample file={file} {...props}/>
+    : <SourceOutput {...props}/>
 
 export default Example
