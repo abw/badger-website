@@ -11,11 +11,13 @@ export const SourceOutput = ({
 }) => {
   return (
     <div className={`example grid-2 gap-8 stack-desktop ${className}`}>
-      <Source
-        code={code||html}
-        language={html ? 'html' : language}
-        {...props}
-      />
+      <div>
+        <Source
+          code={code||html}
+          language={html ? 'html' : language}
+          {...props}
+        />
+      </div>
       { Component
         ? <div className="output">
             <h4 className="caption">Output</h4>

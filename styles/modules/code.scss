@@ -1,5 +1,5 @@
 $source-radius:            4px;
-$source-back-light:      $grey-95;
+$source-back-light:      $grey-100;
 $source-back-dark:       $grey-5;
 $source-back-light-from:  rgba($source-back-light, 0);
 $source-back-light-to:    rgba($source-back-light, 0.9);
@@ -19,12 +19,12 @@ $source-back-dark-to:     rgba($source-back-dark, 0.9);
   --code-hover-text:      var(--brand-30);
   --code-hover-border:    var(--brand-70);
     // source code block
-  --source-back:          var(--grey-100);
+  --source-back:          #{$source-back-light};
+  --source-back-from:     #{$source-back-light-from};
+  --source-back-to:       #{$source-back-light-to};
   --source-text:          var(--grey40-30);
   --source-caption:       var(--grey-20);
   --source-border:        var(--grey20-75);
-  --source-back-from:     #{$source-back-light-from};
-  --source-back-to:       #{$source-back-light-to};
   --output-back:          var(--grey-100);
   --output-back:          white;
   --output-border:        var(--source-border);
@@ -47,12 +47,12 @@ $source-back-dark-to:     rgba($source-back-dark, 0.9);
   --code-hover-text:      var(--brand-90);
   --code-hover-border:    var(--brand-40);
   // source code block
-  --source-back:          var(--grey-5);
+  --source-back:          #{$source-back-dark};
+  --source-back-from:     #{$source-back-dark-from};
+  --source-back-to:       #{$source-back-dark-to};
   --source-text:          var(--grey40-80);
   --source-caption:       var(--grey-70);
   --source-border:        var(--grey20-20);
-  --source-back-from:     #{$source-back-dark-from};
-  --source-back-to:       #{$source-back-dark-to};
   // --output-back:          var(--grey-0);
   --output-back:          black;
   --output-border:        var(--source-border);
@@ -161,7 +161,7 @@ div.source {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(180deg, var(--source-back-from) 0%, var(--source-back-to) 100%);
+    background: linear-gradient(180deg, var(--source-back-from) 0%, var(--source-back) 50%);
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
