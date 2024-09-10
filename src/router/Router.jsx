@@ -45,7 +45,8 @@ export const Router = ({
           .replace(matchPagesPrefix, '')
           .replace(matchPageSuffix, '')
           .replace(matchIndexPage, '')
-          .replace(/(.)\/$/, '$1')
+          // This breaks things - means /foo/ doesn't match /foo in sidebar
+          // .replace(/(.)\/$/, '$1')
           .replace(matchPlaceholder, ':$1')
         return meta
       }
@@ -63,7 +64,6 @@ export const Router = ({
       },
       { }
     )
-
 
   // find all the paths that end in /_layout
   const layoutPaths = Object
