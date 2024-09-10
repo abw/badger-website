@@ -2,10 +2,10 @@ import React        from 'react'
 import SiteHeader   from './Header.jsx'
 import SiteFooter   from './Footer.jsx'
 import SiteSidebar  from './Sidebar.jsx'
+import ScrollToTop  from '@/utils/ScrollToTop.js'
 import { Outlet }   from 'react-router-dom'
 import { SiteConsumer } from './Context.jsx'
 import { CLOSED, OPEN } from '@/constants/Sidebar.jsx'
-//import ScrollToTop  from '@/utils/ScrollToTop.js'
 
 export const Layout = SiteConsumer(
   ({
@@ -16,19 +16,16 @@ export const Layout = SiteConsumer(
     Header=SiteHeader,
     Footer=SiteFooter,
     Sidebar=SiteSidebar,
-    // page={}
   }) =>
     <div
       id="site"
-      // className={page.noSidebar ? 'no-sidebar' : null}
       data-sidebar={sidebarOpen ? OPEN : CLOSED}
       data-small-screen-sidebar={smallScreenSidebarOpen ? OPEN : CLOSED}
       data-theme={theme}
     >
       <Header/>
-      {/* message from {page.uri}: {page.message} */}
       <div id="app">
-        {/* <ScrollToTop/> */}
+        <ScrollToTop/>
         <aside>
           <Sidebar/>
         </aside>
