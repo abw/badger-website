@@ -6,7 +6,7 @@ body {
   color: var(--body-color);
   background-color: var(--body-background);
 }
-:any-link, .hover {
+:any-link:not(button, .button), .hover {
   text-decoration: none;
   transition: all var(--unit-transition);
   color: var(--link-color);
@@ -15,6 +15,7 @@ body {
     cursor: pointer;
   }
 }
+
 #{$headings} {
   color: var(--heading-color);
   &:first-child {
