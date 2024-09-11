@@ -1,17 +1,39 @@
 import Example from '@/code/Example.jsx'
-import MdxComp from '@/snippets/pages/mdxfile.mdx'
-import MdxCode from '@/snippets/pages/mdxfile.mdx?raw'
+import MdxFileComp from '@/snippets/pages/mdxfile.mdx'
+import MdxFileCode from '@/snippets/pages/mdxfile.mdx?raw'
+import MdxCodeComp from '@/snippets/pages/mdxcode.mdx'
+import MdxCodeCode from '@/snippets/pages/mdxcode.mdx?raw'
 import Link from '@/ui/Link.jsx'
 
 # MDX Pages
 
-MDX pages can contain any combination of Markdown markup and React code.
+MDX pages (with a `.mdx` file extension) can contain any combination of
+Markdown markup and React code.
 
 See the <Link href="https://mdxjs.com/" text="MDX website" targetBlank/> for
 further information about MDX.
 
 <Example
-  Component={MdxComp}
-  code={MdxCode}
+  Component={MdxFileComp}
+  code={MdxFileCode}
   language="mdx"
+  expand
+/>
+
+Code blocks are rendered using the <Link to="/code/source" code="Source"/>
+component.  The language can be specified as the first argument immediately
+after the opening <code>```</code> marker.
+
+Additional properties can be added after that, e.g. to set `caption` or
+`highlightLines` as shown in these examples.  This requires the
+`rehype-mdx-code-props` module which should be added to the `rehypePlugins`
+configuration option for the `mdx` plugin in your `vite.config.js` file.  See
+the "Configure Vite Plugins" section in the <Link
+to="/getting-started/installation" text="Installation"/> page for an example.
+
+<Example
+  Component={MdxCodeComp}
+  code={MdxCodeCode}
+  language="mdx"
+  expand
 />

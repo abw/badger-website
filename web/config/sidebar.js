@@ -88,6 +88,7 @@ export const Sidebar = {
         { to: '/section2/baz', code: 'Baz' },
         { to: '/section2/boz', code: 'Boz' },
         { to: '/section2/hello', code: 'Hello' },
+        /*
         {
           title: 'Nested Menu #1',
           menu: [
@@ -110,6 +111,7 @@ export const Sidebar = {
             },
           ]
         }
+        */
       ]
     }
   ]

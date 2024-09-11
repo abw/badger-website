@@ -52,8 +52,10 @@
     "@abw/badger-utils": "^1.1.1",
     "@abw/react-context": "^2.0.4",
     "@abw/react-night-and-day": "^0.0.6",
+    "@mdx-js/react": "^3.0.1",
     "react-router": "^6.23.0",
-    "react-router-dom": "^6.23.0"
+    "react-router-dom": "^6.23.0",
+    "rehype-mdx-code-props": "^3.0.1"
   },
   "devDependencies": {
     "@mdx-js/rollup": "^3.0.1",

@@ -5,6 +5,7 @@ import react            from '@vitejs/plugin-react'
 import mdx              from '@mdx-js/rollup'
 import define           from  './vite.defs.js'
 import fs               from 'node:fs'
+import rehypeCodeProps  from 'rehype-mdx-code-props'
 
 const https = {
   key:  fs.readFileSync('etc/certs/badger-website.local.wardley.org.key'),
@@ -15,7 +16,10 @@ export default defineConfig({
   plugins: [
     {
       enforce: 'pre',
-      ...mdx({/* jsxImportSource: …, otherOptions… */})
+      ...mdx({
+        rehypePlugins: [rehypeCodeProps],
+        providerImportSource: '@mdx-js/react'
+      })
     },
     react({
       include: /\.(jsx|js|mdx|md|tsx|ts)$/

@@ -161,14 +161,13 @@ div.source {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(180deg, var(--source-back-from) 0%, var(--source-back) 50%);
+    background: linear-gradient(180deg, var(--source-back-from) 0%, var(--source-back) 40%);
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     margin: 0;
-    // margin: 0 -1px -1px -1px;
     border-radius: 0 0 $source-radius $source-radius;
-    padding: 2rem 0 0 0;
+    padding: 1rem 0 0 0;
   }
   .expand, .clipboard {
     font-size: 0.8rem;
