@@ -1,6 +1,7 @@
 export * from './code/index.jsx'
 export * from './constants/index.jsx'
 export * from './content/index.jsx'
+export * from './mdx/index.jsx'
 export * from './page/index.jsx'
 export * from './router/index.jsx'
 export * from './sidebar/index.jsx'

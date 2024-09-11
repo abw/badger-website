@@ -1,5 +1,6 @@
 export * from './Error.jsx'
 export * from './Example.jsx'
+export * from './LoadExample.jsx'
 export * from './Snippet.jsx'
 export * from './Source.jsx'
 export * from './SourceOutput.jsx'
