@@ -1,6 +1,6 @@
 import pre from './Pre.jsx'
 
-const mdxComponents = {
+export const mdxComponents = {
   pre
 }
 
