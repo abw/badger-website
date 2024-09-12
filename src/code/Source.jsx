@@ -4,15 +4,23 @@ import Split from '@/content/Split.jsx'
 
 export const Source = ({
   children,
+  className,
   ...props
 }) =>
   children
-    ? <Split vgap={4} {...props}>
+    ? <Split
+        className={className}
+        vgap={4}
+        {...props}
+      >
         <div>
           {children}
         </div>
         <SourceCode {...props}/>
       </Split>
-    : <SourceCode {...props}/>
+    : <SourceCode
+        className={className}
+        {...props}
+      />
 
 export default Source

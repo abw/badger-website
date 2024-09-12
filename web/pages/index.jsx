@@ -8,6 +8,7 @@ import Hero           from '@/content/Hero.jsx'
 import PeopleWhoShare from '@/content/PeopleWhoShare.jsx'
 import Link           from '@/ui/Link.jsx'
 import { Tiles }      from '@abw/badger-react-ui'
+import { BadgerCSSLink, BadgerReactUILink } from '../site/Links.jsx'
 
 export const metadata = {
   // noSidebar: true
@@ -19,31 +20,49 @@ export const Index = () =>
       logo={<Badger className="brw-logo"/>}
       title="Badger Website Builder"
       tagline="Built by Badgers"
-      overview="Badger Website is a framework / template which I use to generate the documentation websites for various other badger projects."
+      overview="Badger Website is a framework / template which I use to generate the documentation websites for various other badger projects"
+      underview="It's not really a general purpose tool, but feel free to use it and adapt it to your needs if you think it might be useful"
     />
     <h2>Features</h2>
     <ul>
       <li>
-        Written by me, for me.  It has one happy customer and there&apos;s no-one else to please.
+        It was written by me, specifically for me.  It has one happy customer
+        and there&apos;s no-one else I need to worry about pleasing.
       </li>
       <li>
-        It allows me to bootstrap a website for a project in no time at all
+        It allows me to bootstrap a documentation website for a project in no
+        time at all.
       </li>
       <li>
-        It mostly Just Works&trade; for my definition of &quot;Works&quot;
+        It&apos;s built on <BadgerCSSLink/> and <BadgerReactUILink/> so I&apos;ve
+        got immediate access to all the CSS class and React UI components I
+        know and love.
       </li>
       <li>
         It has a page router (like Next.js et al) so I can just add pages to
-        the <code>pages</code> directory and they&apos;re available
+        the <code>pages</code> directory and they&apos;re automatically
+        included.
+      </li>
+      <li>
+        It supports MDX so I can write documentation using Markdown and
+        embed React components where I need to.
+      </li>
+      <li>
+        It has components for syntax highlighting, embedding snippets and
+        code examples, showing both the source code and the generated output.
+      </li>
+      <li>
+        It includes various other content components that I use in most of my
+        sites: header, footer, hero section, copyright messages, etc.
       </li>
       <li>
         Standard layout and styling for all my badger themed sites.
       </li>
       <li>
-        Various content components that I use in most sites.
+        Easy generation of menus for the sidebar.
       </li>
       <li>
-        Easy generation of menus
+        It mostly Just Works&trade; (for my definition of &quot;Works&quot;)
       </li>
     </ul>
     <h2>See it in action</h2>

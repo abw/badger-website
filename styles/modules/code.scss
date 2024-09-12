@@ -1,6 +1,6 @@
-$source-radius:            4px;
-$source-back-light:      $grey-100;
-$source-back-dark:       $grey-5;
+$source-radius:           0.25rem;
+$source-back-light:       $grey-100;
+$source-back-dark:        $grey-5;
 $source-back-light-from:  rgba($source-back-light, 0);
 $source-back-light-to:    rgba($source-back-light, 0.9);
 $source-back-dark-from:   rgba($source-back-dark, 0);
@@ -19,6 +19,7 @@ $source-back-dark-to:     rgba($source-back-dark, 0.9);
   --code-hover-text:      var(--brand-30);
   --code-hover-border:    var(--brand-70);
     // source code block
+  --source-radius:        #{$source-radius};
   --source-back:          #{$source-back-light};
   --source-back-from:     #{$source-back-light-from};
   --source-back-to:       #{$source-back-light-to};
@@ -101,7 +102,7 @@ div.alert {
 }
 
 div.example {
-  margin-bottom: 2rem;
+  // margin-bottom: 2rem;
   div.source {
     max-width: 100%;
   }
@@ -119,7 +120,7 @@ div.source {
 div.source,
 div.output {
   position: relative;
-  border-radius: 4px;
+  border-radius: var(--source-radius);
   // max-width: 50%;
   // box-shadow: var(--shadow-3);
   h4.caption {
@@ -131,6 +132,23 @@ div.output {
     margin: 0;
     padding: 0;
     text-align: right;
+  }
+  /*
+  &:has(h4.caption) {
+    padding-top: 2rem;
+  }
+  */
+}
+div.tabset:has(.source) {
+  ul.tabs li {
+    border-bottom: none;
+    &.active {
+      border-color: var(--source-border);
+    }
+  }
+  div.source,
+  div.output {
+    border-top-left-radius: 0 !important;
   }
 }
 
@@ -146,7 +164,7 @@ div.source {
     //background-color: rgba(43, 43, 43);
   }
   pre {
-    border-radius: $source-radius;
+    // border-radius: $source-radius;
     margin: 0 !important;
     max-height: 18rem;
     overflow-y: scroll;
@@ -239,4 +257,8 @@ div.output {
     --background: var(--color-10);
     --border: var(--color-30);
   }
+}
+
+.split + .split {
+  margin-top: 2rem;
 }

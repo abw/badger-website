@@ -19,15 +19,15 @@ imported in the usual way (on line 2 in this example).  The second is the
 `code` property which is the source code of the component.  Vite can import
 this as text from the component file by adding the `?raw` suffix (on line 3).
 
-Any other properties (e.g. `caption`, `language`, `highlightLines`, etc) are
-forwarded onto the <Link to="/code/source" code="Source"/> component which
-renders the source code complete with syntax highlighting.
-
 <Snippet
   file="code/example.jsx"
   highlightLines="2-3,8-9"
   expand
-/>
+>
+  Any other properties (e.g. `caption`, `language`, `highlightLines`, etc) are
+  forwarded onto the <Link to="/code/source" code="Source"/> component which
+  renders the source code complete with syntax highlighting.
+</Snippet>
 
 Here's how the above example is rendered.
 
@@ -41,15 +41,15 @@ Here's how the above example is rendered.
 
 ## `html`
 
-You can include HTML files as examples but they're handled slightly
-differently.  In this case you only need to load the raw source text and
-then pass it to the `Example` component as the `html` property.
-
 <Snippet
   file="code/example-html.jsx"
   highlightLines="2,7"
   expand
-/>
+>
+  You can include HTML files as examples but they're handled slightly
+  differently.  In this case you only need to load the raw source text and
+  then pass it to the `Example` component as the `html` property.
+</Snippet>
 
 Here's how that's rendered.
 
@@ -64,42 +64,43 @@ You can also load examples from a central directory and reference them
 using the `file` property, similar to the way that the <Link
 to="/code/snippet" code="Snippet"/> component works.
 
-To do this you first need to tell the <Link to="/configuration/site-provider"
-code="SiteProvider"/> how to load both the `examples` (code components) and
-the `examplesSrc` (source code for those components).  Both of these are
-done using Vite's `import.meta.glob` function.  Add something like this to
-your main `App.jsx`.
-
 <Snippet
   file="config/examples.jsx"
   highlightLines="1-6,8-14,18-19"
   expand
-/>
-
-The example above assumes that your example files are located in the
-`./examples` directory relative to the `App.jsx`. If they're located somewhere
-else then you should change the glob pattern that you pass to
-`import.meta.glob` and define the `matchExamplesPrefix` property as a regular
-expression to remove the prefix.
+>
+  To do this you first need to tell the
+  <Link to="/configuration/site-provider" code="SiteProvider"/> how to load
+  both the `examples` (code components) and the `examplesSrc` (source code
+  for those components).  Both of these are done using Vite's
+  `import.meta.glob` function.  Add something like this to your main
+  `App.jsx`.
+</Snippet>
 
 <Snippet
   file="config/examplesPrefix.jsx"
   highlightLines="2,9,20"
   expand
-/>
-
-
-You can then display an example using the `file` property to specify the
-location relative to your `./examples` directory.  As with snippets, the
-language for syntax highlighting will be determined from the file extension.
-If you don't have a file extension or it isn't one of the pre-defined
-extensions then you can use the `language` property to set it.
+>
+  The example above assumes that your example files are located in the
+  `./examples` directory relative to the `App.jsx`. If they're located
+  somewhere else then you should change the glob pattern that you pass to
+  `import.meta.glob` and define the `matchExamplesPrefix` property as a regular
+  expression to remove the prefix.
+</Snippet>
 
 <Snippet
   file="code/example-file.jsx"
   highlightLines="6"
   expand
-/>
+>
+  You can then display an example using the `file` property to specify the
+  location relative to your `./examples` directory.  As with snippets, the
+  language for syntax highlighting will be determined from the file extension.
+  If you don't have a file extension or it isn't one of the pre-defined
+  extensions then you can use the `language` property to set it.
+</Snippet>
+
 
 This is how the above example is rendered.
 

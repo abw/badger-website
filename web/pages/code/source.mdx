@@ -10,6 +10,9 @@ import Highlight    from './_examples/SourceHighlight.jsx'
 import HighlightSrc from './_examples/SourceHighlight.jsx?raw'
 import Undent       from './_examples/SourceUndent.jsx'
 import UndentSrc    from './_examples/SourceUndent.jsx?raw'
+import Extract      from './_examples/SourceExtract.jsx'
+import ExtractSrc   from './_examples/SourceExtract.jsx?raw'
+import Split        from '@/content/Split.jsx'
 import Source       from '@/code/Source.jsx'
 import Example      from '@/code/Example.jsx'
 import Link         from '@/ui/Link.jsx'
@@ -151,7 +154,7 @@ because they're commented out. But when the source code is displayed we see
 that lines 3 and 4 in the raw source appear to be lines 1 and 2 in the
 processed output.
 
-<div className="grid-2 gap-8 stack-tablet">
+<Split>
   <div>
     <h4 className="mar-v-1 weight-500">Raw Source</h4>
     <Source
@@ -169,4 +172,30 @@ processed output.
       expand
     />
   </div>
-</div>
+</Split>
+
+Here's another example using `{/* START */}` and `{/* END */}` markers to
+extract a section of the example.  Note that we have to use JSX comments
+(with the extra curly braces) here.  It also demonstrates use of the `undent`
+option which is set to `4` in the "Processed Output" below, removing the
+4 space characters at the start of each line.
+
+<Split>
+  <div>
+    <h4 className="mar-v-1 weight-500">Raw Source</h4>
+    <Source
+      code={ExtractSrc}
+      highlightLines="6,11"
+      expand
+      raw
+    />
+  </div>
+  <div>
+    <h4 className="mar-v-1 weight-500">Processed Output</h4>
+    <Source
+      code={ExtractSrc}
+      undent={4}
+      expand
+    />
+  </div>
+</Split>

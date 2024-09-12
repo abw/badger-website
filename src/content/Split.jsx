@@ -11,7 +11,7 @@ export const Split = ({
   stack = 'laptop',
   className
 }) =>
-  <div className="container">
+  <div className="container split">
     <div
       className={
         classes(
