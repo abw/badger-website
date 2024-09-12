@@ -35,7 +35,7 @@ export const Index = () =>
       </li>
       <li>
         It&apos;s built on <BadgerCSSLink/> and <BadgerReactUILink/> so I&apos;ve
-        got immediate access to all the CSS class and React UI components I
+        got immediate access to all the CSS classes and React UI components I
         know and love.
       </li>
       <li>
