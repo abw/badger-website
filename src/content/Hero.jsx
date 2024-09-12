@@ -17,9 +17,7 @@ export const Hero = ({
         {title}
       </h1>
       { Boolean(tagline) &&
-      <h2>
-        Powered by Badgers
-      </h2>
+      <h2>{tagline}</h2>
       }
       { Boolean(overview) &&
       <div className="overview">

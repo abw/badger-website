@@ -1,0 +1,47 @@
+import SplitCode from './_examples/Split.jsx'
+import SplitSrc  from './_examples/Split.jsx?raw'
+import Example   from '@/code/Example.jsx'
+
+# Split
+
+The `Split` component renders two blocks of content side-by-side when
+the containing element is sufficiently wide, or stacked on top of each other
+if not.
+
+<Example
+  Component={SplitCode}
+  code={SplitSrc}
+  expand
+/>
+
+The following properties can be used to customise the component.
+
+## `split`
+
+The number of split sections, defaults to 2.
+
+## `gap`
+
+The gap between sections, defaults to 8 units (2rem).
+
+## `hgap`
+
+The horizontal gap between sections when displayed next to each other.
+Defaults to the value for `gap`.
+
+## `vgap`
+
+The vertical gap between sections when stacked.
+Defaults to the value for `gap`.
+
+## `stack`
+
+The breakpoint at which the sections stack, defaults to `laptop` (960px).
+
+## `align`
+
+The vertical alignment for the sections, defaults to `top`.
+
+## `className`
+
+An additional CSS class for the container.

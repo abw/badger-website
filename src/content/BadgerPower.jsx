@@ -1,6 +1,6 @@
 import React from 'react'
 import { Icon } from '@abw/badger-react-ui'
-import { SiteConsumer } from './Context.jsx'
+import { SiteConsumer } from '@/site/Context.jsx'
 
 export const BadgerPower = SiteConsumer(
   ({ site }) =>

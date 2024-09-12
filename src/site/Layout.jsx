@@ -1,6 +1,6 @@
 import React        from 'react'
-import SiteHeader   from './Header.jsx'
-import SiteFooter   from './Footer.jsx'
+import SiteHeader   from '@/content/Header.jsx'
+import SiteFooter   from '@/content/Footer.jsx'
 import SiteSidebar  from './Sidebar.jsx'
 import ScrollToTop  from '@/utils/ScrollToTop.js'
 import { Outlet }   from 'react-router-dom'

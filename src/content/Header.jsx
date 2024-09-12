@@ -1,10 +1,10 @@
-import React from 'react'
-import Link from '@/ui/Link.jsx'
-import BadgerPower from './BadgerPower.jsx'
+import React          from 'react'
+import Link           from '@/ui/Link.jsx'
+import BadgerPower    from './BadgerPower.jsx'
 import SiteRepository from './Repository.jsx'
-import { SiteConsumer } from './Context.jsx'
-import { Icon } from '@abw/badger-react-ui'
-import { Toggle } from '@abw/react-night-and-day'
+import { Icon }       from '@abw/badger-react-ui'
+import { Toggle }     from '@abw/react-night-and-day'
+import { SiteConsumer } from '@/site/Context.jsx'
 
 export const Header = SiteConsumer(
   ({

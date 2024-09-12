@@ -1,8 +1,10 @@
+import Link         from '@/ui/Link.jsx'
 import Snippet      from '@/code/Snippet.jsx'
 import Example      from '@/code/Example.jsx'
-import Link         from '@/ui/Link.jsx'
 import SnippetComp  from './_examples/Snippet.jsx'
 import SnippetSrc   from './_examples/Snippet.jsx?raw'
+import ChildrenComp  from './_examples/SnippetChildren.jsx'
+import ChildrenSrc   from './_examples/SnippetChildren.jsx?raw'
 import { LANGUAGE_EXTENSIONS } from '@/src/index.jsx'
 
 # Snippets
@@ -74,3 +76,24 @@ The supported languages and their corresponding file extensions are shown below.
     )}
   </tbody>
 </table>
+
+## `children`
+
+If you define any child elements of the component (passed as the `children`
+property) then it will be rendered using the <Link to="/content/split"
+code="Split"/> component.  If the container is sufficiently wide then the
+content will appear to the left of the code block, otherwise it will be
+stacked above it.
+
+<Example
+  Component={ChildrenComp}
+  code={ChildrenSrc}
+/>
+
+Note that in the example above the two blocks will always appear stacked
+because they're being displayed inside the smaller "Output" container.
+Here's the output again.  If you've viewing on a large screen then try
+resizing the browser window to see the stacking in effect.
+
+<ChildrenComp/>
+

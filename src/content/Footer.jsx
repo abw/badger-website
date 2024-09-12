@@ -3,7 +3,7 @@ import SiteAuthor       from './Author.jsx'
 import SiteCopyright    from './Copyright.jsx'
 import SitePowered      from './BadgerPowered.jsx'
 import SiteRelease      from './Release.jsx'
-import { SiteConsumer } from './Context.jsx'
+import { SiteConsumer } from '@/site/Context.jsx'
 
 export const Footer = SiteConsumer(
   ({

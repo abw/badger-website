@@ -1,3 +1,4 @@
+export * from './Pre.jsx'
 import pre from './Pre.jsx'
 
 export const mdxComponents = {

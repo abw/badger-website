@@ -1,5 +1,5 @@
 import React from 'react'
-import { SiteConsumer } from './Context.jsx'
+import { SiteConsumer } from '@/site/Context.jsx'
 
 export const Copyright = SiteConsumer(
   ({ site }) =>

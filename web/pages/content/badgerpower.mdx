@@ -1,0 +1,21 @@
+import Link       from '@/ui/Link.jsx'
+import Example    from '@/code/Example.jsx'
+import PowerCode  from './_examples/BadgerPower.jsx'
+import PowerSrc   from './_examples/BadgerPower.jsx?raw'
+
+# BadgerPower
+
+The `BadgerPower` component renders a badger icon as link to the
+<Link href="https://badgerpower.com/" text="https://badgerpower.com/"/> site.  It's used in the default
+site <Link to="/content/header" code="Header"/> component
+
+If you're not building a web site that is part of the Badger Power
+collective then you probably don't want this.  You can set the
+`site.badgerpower` configuration item to `false` to supress it from the
+header.
+
+<Example
+  Component={PowerCode}
+  code={PowerSrc}
+  expand
+/>

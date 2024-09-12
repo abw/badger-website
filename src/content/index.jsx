@@ -1,3 +1,13 @@
+export * from './Author.jsx'
+export * from './BadgerPower.jsx'
+export * from './BadgerPowered.jsx'
+export * from './Copyright.jsx'
+export * from './Footer.jsx'
+export * from './Header.jsx'
 export * from './Hero.jsx'
 export * from './OSSLogo.jsx'
 export * from './PeopleWhoShare.jsx'
+export * from './Release.jsx'
+export * from './Repository.jsx'
+export * from './Split.jsx'
+

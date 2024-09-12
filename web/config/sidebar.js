@@ -55,18 +55,23 @@ export const Sidebar = {
       ]
     },
     {
-      title: 'Site Components',
-      openPath: '/components/',
+      title: 'Content',
+      openPath: '/content/',
       revealable: true,
       menu: [
         // { title: 'Site Components' },
-        { to: '/components/author',           code: 'Author' },
-        { to: '/components/copyright',        code: 'Copyright' },
-        { to: '/components/hero',             code: 'Hero' },
-        { to: '/components/oss-logo',         code: 'OSSLogo' },
-        { to: '/components/people-who-share', code: 'PeopleWhoShare' },
-        { to: '/components/release',          code: 'Release' },
-        { to: '/components/repository',       code: 'Repository' },
+        { to: '/content/author',           code: 'Author' },
+        { to: '/content/badgerpower',      code: 'BadgerPower' },
+        { to: '/content/badgerpowered',    code: 'BadgerPowered' },
+        { to: '/content/copyright',        code: 'Copyright' },
+        { to: '/content/footer',           code: 'Footer' },
+        { to: '/content/header',           code: 'Header' },
+        { to: '/content/hero',             code: 'Hero' },
+        { to: '/content/oss-logo',         code: 'OSSLogo' },
+        { to: '/content/people-who-share', code: 'PeopleWhoShare' },
+        { to: '/content/release',          code: 'Release' },
+        { to: '/content/repository',       code: 'Repository' },
+        { to: '/content/split',            code: 'Split' },
       ]
     },
     {

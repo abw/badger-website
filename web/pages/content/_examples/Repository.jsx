@@ -1,4 +1,4 @@
-import Repository  from '@/site/Repository.jsx'
+import Repository  from '@/content/Repository.jsx'
 /* START */
 import React from 'react'
 // PRETEND: import { Repository } from '@abw/badger-website'

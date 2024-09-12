@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from '@/ui/Link.jsx'
-import { SiteConsumer } from './Context.jsx'
+import { SiteConsumer } from '@/site/Context.jsx'
 
 export const Author = SiteConsumer(
   ({ site }) =>

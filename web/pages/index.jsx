@@ -18,7 +18,7 @@ export const Index = () =>
     <Hero
       logo={<Badger className="brw-logo"/>}
       title="Badger Website Builder"
-      tagline="Powered by Badgers"
+      tagline="Built by Badgers"
       overview="Badger Website is a framework / template which I use to generate the documentation websites for various other badger projects."
     />
     <h2>Features</h2>
