@@ -1,6 +1,7 @@
 import React from 'react'
 import Loading from './Loading.jsx'
 import Source from './Source.jsx'
+import SourceOutput from './SourceOutput.jsx'
 import { useSite } from '@/site/Context.jsx'
 import { LANGUAGE_EXTENSIONS, SNIPPET } from '@/constants/Code.jsx'
 import { InvalidNameError, NoExtensionError, UnknownExtensionError } from './Error.jsx'
@@ -8,6 +9,7 @@ import { InvalidNameError, NoExtensionError, UnknownExtensionError } from './Err
 export const Snippet = ({
   file,
   language,
+  output,
   ...props
 }) => {
   const { snippets } = useSite()
@@ -56,6 +58,16 @@ export const Snippet = ({
     },
     [file]
   )
+
+  if (code && language === 'html' && output) {
+    return (
+      <SourceOutput
+        html={code}
+        vgap={4}
+        {...props}
+      />
+    )
+  }
 
   return code
     ? <Source

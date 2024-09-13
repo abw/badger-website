@@ -34,7 +34,7 @@ p:first-child {
   // padding: 0.5rem 0.75rem;
 }
 
-li {
+li:not(:last-child) {
   margin-bottom: 0.5rem;
 }
 /*

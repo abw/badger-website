@@ -5,6 +5,8 @@ import SnippetComp  from './_examples/Snippet.jsx'
 import SnippetSrc   from './_examples/Snippet.jsx?raw'
 import ChildrenComp  from './_examples/SnippetChildren.jsx'
 import ChildrenSrc   from './_examples/SnippetChildren.jsx?raw'
+import OutputComp    from './_examples/SnippetOutput.jsx'
+import OutputSrc     from './_examples/SnippetOutput.jsx?raw'
 import { LANGUAGE_EXTENSIONS } from '@/src/index.jsx'
 
 # Snippets
@@ -96,4 +98,17 @@ Here's the output again.  If you've viewing on a large screen then try
 resizing the browser window to see the stacking in effect.
 
 <ChildrenComp/>
+
+## `output`
+
+If your snippet file is HTML you can add the `output` option to see the
+rendered HTML along with the source.
+
+For non-HTML examples you should use the <Link to="/code/example" code="Example"/>
+component.
+
+<Example
+  Component={OutputComp}
+  code={OutputSrc}
+/>
 
