@@ -1,0 +1,26 @@
+import LoadingCode from './_examples/Loading.jsx'
+import LoadingSrc  from './_examples/Loading.jsx?raw'
+import Example     from '@/code/Example.jsx'
+import PropsTable  from '@/src/ui/PropsTable.jsx'
+
+# Loading
+
+The `Loading` component can be used to generated a loading message.
+
+<Example
+  Component={LoadingCode}
+  code={LoadingSrc}
+  expand
+/>
+
+## Properties
+
+<PropsTable
+  items={[
+    ['message',     'Loading...', 'The loading message'],
+    ['size', 'x2',  'CSS class for the message size'],
+    ['spinnerSize', 'x6', 'CSS class for the spinner size'],
+    ['className',   '', 'Additional CSS class for the container'],
+
+  ]}
+/>

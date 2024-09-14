@@ -1,0 +1,27 @@
+import LinksCode  from './_examples/Links.jsx'
+import LinksSrc   from './_examples/Links.jsx?raw'
+import Example    from '@/code/Example.jsx'
+import PropsTable from '@/src/ui/PropsTable.jsx'
+
+# Link
+
+The `Link` component can be used to generated internal and external links.
+
+<Example
+  Component={LinksCode}
+  code={LinksSrc}
+  expand
+/>
+
+## Properties
+
+<PropsTable
+  items={[
+    ['to',   '', 'An internal React Router link'],
+    ['text', '', 'Text for the link'],
+    ['code', '', 'Monospaced text for the link, e.g. for links to code components'],
+    ['href', '', 'URL for external links'],
+    ['targetBlank', '', 'Open in a new window'],
+
+  ]}
+/>

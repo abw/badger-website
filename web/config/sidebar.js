@@ -1,3 +1,40 @@
+const TestSection = {
+  title: 'Dev Tests',
+  openPath: '/section2/',
+  revealable: true,
+  menu: [
+    // { to: '/section2/', code: 'Index', exact: true },
+    { to: '/section2/biz', code: 'Biz' },
+    { to: '/section2/baz', code: 'Baz' },
+    { to: '/section2/boz', code: 'Boz' },
+    { to: '/section2/hello', code: 'Hello' },
+    /*
+    {
+      title: 'Nested Menu #1',
+      menu: [
+        { to: '/debug/properties/status',       code: 'status'      },
+        { to: '/debug/properties/values',       code: 'values'      },
+      ]
+    },
+    {
+      title: 'Nested Menu #2',
+      menu: [
+        { to: '/section2/wam', text: 'Wam' },
+        { to: '/section2/bam', text: 'Bam' },
+        {
+          title: 'Level 2 Nested Menu',
+          menu: [
+            { to: '/debug/properties/thank',       text: 'thank'      },
+            { to: '/debug/properties/you',         text: 'you'      },
+            { to: '/debug/properties/maam',        text: "Ma'am"   },
+          ]
+        },
+      ]
+    }
+    */
+  ]
+}
+
 export const Sidebar = {
   sections: [
     /*
@@ -71,7 +108,18 @@ export const Sidebar = {
         { to: '/content/people-who-share', code: 'PeopleWhoShare' },
         { to: '/content/release',          code: 'Release' },
         { to: '/content/repository',       code: 'Repository' },
-        { to: '/content/split',            code: 'Split' },
+        // { to: '/content/split',            code: 'Split' },
+      ]
+    },
+    {
+      title: 'Utilities',
+      openPath: '/utilities/',
+      revealable: true,
+      menu: [
+        { to: '/utilities/link',             code: 'Link' },
+        { to: '/utilities/loading',          code: 'Loading' },
+        { to: '/utilities/propstable',       code: 'PropsTable' },
+        { to: '/utilities/split',            code: 'Split' },
       ]
     },
     {
@@ -85,43 +133,13 @@ export const Sidebar = {
         { to: '/code/example',               code: 'Example' },
       ]
     },
-    {
-      title: 'Section 2',
-      openPath: '/section2/',
-      revealable: true,
-      menu: [
-        // { to: '/section2/', code: 'Index', exact: true },
-        { to: '/section2/biz', code: 'Biz' },
-        { to: '/section2/baz', code: 'Baz' },
-        { to: '/section2/boz', code: 'Boz' },
-        { to: '/section2/hello', code: 'Hello' },
-        /*
-        {
-          title: 'Nested Menu #1',
-          menu: [
-            { to: '/debug/properties/status',       code: 'status'      },
-            { to: '/debug/properties/values',       code: 'values'      },
-          ]
-        },
-        {
-          title: 'Nested Menu #2',
-          menu: [
-            { to: '/section2/wam', text: 'Wam' },
-            { to: '/section2/bam', text: 'Bam' },
-            {
-              title: 'Level 2 Nested Menu',
-              menu: [
-                { to: '/debug/properties/thank',       text: 'thank'      },
-                { to: '/debug/properties/you',         text: 'you'      },
-                { to: '/debug/properties/maam',        text: "Ma'am"   },
-              ]
-            },
-          ]
-        }
-        */
-      ]
-    }
+    ...(
+      import.meta.env.DEV
+        ? [ TestSection ]
+        : [ ]
+    )
   ]
 }
+
 
 export default Sidebar

@@ -1,0 +1,23 @@
+import PTCode     from './_examples/PropsTable.jsx'
+import PTSrc      from './_examples/PropsTable.jsx?raw'
+import Example    from '@/code/Example.jsx'
+import PropsTable from '@/src/ui/PropsTable.jsx'
+
+# PropsTable
+
+The `PropsTable` component can be used to generated a table showing properties
+for a component.
+
+<Example
+  Component={PTCode}
+  code={PTSrc}
+  expand
+/>
+
+## Properties
+
+<PropsTable
+  items={[
+    ['items',     '',      'An array of items, each containing 3 elements: the property name, default value and description'],
+  ]}
+/>
