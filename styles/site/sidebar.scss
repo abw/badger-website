@@ -2,6 +2,15 @@
   h3:first-child {
     margin-top: 0;
   }
+  h3.sidebar-title {
+    &:not(:first-child) {
+      margin-top: 1.25rem;
+    }
+    margin-bottom: 0.25rem;
+    font-size: var(--size-medium);
+    font-weight: 400;
+    color: var(--side-title);
+  }
   section {
     margin-bottom: 0.5rem;
     h3 {

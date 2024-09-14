@@ -47,6 +47,7 @@ export const Sidebar = {
       ]
     },
     */
+    // { title: 'Intro' },
     {
       title: 'Getting Started',
       openPath: '/getting-started/',
@@ -69,6 +70,7 @@ export const Sidebar = {
         { to: '/configuration/components',    text: 'Components' },
       ]
     },
+    // { title: 'Hello World' },
     {
       title: 'Pages',
       revealable: true,
