@@ -69,7 +69,7 @@ const Context = ({
       item => ({
         ...item,
         // canonical form without any trailing slash
-        uri: item.to.replace(/\/$/, '')
+        uri: item.to?.replace(/\/$/, '')
       })
     )
   // console.log(`menuItems: `, menuItems)
