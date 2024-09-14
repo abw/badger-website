@@ -1,5 +1,5 @@
 import React from 'react'
-import { Outlet } from 'react-router'
+import { Outlet } from '@abw/badger-website'
 
 const Layout = () =>
   <div className="border bdr-2 pad-a-4 paper">
