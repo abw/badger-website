@@ -1,5 +1,4 @@
-import Source from '@/code/Source.jsx'
-import example from '@/snippets/Provider.jsx?raw'
+import Snippet from '@/code/Snippet.jsx'
 import PropsTable from '@/ui/PropsTable.jsx'
 import Link from '@/ui/Link.jsx'
 export const Xmetadata = {
@@ -7,15 +6,14 @@ export const Xmetadata = {
 }
 export const titleCode = 'SiteProvider'
 
-<Source
-  code={example}
-  language="jsx"
+<Snippet
+  file="Provider.jsx"
   expand
 >
   The `SiteProvider` component is the main entry point for the
   web site.  This will usually be called from the main `App.jsx`
   file.  It takes a number of configuration options.
-</Source>
+</Snippet>
 
 ## Properties
 
