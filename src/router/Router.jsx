@@ -45,8 +45,7 @@ export const Router = ({
           .replace(matchPagesPrefix, '')
           .replace(matchPageSuffix, '')
           .replace(matchIndexPage, '')
-          // This breaks things - means /foo/ doesn't match /foo in sidebar
-          // .replace(/(.)\/$/, '$1')
+          .replace(/\/$/, '')    // canonical form - no trailing slash
           .replace(matchPlaceholder, ':$1')
         return meta
       }

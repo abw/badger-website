@@ -65,12 +65,20 @@ const Context = ({
     .flatMap(
       item => item.menu || item
     )
+    .map(
+      item => ({
+        ...item,
+        // canonical form without any trailing slash
+        uri: item.to.replace(/\/$/, '')
+      })
+    )
   // console.log(`menuItems: `, menuItems)
 
   const prevNextPage = () => {
     const index = menuItems.findIndex(
-      item => item.to === page.uri
+      item => item.uri === page.uri
     )
+
     const prev = index > 0
       ? menuItems[index - 1]
       : null

@@ -79,6 +79,7 @@ export const Sidebar = {
       openPath: '/code/',
       revealable: true,
       menu: [
+        // { to: '/code/',                code: 'Overview', exact: true },
         { to: '/code/source',                code: 'Source' },
         { to: '/code/snippet',               code: 'Snippet' },
         { to: '/code/example',               code: 'Example' },
@@ -89,6 +90,7 @@ export const Sidebar = {
       openPath: '/section2/',
       revealable: true,
       menu: [
+        // { to: '/section2/', code: 'Index', exact: true },
         { to: '/section2/biz', code: 'Biz' },
         { to: '/section2/baz', code: 'Baz' },
         { to: '/section2/boz', code: 'Boz' },
