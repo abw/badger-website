@@ -7,7 +7,8 @@ export const SidebarMenuSection = SiteConsumer(
     sidebar={},
     menuClass=sidebar.menuClass ?? 'menu',
     title,
-    menu
+    menu,
+    SidebarMenuItem=Item
   }) =>
     <div className={menuClass}>
       { Boolean(title) &&
@@ -15,7 +16,7 @@ export const SidebarMenuSection = SiteConsumer(
       }
       { menu.map(
         item =>
-          <Item
+          <SidebarMenuItem
             key={item.to}
             {...item}
           />
