@@ -72,12 +72,23 @@ const Context = ({
         uri: item.to?.replace(/\/$/, '')
       })
     )
-  // console.log(`menuItems: `, menuItems)
+
+  if (site.debugPages) {
+    console.log(`menuItems: `, menuItems)
+  }
 
   const prevNextPage = () => {
     const index = menuItems.findIndex(
       item => item.uri === page.uri
     )
+    if (site.debugPages) {
+      console.log(
+        `menu index for page ${page.uri} is ${index}: `,
+        index >= 0
+          ? menuItems[index]
+          : undefined
+      )
+    }
 
     const prev = index > 0
       ? menuItems[index - 1]

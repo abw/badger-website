@@ -51,6 +51,10 @@ export const Router = ({
       }
     )
 
+  if (site.debugRouter) {
+    console.log(`Scanned paths: `, metas)
+  }
+
   // Build a lookup table from path to page
   const paths = metas
     .filter(
@@ -63,6 +67,10 @@ export const Router = ({
       },
       { }
     )
+
+  if (site.debugRouter) {
+    console.log(`Created path lookup: `, paths)
+  }
 
   // find all the paths that end in /_layout
   const layoutPaths = Object
@@ -113,6 +121,14 @@ export const Router = ({
     // add the layout page as the new page for the base directory
     // console.log(`inserting new ${base} page as layout`)
     paths[base] = layout
+  }
+
+  if (site.debugRouter) {
+    console.log(`Applied layouts: `, paths)
+  }
+
+  if (site.debugRouter) {
+    console.log(`Final metas: `, metas)
   }
 
   const routes = metas.map(makeRoute)
