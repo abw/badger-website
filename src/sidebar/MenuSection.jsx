@@ -15,9 +15,9 @@ export const SidebarMenuSection = SiteConsumer(
         <h4>{title}</h4>
       }
       { menu.map(
-        item =>
+        (item, n) =>
           <SidebarMenuItem
-            key={item.to}
+            key={item.to || `menu-item-${n}`}
             {...item}
           />
       )}

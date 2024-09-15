@@ -12,9 +12,9 @@ export const SidebarMenu = SiteConsumer(
   }) =>
     <div className={menuClass} onClick={sidebarClick}>
       { menu.map(
-        item =>
+        (item, n) =>
           <SidebarMenuItem
-            key={item.to}
+            key={item.to || `menu-item-${n}`}
             {...item}
           />
       )}
