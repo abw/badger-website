@@ -131,7 +131,11 @@ export const Router = ({
     console.log(`Final metas: `, metas)
   }
 
-  const routes = metas.map(makeRoute)
+  const routes = Object.values(paths).map(makeRoute)
+
+  if (site.debugRouter) {
+    console.log(`Routes: `, routes)
+  }
 
   return createBrowserRouter(
     [
