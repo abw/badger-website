@@ -1,7 +1,8 @@
 import React from 'react'
 import Menu from './Menu.jsx'
 import { Details } from '@abw/badger-react-ui'
-import { useResolvedPath, useSite } from 'react-router'
+import { useResolvedPath } from 'react-router'
+import { useSite } from '@/site/Context.jsx'
 
 export const SidebarDetails = ({
   title,
