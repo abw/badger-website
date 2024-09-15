@@ -1,5 +1,7 @@
 export * from './Details.jsx'
 export * from './Menu.jsx'
+export * from './MenuItem.jsx'
+export * from './MenuSection.jsx'
 export * from './Section.jsx'
 export * from './Sections.jsx'
 export * from './Title.jsx'
