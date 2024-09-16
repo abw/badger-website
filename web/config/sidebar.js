@@ -3,12 +3,11 @@ const TestSection = {
   openPath: '/section2/',
   revealable: true,
   menu: [
-    // { to: '/section2/', code: 'Index', exact: true },
+    { to: '/section2/', code: 'Index', exact: true },
     { to: '/section2/biz', code: 'Biz' },
     { to: '/section2/baz', code: 'Baz' },
     { to: '/section2/boz', code: 'Boz' },
     { to: '/section2/hello', code: 'Hello' },
-    /*
     {
       title: 'Nested Menu #1',
       menu: [
@@ -16,6 +15,7 @@ const TestSection = {
         { to: '/debug/properties/values',       code: 'values'      },
       ]
     },
+    /*
     {
       title: 'Nested Menu #2',
       menu: [

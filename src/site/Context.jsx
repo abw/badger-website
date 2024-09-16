@@ -49,6 +49,23 @@ const Context = ({
 
   // Page metadata
   const [page, setPage] = useState({ })
+  const [tocs, setTocs] = useState({ })
+
+  const addPageToc = (page, id, item) => {
+    setTocs(
+      tocs => {
+        // console.log(`adding TOC to page ${page}: ${id} =>`, item)
+        return {
+          ...tocs,
+          [page]: {
+            ...(tocs[page] || { }),
+            [id]: item
+          }
+        }
+      }
+    )
+  }
+  const getPageToc = page => tocs[page]
 
   // content ref for scrolling main body
   const contentRef = useRef()
@@ -106,7 +123,7 @@ const Context = ({
   return render({
     ...props,
     site, sidebar, snippets, examples,
-    page, setPage, prevNextPage,
+    page, setPage, tocs, addPageToc, getPageToc, prevNextPage,
     width, breakpoint,
     sidebarOpen, setSidebarOpen,
     openSidebar, closeSidebar, toggleSidebar,

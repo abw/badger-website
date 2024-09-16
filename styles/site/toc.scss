@@ -1,0 +1,18 @@
+ul.toc {
+  padding: 0;
+  li {
+    padding: 0.25rem 0.5rem;
+    margin: 0;
+    border-radius: var(--unit-radius);
+    &:hover {
+      background-color: var(--menu-active-back);
+      cursor: pointer;
+    }
+  }
+  .item {
+    display: block;
+    &.code {
+      font-family: var(--font-mono);
+    }
+  }
+}

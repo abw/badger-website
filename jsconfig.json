@@ -12,6 +12,7 @@
       "@/router/*":     ["./src/router/*"],
       "@/site/*":       ["./src/site/*"],
       "@/sidebar/*":    ["./src/sidebar/*"],
+      "@/toc/*":        ["./src/toc/*"],
       "@/ui/*":         ["./src/ui/*"],
       "@/utils/*":      ["./src/utils/*"],
       "@/web/*":        ["./web/*"],

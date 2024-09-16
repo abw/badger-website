@@ -4,6 +4,7 @@ import Intro from './Intro.jsx'
 import PrevNext from './PrevNext.jsx'
 import PrevNextArrows from './PrevNextArrows.jsx'
 import { SiteConsumer } from '@/site/Context.jsx'
+import { PageProvider } from './Context.jsx'
 
 export const Page = SiteConsumer(
   ({ site, isLayout, setPage, page={}, Component }) => {
@@ -17,7 +18,7 @@ export const Page = SiteConsumer(
       [page]
     )
     return (
-      <>
+      <PageProvider page={page}>
         { (site.prevNextArrows && (page.prevNext ?? true)) &&
           <PrevNextArrows/>
         }
@@ -29,7 +30,7 @@ export const Page = SiteConsumer(
             <PrevNext/>
           }
         </div>
-      </>
+      </PageProvider>
     )
   }
 )
