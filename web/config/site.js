@@ -17,7 +17,7 @@ export const site = {
   badgerpower: true,
   basename:    import.meta.env.BASE_URL,
   debugRouter: false,
-  debugPages:  false
+  debugPages:  false,
 }
 
 export default site

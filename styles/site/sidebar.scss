@@ -66,45 +66,28 @@
     }
     & > div.menu {
       padding-left: 0.5rem;
+      margin-bottom: 0.5rem;
       h4 {
-        font-size: 1.1em;
-        font-weight: 400;
-        margin: 0.325rem 0 0.25rem 0;
         color: var(--submenu-head);
-        margin-left: 0.25rem;
+        font-size: 1.1em;
+        font-weight: 500;
+        margin: 0.5rem 0 0.125rem 0.25rem;
+        &:hover {
+          cursor: pointer;
+        }
       }
-    }
-    .toc {
-      font-size: 0.8em;
-      margin-left: 0.5rem;
-      padding-left: 0rem;
-      margin-bottom: 0.25rem;
-      margin-top: 0.25rem;
-      li:not(.heading) {
-        padding-left: 0.5rem;
-        border-radius: 4px;
+      .item {
         color: var(--menu-item-text);
         background-color: var(--submenu-back);
-        line-height: 1.5;
-        margin-bottom: 0.25rem;
         &:hover {
           transition: all 0.2s;
-          color: var(--menu-hover-text);
-          background-color: var(--menu-hover-back);
+          color: var(--submenu-hover-text);
+          background-color: var(--submenu-hover-back);
           cursor: pointer;
         }
         &:active {
           color: var(--menu-active-text);
           background-color: var(--menu-active-back);
-        }
-      }
-      li.heading {
-        margin-top: 0.5rem;
-        h4 {
-          font-weight: 500;
-          font-size: $size-smaller;
-          margin: 0 0 0.25rem 0;
-          cursor: pointer;
         }
       }
     }

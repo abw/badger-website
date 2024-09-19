@@ -12,9 +12,6 @@ export const Section = ({
   const { addToc } = usePage()
   const ref = useRef()
   id ||= idSafe(code || title)
-  // const tocText = code
-  //   ? `code:${code}`
-  //   : title
 
   useEffect(
     () => {
@@ -23,9 +20,13 @@ export const Section = ({
     [id, code, title]
   )
   return (
-    <section id={id} ref={ref}>
-      <h3 className={classes({ 'font-mono': code })}>{title}</h3>
-      <div>
+    <section id={id} ref={ref} className="page-section">
+      <h3
+        className={ classes({ 'font-mono flex space': code }) }
+      >
+        {title}
+      </h3>
+      <div className="page-section-content">
         {children}
       </div>
     </section>

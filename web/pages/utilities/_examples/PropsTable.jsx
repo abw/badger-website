@@ -8,6 +8,13 @@ const PropsTableExample = () =>
     items={[
       ['foo', '10', 'Quite loud'],
       ['bar', '11', 'One Louder'],
+      [
+        'baz', '99',
+        [
+          'First paragraph.',
+          'Second paragraph with some `code`'
+        ]
+      ],
     ]}
   />
 

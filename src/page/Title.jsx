@@ -2,7 +2,7 @@ import React from 'react'
 import { SiteConsumer } from '@/site/Context.jsx'
 import { hasValue, isString } from '@abw/badger-utils'
 
-export const Title = SiteConsumer(
+export const PageTitle = SiteConsumer(
   ({
     page={},
     codeClass='font-mono'
@@ -25,4 +25,4 @@ export const Title = SiteConsumer(
   }
 )
 
-export default Title
+export default PageTitle

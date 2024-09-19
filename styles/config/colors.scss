@@ -1,86 +1,100 @@
 :where(html) {
-  --body-color:        var(--grey-20);
-  --body-background:   var(--grey-100);
-  --link-color:        var(--brand-45);
-  --link-hover:        var(--brand-55);
+  --body-color:         var(--grey-20);
+  --body-background:    var(--grey-100);
+  --link-color:         var(--brand-45);
+  --link-hover:         var(--brand-55);
 
-  --heading-color:     var(--grey-10);
-  --side-shadow:      rgba(0, 0, 0, 0.04);
-  --top-shadow:       rgba(0, 0, 0, 0.08);
+  --heading-color:      var(--grey-10);
+  --side-shadow:        rgba(0, 0, 0, 0.04);
+  --top-shadow:         rgba(0, 0, 0, 0.08);
   // header
-  --header-back:      var(--brand-30);
-  --header-text:      var(--grey-60);
-  --header-link:      var(--grey20-80);
-  --header-hover:     var(--brand-95);
-  --header-border:    var(--brand-20);
+  --header-back:        var(--brand-30);
+  --header-text:        var(--grey-60);
+  --header-link:        var(--grey20-80);
+  --header-hover:       var(--brand-95);
+  --header-border:      var(--brand-20);
   // app
-  --app-back:         var(--grey-70);
-  --main-back:        var(--grey-95);
-  --side-back:        var(--grey-85);
-  --side-border:      var(--grey-70);
-  --side-title:       var(--grey-50);
+  --app-back:           var(--grey-70);
+  --main-back:          var(--grey-95);
+  --side-back:          var(--grey-85);
+  --side-border:        var(--grey-70);
+  --side-title:         var(--grey-50);
   // sidebar menu
-  --menu-head:        var(--grey-30);
-  --menu-head-hover:  var(--grey-10);
-  --menu-item-text:   var(--grey-20);
-  --menu-item-back:   var(--grey-90);
-  --menu-hover-text:  var(--brand-10);
-  --menu-hover-back:  var(--grey20-95);
-  --menu-active-text: var(--brand-0);
-  --menu-active-back: var(--grey40-100);
-  --submenu-head:     var(--grey-40);
-  --submenu-back:     var(--grey-85);
+  --menu-head:          var(--grey-30);
+  --menu-head-hover:    var(--grey-10);
+  --menu-item-text:     var(--grey-20);
+  --menu-item-back:     var(--grey-90);
+  --menu-hover-text:    var(--brand-10);
+  --menu-hover-back:    var(--grey20-95);
+  --menu-active-text:   var(--brand-0);
+  --menu-active-back:   var(--grey40-100);
+  --submenu-head:       var(--grey-20);
+  --submenu-back:       var(--grey-85);
+  --submenu-hover-text: var(--grey-10);
+  --submenu-hover-back: var(--grey-90);
   // footer
-  --footer-color:      var(--grey20-55);
-  --footer-background: var(--brand-15);
-  --footer-border:     var(--brand-20);
-  --footer-link:       var(--grey20-60);
-  --footer-hover:      var(--grey40-75);
+  --footer-color:       var(--grey20-55);
+  --footer-background:  var(--brand-15);
+  --footer-border:      var(--brand-20);
+  --footer-link:        var(--grey20-60);
+  --footer-hover:       var(--grey40-75);
 
-  // section
-  --section-underline:var(--grey-80);
+  // page heading/section
+  --heading-background: var(--grey-85);
+  --up-background:      var(--grey-95);
+  --up-color:           var(--grey-50);
+  --up-hover-background:var(--grey-100);
+  --up-hover-color:     var(--grey-5);
+
+  // table of contents
+  --toc-background:     var(--grey-100);
+  --toc-border:         var(--grey-85);
 }
 
 #{$dark-theme}, .dark {
-  --body-color:       var(--grey20-80);
-  --body-background:  var(--grey20-0);
-  --link-color:       var(--grey40-60);
-  --link-hover:       var(--brand-75);
+  --body-color:         var(--grey20-80);
+  --body-background:    var(--grey20-0);
+  --link-color:         var(--grey40-60);
+  --link-hover:         var(--brand-75);
 
-  --heading-color:    var(--grey20-90);
-  --side-shadow:      rgba(0, 0, 0, 0.2);
-  --top-shadow:       rgba(0, 0, 0, 0.15);
+  --heading-color:      var(--grey20-90);
+  --side-shadow:        rgba(0, 0, 0, 0.2);
+  --top-shadow:         rgba(0, 0, 0, 0.15);
   // header
-  --header-back:      var(--brand-20);
-  --header-text:      var(--grey20-60);
-  --header-link:      var(--grey20-70);
-  --header-hover:     var(--brand-95);
-  --header-border:    var(--brand-0);
+  --header-back:        var(--brand-20);
+  --header-text:        var(--grey20-60);
+  --header-link:        var(--grey20-70);
+  --header-hover:       var(--brand-95);
+  --header-border:      var(--brand-0);
 
   // app
-  --app-back:         var(--grey-0);
-  --main-back:        var(--grey-15);
-  --side-back:        var(--grey-10);
-  --side-border:      var(--grey-30);
-  --side-title:       var(--grey-40);
+  --app-back:           var(--grey-0);
+  --main-back:          var(--grey-15);
+  --side-back:          var(--grey-10);
+  --side-border:        var(--grey-30);
+  --side-title:         var(--grey-40);
 
   // sidebar menu
-  --menu-head:        var(--grey-70);
-  --menu-head-hover:  var(--grey-90);
-  --menu-item-text:   var(--grey-60);
-  --menu-item-back:   var(--grey-15);
-  --menu-hover-text:  var(--grey-70);
-  --menu-hover-back:  var(--grey-20);
-  --menu-active-text: var(--grey-100);
-  --menu-active-back: var(--grey-25);
-  --submenu-head:     var(--grey-50);
-  --submenu-back:     var(--grey-10);
+  --menu-head:          var(--grey-70);
+  --menu-head-hover:    var(--grey-90);
+  --menu-item-text:     var(--grey-60);
+  --menu-item-back:     var(--grey-15);
+  --menu-hover-text:    var(--grey-70);
+  --menu-hover-back:    var(--grey-20);
+  --menu-active-text:   var(--grey-100);
+  --menu-active-back:   var(--grey-25);
+  --submenu-head:       var(--grey-70);
+  --submenu-back:       var(--grey-10);
+  --submenu-hover-text: var(--grey-90);
+  --submenu-hover-back: var(--grey-20);
+
   // footer
-  --footer-color:      var(--grey20-40);
-  --footer-background: var(--brand-10);
-  --footer-border:     var(--brand-5);
-  --footer-link:       var(--grey20-55);
-  --footer-hover:      var(--grey40-70);
-  // section
-  --section-underline:var(--grey-25);
+  --footer-color:       var(--grey20-40);
+  --footer-background:  var(--brand-10);
+  --footer-border:      var(--brand-5);
+  --footer-link:        var(--grey20-55);
+  --footer-hover:       var(--grey40-70);
+
+  // page heading/section
+  --heading-background: var(--grey-25);
 }

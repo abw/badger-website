@@ -18,6 +18,13 @@ for a component.
 
 <PropsTable
   items={[
-    ['items',     '',      'An array of items, each containing 3 elements: the property name, default value and description'],
+    [
+      'items', '',
+      [
+        'An array of items, each containing 3 elements: the property `name`, `default` value and `description`.',
+        'The `description` can be either a string or an array of strings which will be rendered as separate paragraphs.',
+        'The `name` and `default` will be rendered in monospaced font.  The description can contain backticks around an extract to render in monospaced font.'
+      ]
+    ],
   ]}
 />

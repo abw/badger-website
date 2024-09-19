@@ -39,6 +39,7 @@ export const App = () =>
     snippets={snippets}
     examples={examples}
     examplesSrc={examplesSrc}
+    linkUp
   />
 
 export default App

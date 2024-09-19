@@ -1,9 +1,10 @@
 import React from 'react'
 import { codify } from '@/utils/Markup.jsx'
 import { isString } from '@abw/badger-utils'
+import { isArray } from '@abw/badger-utils'
 
-export const PropsTable = ({items}) =>
-  <table className="wide shaded striped celled">
+export const PropsTable = ({ items }) =>
+  <table className="props-table wide shaded striped celled baseline">
     <thead>
       <tr>
         <th>Property</th>
@@ -25,7 +26,14 @@ const PropRow = ({name, defaultValue, description}) =>
     <td className="font-mono">{defaultValue}</td>
     { isString(description)
       ? <td dangerouslySetInnerHTML={{__html: codify(description)}}/>
-      : <td>{description}</td>
+      : isArray(description)
+        ? <td>
+            { description.map(
+              (para, n) =>
+                <p key={n} dangerouslySetInnerHTML={{__html: codify(para)}}/>
+            )}
+          </td>
+        : <td>{description}</td>
     }
   </tr>
 
