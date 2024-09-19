@@ -16,6 +16,8 @@ import Split        from '@/content/Split.jsx'
 import Source       from '@/code/Source.jsx'
 import Example      from '@/code/Example.jsx'
 import Link         from '@/ui/Link.jsx'
+import { Heading }  from '@/page/Heading.jsx'
+import { Section }  from '@/page/Section.jsx'
 import { distinct } from '@/utils/Filter.jsx'
 import { LANGUAGE_EXTENSIONS } from '@/src/index.jsx'
 
@@ -29,173 +31,175 @@ highlighting.
   code={TextSrc}
 />
 
-## `code`
+<Heading title="Properties"/>
 
-The `code` property should be set to the source code you want to display.
-Vite allows you to import raw text from a file by adding the `?raw` extension
-to an import filename. Note that the `_examples` directory is ignored by the
-<Link to="/configuration/pages" code="pages"/> router so it's a good place to
-put examples.
+<Section code="code">
+  The `code` property should be set to the source code you want to display.
+  Vite allows you to import raw text from a file by adding the `?raw` extension
+  to an import filename. Note that the `_examples` directory is ignored by the
+  <Link to="/configuration/pages" code="pages"/> router so it's a good place to
+  put examples.
 
-<Example
-  Component={Load}
-  code={LoadSrc}
-/>
+  <Example
+    Component={Load}
+    code={LoadSrc}
+  />
+</Section>
 
-## `language`
+<Section code="language">
+  The `language`property should be used to define the language for the correct
+  syntax highlighting to be applied. The supported languages are shown below.
 
-The `language`property should be used to define the language for the correct
-syntax highlighting to be applied. The supported languages are shown below.
+  <table className="shaded striped celled">
+    <thead>
+      <tr>
+        <th>Language</th>
+      </tr>
+    </thead>
+    <tbody>
+      { Object.values(LANGUAGE_EXTENSIONS).filter( distinct() ).map(
+        language =>
+          <tr key={language}>
+            <td className="font-mono">{language}</td>
+          </tr>
+      )}
+    </tbody>
+  </table>
+</Section>
 
-<table className="shaded striped celled">
-  <thead>
-    <tr>
-      <th>Language</th>
-    </tr>
-  </thead>
-  <tbody>
-    { Object.values(LANGUAGE_EXTENSIONS).filter( distinct() ).map(
-      language =>
-        <tr key={language}>
-          <td className="font-mono">{language}</td>
-        </tr>
-    )}
-  </tbody>
-</table>
+<Section code="children">
+  If you define any child elements of the component (passed as the `children`
+  property) then it will be rendered using the <Link to="/content/split"
+  code="Split"/> component.  If the container is sufficiently wide then the
+  content will appear to the left of the code block, otherwise it will be
+  stacked above it.
 
-## `children`
+  <Example
+    Component={Children}
+    code={ChildrenSrc}
+  />
 
-If you define any child elements of the component (passed as the `children`
-property) then it will be rendered using the <Link to="/content/split"
-code="Split"/> component.  If the container is sufficiently wide then the
-content will appear to the left of the code block, otherwise it will be
-stacked above it.
+  Note that in the example above the two blocks will always appear stacked
+  because they're being displayed inside the smaller "Output" container.
+  Here's the output again.  If you've viewing on a large screen then try
+  resizing the browser window to see the stacking in effect.
 
-<Example
-  Component={Children}
-  code={ChildrenSrc}
-/>
+  <Children/>
+</Section>
 
-Note that in the example above the two blocks will always appear stacked
-because they're being displayed inside the smaller "Output" container.
-Here's the output again.  If you've viewing on a large screen then try
-resizing the browser window to see the stacking in effect.
+<Section code="caption">
+  The `caption` property allows you to add a caption to the source code.
 
-<Children/>
+  <Example
+    Component={Caption}
+    code={CaptionSrc}
+  />
+</Section>
 
-## `caption`
+<Section code="highlightLines">
+  The `highlightLines` property allows you to highlight one or more lines or
+  ranges of lines.  A single line is represented by a number, e.g. `3`.  A range
+  of lines is represented by a hyphenated pair of the start and end lines, e.g.
+  `6-7`. Multiple lines or lines ranges should be separated by commas,
+  e.g. `3,6-7`.
 
-The `caption` property allows you to add a caption to the source code.
+  <Example
+    Component={Highlight}
+    code={HighlightSrc}
+  />
+</Section>
 
-<Example
-  Component={Caption}
-  code={CaptionSrc}
-/>
+<Section code="undent">
+  The `undent` property can be used to remove whitespace from the start of lines,
+  effectively un-indenting it.  It should be set to the number of spaces you want
+  to remove from the start of each line.
 
-## `highlightLines`
+  <Example
+    Component={Undent}
+    code={UndentSrc}
+  />
+</Section>
 
-The `highlightLines` property allows you to highlight one or more lines or
-ranges of lines.  A single line is represented by a number, e.g. `3`.  A range
-of lines is represented by a hyphenated pair of the start and end lines, e.g.
-`6-7`. Multiple lines or lines ranges should be separated by commas,
-e.g. `3,6-7`.
+<Section code="expand">
+  The default behaviour is to display the first dozen or so lines of code along
+  with an "Expand" button to allow the user to expand it to view the entire
+  source code.  Add the `expand` property if you want it expanded by default.
+</Section>
 
-<Example
-  Component={Highlight}
-  code={HighlightSrc}
-/>
+<Section code="raw">
+  There are some special comment markers that can be added to the source code to
+  control what is and isn't displayed. The `raw` property can be added to prevent
+  any of the this pre-processing from being applied.
 
-## `undent`
+  A `/* START */` or `{/* START */}` comment line can be added to the source to
+  indicate the start of the code that you want to display.  Anything before this
+  comment will be ignored.
 
-The `undent` property can be used to remove whitespace from the start of lines,
-effectively un-indenting it.  It should be set to the number of spaces you want
-to remove from the start of each line.
+  An `/* END */` or `{/* END */}` comment line can be added to the source to
+  indicate the end of the code that you want to display.  Anything after this
+  comment will be ignored.
 
-<Example
-  Component={Undent}
-  code={UndentSrc}
-/>
+  A line can be prefixed with a `// PRETEND: `&nbsp;comment. The comment will be
+  removed and the remainder of the line will be displayed as part of the source
+  code.  This is useful when using the <Link to="/code/example" code="Example"/>
+  component which displays the source code of a file and renders the output
+  alongside it.
 
-## `expand`
+  This is shown in the example below.  To make this example work I have
+  to import the `Source` component from `@/code/Source.jsx`.  But I don't want
+  to show that to users because they need to import it from `@abw/badger-website`
+  instead.
 
-The default behaviour is to display the first dozen or so lines of code along
-with an "Expand" button to allow the user to expand it to view the entire
-source code.  Add the `expand` property if you want it expanded by default.
+  So I add a `/* START */` comment on line 2 so that line 1 isn't displayed.  I
+  then add a `// PRETEND: `&nbsp;comment to line 4 to show them what I want them to
+  see.  As far as Javascript/React is concerned, lines 2 and 4 are ignored
+  because they're commented out. But when the source code is displayed we see
+  that lines 3 and 4 in the raw source appear to be lines 1 and 2 in the
+  processed output.
 
-## `raw`
+  <Split>
+    <div>
+      <h4 className="mar-v-1 weight-500">Raw Source</h4>
+      <Source
+        code={TextSrc}
+        highlightLines="2,4"
+        expand
+        raw
+      />
+    </div>
+    <div>
+      <h4 className="mar-v-1 weight-500">Processed Output</h4>
+      <Source
+        code={TextSrc}
+        highlightLines="2"
+        expand
+      />
+    </div>
+  </Split>
 
-There are some special comment markers that can be added to the source code to
-control what is and isn't displayed. The `raw` property can be added to prevent
-any of the this pre-processing from being applied.
+  Here's another example using `{/* START */}` and `{/* END */}` markers to
+  extract a section of the example.  Note that we have to use JSX comments
+  (with the extra curly braces) here.  It also demonstrates use of the `undent`
+  option which is set to `4` in the "Processed Output" below, removing the
+  4 space characters at the start of each line.
 
-A `/* START */` or `{/* START */}` comment line can be added to the source to
-indicate the start of the code that you want to display.  Anything before this
-comment will be ignored.
-
-An `/* END */` or `{/* END */}` comment line can be added to the source to
-indicate the end of the code that you want to display.  Anything after this
-comment will be ignored.
-
-A line can be prefixed with a `// PRETEND: `&nbsp;comment. The comment will be
-removed and the remainder of the line will be displayed as part of the source
-code.  This is useful when using the <Link to="/code/example" code="Example"/>
-component which displays the source code of a file and renders the output
-alongside it.
-
-This is shown in the example below.  To make this example work I have
-to import the `Source` component from `@/code/Source.jsx`.  But I don't want
-to show that to users because they need to import it from `@abw/badger-website`
-instead.
-
-So I add a `/* START */` comment on line 2 so that line 1 isn't displayed.  I
-then add a `// PRETEND: `&nbsp;comment to line 4 to show them what I want them to
-see.  As far as Javascript/React is concerned, lines 2 and 4 are ignored
-because they're commented out. But when the source code is displayed we see
-that lines 3 and 4 in the raw source appear to be lines 1 and 2 in the
-processed output.
-
-<Split>
-  <div>
-    <h4 className="mar-v-1 weight-500">Raw Source</h4>
-    <Source
-      code={TextSrc}
-      highlightLines="2,4"
-      expand
-      raw
-    />
-  </div>
-  <div>
-    <h4 className="mar-v-1 weight-500">Processed Output</h4>
-    <Source
-      code={TextSrc}
-      highlightLines="2"
-      expand
-    />
-  </div>
-</Split>
-
-Here's another example using `{/* START */}` and `{/* END */}` markers to
-extract a section of the example.  Note that we have to use JSX comments
-(with the extra curly braces) here.  It also demonstrates use of the `undent`
-option which is set to `4` in the "Processed Output" below, removing the
-4 space characters at the start of each line.
-
-<Split>
-  <div>
-    <h4 className="mar-v-1 weight-500">Raw Source</h4>
-    <Source
-      code={ExtractSrc}
-      highlightLines="6,11"
-      expand
-      raw
-    />
-  </div>
-  <div>
-    <h4 className="mar-v-1 weight-500">Processed Output</h4>
-    <Source
-      code={ExtractSrc}
-      undent={4}
-      expand
-    />
-  </div>
-</Split>
+  <Split>
+    <div>
+      <h4 className="mar-v-1 weight-500">Raw Source</h4>
+      <Source
+        code={ExtractSrc}
+        highlightLines="6,11"
+        expand
+        raw
+      />
+    </div>
+    <div>
+      <h4 className="mar-v-1 weight-500">Processed Output</h4>
+      <Source
+        code={ExtractSrc}
+        undent={4}
+        expand
+      />
+    </div>
+  </Split>
+</Section>

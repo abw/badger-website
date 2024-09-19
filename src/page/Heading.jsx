@@ -11,7 +11,7 @@ export const Heading = ({
   text=code,
   title=text,
   site=useSite(),
-  upIcon=site.upIcon||'arrow-up',
+  linkUpIcon=site.linkUpIcon||'arrow-up',
   linkUp=site.linkUp,
 }) => {
   const { addToc } = usePage()
@@ -35,7 +35,7 @@ export const Heading = ({
       { Boolean(linkUp) &&
         <Icon
           className="page-heading-scroll-up"
-          name={upIcon}
+          name={linkUpIcon}
           size="medium"
           onClick={scrollToTop}
         />

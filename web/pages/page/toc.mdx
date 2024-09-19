@@ -1,0 +1,17 @@
+import Example  from '@/code/Example.jsx'
+import TocComp from './_examples/toc.jsx'
+import TocCode from './_examples/toc.jsx?raw'
+import { SectionLink, HeadingLink } from '@/web/site/Links.jsx'
+
+# PageToc
+
+The `PageToc` component can be used to render a table of contents for the page.
+It will contain links to any <HeadingLink/> and <SectionLink/> elements in the
+page.
+
+<Example
+  Component={TocComp}
+  code={TocCode}
+  highlightLines="2,7"
+  expand
+/>

@@ -6,7 +6,7 @@ const TocTitle = ({ item }) =>
   <h4
     key={item.id}
     onClick={TocClick(item)}
-    className={classes({ code: item.code })}
+    className={classes({ 'font-mono': item.code })}
   >
     {item.code || item.title}
   </h4>

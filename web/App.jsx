@@ -40,6 +40,7 @@ export const App = () =>
     examples={examples}
     examplesSrc={examplesSrc}
     linkUp
+    // linkUpIcon='angle-up'
   />
 
 export default App

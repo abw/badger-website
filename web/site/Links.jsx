@@ -1,6 +1,15 @@
 import React from 'react'
 import { Link } from '@/ui/Link.jsx'
 
+export const HeadingLink = () =>
+  <Link to="/page/heading" code="Heading"/>
+
+export const SectionLink = () =>
+  <Link to="/page/section" code="Section"/>
+
+export const PageTocLink = () =>
+  <Link to="/page/toc" code="PageToc"/>
+
 export const BadgerCSSLink = ({ path='', text='Badger CSS' }) =>
   <Link href={`https://badgerpower.com/badger-css/${path}`} text={text} targetBlank />
 

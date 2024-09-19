@@ -1,0 +1,17 @@
+import Example  from '@/code/Example.jsx'
+import HeadComp from './_examples/heading.jsx'
+import HeadCode from './_examples/heading.jsx?raw'
+import { PageTocLink } from '@/web/site/Links.jsx'
+
+# Heading
+
+The `Heading` component can be used to render a heading block.  This also
+inserts an entry in the table of contents which will be displayed in the
+sidebar and any <PageTocLink/> included in the page.
+
+<Example
+  Component={HeadComp}
+  code={HeadCode}
+  highlightLines="2,7,11"
+  expand
+/>

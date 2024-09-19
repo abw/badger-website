@@ -1,5 +1,6 @@
 import Snippet from '@/code/Snippet.jsx'
 import Link from '@/ui/Link.jsx'
+import { Heading } from '@/page/Heading.jsx'
 import {
   BadgerCSSLink, BadgerFormLink, BadgerReactUILink, ReactNightAndDayLink,
   ViteLink
@@ -7,7 +8,7 @@ import {
 
 # Basic setup
 
-## Site configuration
+<Heading title="Site configuration"/>
 
 <Snippet
   file="config/site.js"
@@ -18,7 +19,7 @@ import {
   it's in a `config/site.js` file underneath your main `src` source directory.
 </Snippet>
 
-## Sidebar configuration
+<Heading title="Sidebar configuration"/>
 
 <Snippet
   file="config/sidebar.js"
@@ -30,7 +31,7 @@ import {
 </Snippet>
 
 
-## Main application
+<Heading title="Main application"/>
 
 <Snippet
   file="App.jsx"
@@ -50,7 +51,7 @@ import {
   There are lots of additional properties you can pass in here.  More on that later.
 </Snippet>
 
-## Styling
+<Heading title="Styling"/>
 
 The main `App.jsx` component also imports a stylesheet for the site.  In the
 example above this is `./styles/my-website.scss`, but obviously you can call
@@ -85,7 +86,7 @@ the styles for <ReactNightAndDayLink/> for the light/dark theme switcher.
   styles for Badger Website.
 </Snippet>
 
-## Create a Page
+<Heading title="Create a Page"/>
 
 
 <Snippet
