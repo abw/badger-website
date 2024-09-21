@@ -1,6 +1,5 @@
 import PropsTable from '@/src/ui/PropsTable.jsx'
 import Snippet from '@/code/Snippet.jsx'
-import { Heading } from '@/page/Heading.jsx'
 
 # `sidebar`
 
@@ -13,7 +12,9 @@ to appear in the sidebar.
   highlightLines="32"
 />
 
-<Heading title="Properties"/>
+## Properties
+
+The following properties can be defined.
 
 <PropsTable
   items={[
@@ -24,7 +25,7 @@ to appear in the sidebar.
   ]}
 />
 
-<Heading title="Sections"/>
+## Sections
 
 Each element in the `sections` array should be an object.  It can contain a
 `title`, a `menu` and/or some additional `content`.  The `revealable` property
@@ -41,7 +42,7 @@ default for pages whose paths begin with that prefix.
   ]}
 />
 
-<Heading title="Menu Items"/>
+## Menu Items
 
 Each item in a `menu` should be an object containing a `to` property denoting
 the path to the page and a `text` property for the corresponding text to be

@@ -4,8 +4,6 @@ import Link        from '@/ui/Link.jsx'
 import Hello       from './_examples/Hello.jsx'
 import HelloSrc    from './_examples/Hello.jsx?raw'
 import HelloHTML   from './_examples/Hello.html?raw'
-import { Heading } from '@/page/Heading.jsx'
-import { Section } from '@/page/Section.jsx'
 
 # `Example`
 
@@ -39,89 +37,88 @@ Here's how the above example is rendered.
   highlightLines="5"
 />
 
-<Heading title="Properties"/>
+## Properties
 
-<Section code="html">
-  <Snippet
-    file="code/example-html.jsx"
-    highlightLines="2,7"
-    expand
-  >
-    You can include HTML files as examples but they're handled slightly
-    differently.  In this case you only need to load the raw source text and
-    then pass it to the `Example` component as the `html` property.
-  </Snippet>
+### `html`
 
-  Here's how that's rendered.
+<Snippet
+  file="code/example-html.jsx"
+  highlightLines="2,7"
+  expand
+>
+  You can include HTML files as examples but they're handled slightly
+  differently.  In this case you only need to load the raw source text and
+  then pass it to the `Example` component as the `html` property.
+</Snippet>
 
-  <Example
-    html={HelloHTML}
-    caption="Hello World!"
-  />
-</Section>
+Here's how that's rendered.
+
+<Example
+  html={HelloHTML}
+  caption="Hello World!"
+/>
+
+### `file`
+
+You can also load examples from a central directory and reference them
+using the `file` property, similar to the way that the <Link
+to="/code/snippet" code="Snippet"/> component works.
+
+<Snippet
+  file="config/examples.jsx"
+  highlightLines="1-6,8-14,18-19"
+  expand
+>
+  To do this you first need to tell the
+  <Link to="/configuration/site-provider" code="SiteProvider"/> how to load
+  both the `examples` (code components) and the `examplesSrc` (source code
+  for those components).  Both of these are done using Vite's
+  `import.meta.glob` function.  Add something like this to your main
+  `App.jsx`.
+</Snippet>
+
+<Snippet
+  file="config/examplesPrefix.jsx"
+  highlightLines="2,9,20"
+  expand
+>
+  The example above assumes that your example files are located in the
+  `./examples` directory relative to the `App.jsx`. If they're located
+  somewhere else then you should change the glob pattern that you pass to
+  `import.meta.glob` and define the `matchExamplesPrefix` property as a regular
+  expression to remove the prefix.
+</Snippet>
+
+<Snippet
+  file="code/example-file.jsx"
+  highlightLines="6"
+  expand
+>
+  You can then display an example using the `file` property to specify the
+  location relative to your `./examples` directory.  As with snippets, the
+  language for syntax highlighting will be determined from the file extension.
+  If you don't have a file extension or it isn't one of the pre-defined
+  extensions then you can use the `language` property to set it.
+</Snippet>
 
 
-<Section code="file">
-  You can also load examples from a central directory and reference them
-  using the `file` property, similar to the way that the <Link
-  to="/code/snippet" code="Snippet"/> component works.
+This is how the above example is rendered.
 
-  <Snippet
-    file="config/examples.jsx"
-    highlightLines="1-6,8-14,18-19"
-    expand
-  >
-    To do this you first need to tell the
-    <Link to="/configuration/site-provider" code="SiteProvider"/> how to load
-    both the `examples` (code components) and the `examplesSrc` (source code
-    for those components).  Both of these are done using Vite's
-    `import.meta.glob` function.  Add something like this to your main
-    `App.jsx`.
-  </Snippet>
+<Example
+  file="hello.jsx"
+  caption="Hello World!"
+/>
 
-  <Snippet
-    file="config/examplesPrefix.jsx"
-    highlightLines="2,9,20"
-    expand
-  >
-    The example above assumes that your example files are located in the
-    `./examples` directory relative to the `App.jsx`. If they're located
-    somewhere else then you should change the glob pattern that you pass to
-    `import.meta.glob` and define the `matchExamplesPrefix` property as a regular
-    expression to remove the prefix.
-  </Snippet>
+MDX examples can also be loaded.
 
-  <Snippet
-    file="code/example-file.jsx"
-    highlightLines="6"
-    expand
-  >
-    You can then display an example using the `file` property to specify the
-    location relative to your `./examples` directory.  As with snippets, the
-    language for syntax highlighting will be determined from the file extension.
-    If you don't have a file extension or it isn't one of the pre-defined
-    extensions then you can use the `language` property to set it.
-  </Snippet>
+<Example
+  file="hello.mdx"
+  caption="Hello World!"
+/>
 
+HTML examples can also be loaded.
 
-  This is how the above example is rendered.
-
-  <Example
-    file="hello.jsx"
-    caption="Hello World!"
-  />
-
-  MDX examples can also be loaded.
-
-  <Example
-    file="hello.mdx"
-    caption="Hello World!"
-  />
-
-  HTML examples can also be loaded.
-
-  <Example
-    file="hello.html"
-    caption="Hello World!"
-  />
-</Section>
+<Example
+  file="hello.html"
+  caption="Hello World!"
+/>

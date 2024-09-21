@@ -1,5 +1,5 @@
 import React from 'react'
-import Section from '@/page/Section.jsx'
+import SubSection from '@/page/SubSection.jsx'
 import Heading from '@/page/Heading.jsx'
 import Toc from '@/page/Toc.jsx'
 
@@ -15,7 +15,7 @@ import Toc from '@/page/Toc.jsx'
 
 <Heading text="Part the First"/>
 
-<Section title="Section One">
+<SubSection title="Section One">
   This is section One
 
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt optio
@@ -41,26 +41,39 @@ import Toc from '@/page/Toc.jsx'
   ipsam exercitationem dolorem cupiditate illo reiciendis est quaerat
   accusamus. In dicta blanditiis quis est fugiat asperiores. Quae recusandae
   sit accusantium?
-</Section>
+</SubSection>
 
 <Heading code="Part the Second"/>
 
-<Section title="Section Two">
+<SubSection title="Section Two">
   This is section Two
-</Section>
+</SubSection>
 
-<Section code="Section Three">
+<SubSection code="Section Three">
   This is section Two
-</Section>
+</SubSection>
 
 ## A New Section
 
 This section was adding using in markdown as `## A New Section`
 
+### The First Sub-Section
+
+This sub-heading was adding using in markdown as `###`
+
+### The Second Sub-Section
+
+This sub-heading was adding using in markdown as `###`
+
 ## `SomeCode`
 
 This section was adding using in markdown as code
 
-## `Text and SomeCode`
+## Text and `SomeCode`
 
 This section was adding using in markdown as code
+
+### Another `mixed` title with **bold** and *italic*
+
+Woot!  We can now mix markup into titles and it appears correctly
+rendered in the h2/h3, sidebar toc and page toc

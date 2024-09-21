@@ -7,9 +7,6 @@ import ChildrenComp from './_examples/SnippetChildren.jsx'
 import ChildrenSrc  from './_examples/SnippetChildren.jsx?raw'
 import OutputComp   from './_examples/SnippetOutput.jsx'
 import OutputSrc    from './_examples/SnippetOutput.jsx?raw'
-import { Heading }  from '@/page/Heading.jsx'
-import { Section }  from '@/page/Section.jsx'
-
 import { LANGUAGE_EXTENSIONS } from '@/src/index.jsx'
 
 # Snippets
@@ -55,65 +52,65 @@ Any other properties set on the `Snippet` component will be forwarded to the
   code={SnippetSrc}
 />
 
-<Heading title="Properties"/>
+## Properties
 
-<Section code="language">
-  The file extension will be used to determine the language type so that the
-  correct syntax highlighting can be applied.  If the file doesn't have a file
-  extension or the correct language can't be determined correctly from it then
-  you should add the `language` property to specify it.
+### `language`
 
-  The supported languages and their corresponding file extensions are shown below.
+The file extension will be used to determine the language type so that the
+correct syntax highlighting can be applied.  If the file doesn't have a file
+extension or the correct language can't be determined correctly from it then
+you should add the `language` property to specify it.
 
-  <table className="shaded striped celled">
-    <thead>
-      <tr>
-        <th>File Extension</th>
-        <th>Language</th>
-      </tr>
-    </thead>
-    <tbody>
-      { Object.entries(LANGUAGE_EXTENSIONS).map(
-        ([ext, language]) =>
-          <tr key={ext}>
-            <td className="font-mono">.{ext}</td>
-            <td className="font-mono">{language}</td>
-          </tr>
-      )}
-    </tbody>
-  </table>
-</Section>
+The supported languages and their corresponding file extensions are shown below.
 
-<Section code="children">
-  If you define any child elements of the component (passed as the `children`
-  property) then it will be rendered using the <Link to="/content/split"
-  code="Split"/> component.  If the container is sufficiently wide then the
-  content will appear to the left of the code block, otherwise it will be
-  stacked above it.
+<table className="shaded striped celled">
+  <thead>
+    <tr>
+      <th>File Extension</th>
+      <th>Language</th>
+    </tr>
+  </thead>
+  <tbody>
+    { Object.entries(LANGUAGE_EXTENSIONS).map(
+      ([ext, language]) =>
+        <tr key={ext}>
+          <td className="font-mono">.{ext}</td>
+          <td className="font-mono">{language}</td>
+        </tr>
+    )}
+  </tbody>
+</table>
 
-  <Example
-    Component={ChildrenComp}
-    code={ChildrenSrc}
-  />
+### `children`
 
-  Note that in the example above the two blocks will always appear stacked
-  because they're being displayed inside the smaller "Output" container.
-  Here's the output again.  If you've viewing on a large screen then try
-  resizing the browser window to see the stacking in effect.
+If you define any child elements of the component (passed as the `children`
+property) then it will be rendered using the <Link to="/content/split"
+code="Split"/> component.  If the container is sufficiently wide then the
+content will appear to the left of the code block, otherwise it will be
+stacked above it.
 
-  <ChildrenComp/>
-</Section>
+<Example
+  Component={ChildrenComp}
+  code={ChildrenSrc}
+/>
 
-<Section code="output">
-  If your snippet file is HTML you can add the `output` option to see the
-  rendered HTML along with the source.
+Note that in the example above the two blocks will always appear stacked
+because they're being displayed inside the smaller "Output" container.
+Here's the output again.  If you've viewing on a large screen then try
+resizing the browser window to see the stacking in effect.
 
-  For non-HTML examples you should use the <Link to="/code/example" code="Example"/>
-  component.
+<ChildrenComp/>
 
-  <Example
-    Component={OutputComp}
-    code={OutputSrc}
-  />
-</Section>
+### `output`
+
+If your snippet file is HTML you can add the `output` option to see the
+rendered HTML along with the source.
+
+For non-HTML examples you should use the <Link to="/code/example" code="Example"/>
+component.
+
+<Example
+  Component={OutputComp}
+  code={OutputSrc}
+/>
 

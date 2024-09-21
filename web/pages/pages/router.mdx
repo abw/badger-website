@@ -1,6 +1,5 @@
 import Snippet from '@/code/Snippet.jsx'
 import Link from '@/ui/Link.jsx'
-import { Heading } from '@/page/Heading.jsx'
 
 # Page Router
 
@@ -9,18 +8,18 @@ directory.  You can configure it with the <Link to="/configuration/pages"
 code="pages"/> configuration option for the <Link
 to="/configuration/site-provider" code="SiteProvider"/>.
 
-<Heading title="File Types"/>
+### File Types
 
 Pages can be JSX files with an extension of `.jsx` or `.tsx`, or MDX files
 with an extension of `.mdx`.
 
-<Heading title="File Routes"/>
+### File Routes
 
 The route for a file will be the filename without any file extension.  For
 example an `about.jsx` file would have a route of `/about`, or a
 `getting-started/installation.mdx` file would have a route of `/getting-started/installation`.
 
-<Heading title="Index Pages"/>
+### Index Pages
 
 An index page (`index.jsx`, `index.tsx` or `index.mdx`) will have a route
 created which does **NOT** include the filename.  For example, an `index.mdx`
@@ -28,7 +27,7 @@ file would simply have a corresponding route of `/`.  The same applies for
 index files in directories.  For example, a `/getting-started/index.jsx` file
 would have a route of `/getting-started/`.
 
-<Heading title="Section Layouts"/>
+### Section Layouts
 
 A directory can contain a `_layout.jsx` file which defines a shared layout
 for all the files under that directory.  It should contain an `<Outlet/>`
