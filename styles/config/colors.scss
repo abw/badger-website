@@ -96,5 +96,14 @@
   --footer-hover:       var(--grey40-70);
 
   // page heading/section
-  --heading-background: var(--grey-25);
+  --heading-background: var(--grey-20);
+  --up-background:      var(--grey-15);
+  --up-color:           var(--grey-60);
+  --up-hover-background:var(--grey-5);
+  --up-hover-color:     var(--grey-95);
+
+  // table of contents
+  --toc-background:     var(--grey-5);
+  --toc-border:         var(--grey-15);
+
 }
