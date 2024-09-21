@@ -1,4 +1,4 @@
-import { Section } from '@/page/Section.jsx'
+import Section from '@/page/Section.jsx'
 /* START */
 import React from 'react'
 // PRETEND: import { Section } from '@abw/badger-website'

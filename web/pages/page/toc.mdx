@@ -1,13 +1,16 @@
 import Example  from '@/code/Example.jsx'
 import TocComp from './_examples/toc.jsx'
 import TocCode from './_examples/toc.jsx?raw'
-import { SectionLink, HeadingLink } from '@/web/site/Links.jsx'
+import { HeadingLink, SubHeadingLink } from '@/web/site/Links.jsx'
 
 # PageToc
 
 The `PageToc` component can be used to render a table of contents for the page.
-It will contain links to any <HeadingLink/> and <SectionLink/> elements in the
-page.
+It will contain links to any <HeadingLink/> and <SubHeadingLink/> elements in
+the page.
+
+When using MDX the <HeadingLink/> and <SubHeadingLink/> components are
+inserted for level two (`##`) and level three (`###`) headings.
 
 <Example
   Component={TocComp}

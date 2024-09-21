@@ -42,6 +42,13 @@
   section.page-section {
     margin-top: 1rem;
     margin-bottom: 2rem;
+    & > h2:first-child {
+      margin-bottom: 1.5rem;
+    }
+  }
+  section.page-sub-section {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
     & > h3:first-child {
       margin-bottom: 0.5rem;
     }

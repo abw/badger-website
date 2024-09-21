@@ -71,7 +71,9 @@ const PageContent = {
   revealable: true,
   menu: [
     { to: '/page/heading',          code: 'Heading' },
+    { to: '/page/sub-heading',      code: 'SubHeading' },
     { to: '/page/section',          code: 'Section' },
+    { to: '/page/sub-section',      code: 'SubSection' },
     { to: '/page/toc',              code: 'PageToc' },
   ]
 }
@@ -100,16 +102,19 @@ export const Code = {
   ]
 }
 
-const TestSection = {
+const DevTests = {
   title: 'Dev Tests',
-  openPath: '/section2/',
+  openPath: '/dev-tests/',
   revealable: true,
   menu: [
-    { to: '/section2/', code: 'Index', exact: true },
-    { to: '/section2/biz', code: 'Biz' },
-    { to: '/section2/baz', code: 'Baz' },
-    { to: '/section2/boz', code: 'Boz' },
-    { to: '/section2/hello', code: 'Hello' },
+    { to: '/dev-tests/',                 text: 'Introduction', exact: true },
+    { to: '/dev-tests/heading-section',  text: 'Heading/Section' },
+    { to: '/dev-tests/code-blocks',      text: 'Code Blocks' },
+    { to: '/dev-tests/example-file',     text: 'Example File' },
+    { to: '/dev-tests/theme-toggle',     text: 'Theme Toggle' },
+    { to: '/dev-tests/subdir',           text: 'Sub-Directory' },
+    { to: '/dev-tests/toc',              text: 'MDX Toc' },
+    /*
     {
       title: 'Nested Menu #1',
       menu: [
@@ -117,6 +122,7 @@ const TestSection = {
         { to: '/debug/properties/values',       code: 'values'      },
       ]
     },
+    */
     /*
     {
       title: 'Nested Menu #2',
@@ -149,7 +155,7 @@ export const Sidebar = {
     Code,
     ...(
       import.meta.env.DEV
-        ? [ TestSection ]
+        ? [ DevTests ]
         : [ ]
     )
   ]

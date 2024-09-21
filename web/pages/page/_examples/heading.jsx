@@ -1,4 +1,4 @@
-import { Heading } from '@/page/Heading.jsx'
+import Heading from '@/page/Heading.jsx'
 /* START */
 import React from 'react'
 // PRETEND: import { Heading } from '@abw/badger-website'
@@ -6,11 +6,11 @@ import React from 'react'
 const PageWithHeadings = () =>
   <>
     <h1>Page With Heading</h1>
-    <Heading title="First Heading"/>
+    <Heading text="First Heading"/>
     <p>
       This is some text
     </p>
-    <Heading code="SomeCode"/>
+    <Heading code="Second Heading as Code"/>
     <p>
       This is some text
     </p>

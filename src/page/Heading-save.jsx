@@ -1,16 +1,30 @@
-import React from 'react'
-import useToc from '@/toc/useToc.jsx'
+import React, { useEffect, useRef } from 'react'
+import { usePage } from './Context.jsx'
+import { idSafe } from '@/utils/Misc.jsx'
 import { classes, Icon } from '@abw/badger-react-ui'
 import { scrollToTop } from '@/utils/Scroll.jsx'
 import { useSite } from '@/site/Context.jsx'
 
 export const Heading = ({
+  id,
+  code,
+  text=code,
+  title=text,
   site=useSite(),
   linkUpIcon=site.linkUpIcon||'arrow-up',
   linkUp=site.linkUp,
-  ...props
 }) => {
-  const { id, ref, code, title } = useToc({ ...props, heading: true })
+
+  const { addToc } = usePage()
+  const ref = useRef()
+  id ||= idSafe(code || title)
+
+  useEffect(
+    () => {
+      addToc({ id, code, title, ref, heading: true })
+    },
+    [title]
+  )
 
   return (
     <h2

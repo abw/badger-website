@@ -4,6 +4,9 @@ import { Link } from '@/ui/Link.jsx'
 export const HeadingLink = () =>
   <Link to="/page/heading" code="Heading"/>
 
+export const SubHeadingLink = () =>
+  <Link to="/page/sub-heading" code="SubHeading"/>
+
 export const SectionLink = () =>
   <Link to="/page/section" code="Section"/>
 

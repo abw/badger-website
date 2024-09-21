@@ -1,15 +1,14 @@
 import Example  from '@/code/Example.jsx'
 import SectComp from './_examples/section.jsx'
 import SectCode from './_examples/section.jsx?raw'
-import { PageTocLink } from '@/web/site/Links.jsx'
+import { HeadingLink } from '@/web/site/Links.jsx'
 
 # Section
 
-The `Section` component can be used to render a page section.  It renders a
-heading and inserts an entry in the table of contents which will be displayed
-in the sidebar and any <PageTocLink/> included in the page.
+The `Section` component can be used to render a page section.
 
-The child elements will be rendered inside the `section` element.
+It renders a `section` HTML element containing a <HeadingLink/> component
+and any children.
 
 <Example
   Component={SectComp}

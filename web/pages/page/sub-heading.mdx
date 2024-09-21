@@ -1,13 +1,13 @@
 import Example  from '@/code/Example.jsx'
-import HeadComp from './_examples/heading.jsx'
-import HeadCode from './_examples/heading.jsx?raw'
-import MdxComp from './_examples/heading.mdx'
-import MdxCode from './_examples/heading.mdx?raw'
+import SubComp from './_examples/subheading.jsx'
+import SubCode from './_examples/subheading.jsx?raw'
+import MdxComp from './_examples/subheading.mdx'
+import MdxCode from './_examples/subheading.mdx?raw'
 import { PageTocLink } from '@/web/site/Links.jsx'
 
-# Heading
+# SubHeading
 
-The `Heading` component can be used to render a heading block as an `h2`
+The `SubHeading` component can be used to render a heading block as an `h3`
 element.
 
 It accepts a `text` property for the title text (or `title` as an alias for
@@ -18,14 +18,14 @@ It also inserts a heading entry in the table of contents which will be
 displayed in the sidebar and any <PageTocLink/> included in the page.
 
 <Example
-  Component={HeadComp}
-  code={HeadCode}
+  Component={SubComp}
+  code={SubCode}
   highlightLines="2,7,11"
   expand
 />
 
-When using MDX this element is rendered for second level headings indicated
-by the `##` prefix on a line.
+When using MDX this element is rendered for third level headings indicated
+by the `###` prefix on a line.
 
 <Example
   Component={MdxComp}
@@ -33,5 +33,3 @@ by the `##` prefix on a line.
   highlightLines="3,7"
   expand
 />
-
-

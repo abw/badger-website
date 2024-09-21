@@ -1,5 +1,6 @@
 export * from './Context.jsx'
 export * from './Heading.jsx'
+export * from './SubHeading.jsx'
 export * from './Page.jsx'
 export * from './PrevNext.jsx'
 export * from './PrevNextArrows.jsx'
