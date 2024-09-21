@@ -13,6 +13,9 @@ export const SectionLink = () =>
 export const PageTocLink = () =>
   <Link to="/page/toc" code="PageToc"/>
 
+export const BadgerPowerLink = ({ path='', text='Badger Power' }) =>
+  <Link href={`https://badgerpower.com/${path}`} text={text} targetBlank />
+
 export const BadgerCSSLink = ({ path='', text='Badger CSS' }) =>
   <Link href={`https://badgerpower.com/badger-css/${path}`} text={text} targetBlank />
 
