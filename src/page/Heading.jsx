@@ -10,7 +10,7 @@ export const Heading = ({
   linkUp=site.linkUp,
   ...props
 }) => {
-  const { id, ref, code, title } = useToc({ ...props, heading: true })
+  const { id, ref, code, title, children } = useToc({ ...props, heading: true })
 
   return (
     <h2
@@ -18,7 +18,10 @@ export const Heading = ({
       ref={ref}
       className={ classes('page-heading flex space middle', { 'font-mono': code }) }
     >
-      {title}
+      { children
+        ? <span>{children}</span>
+        : title
+      }
       { Boolean(linkUp) &&
         <Icon
           className="page-heading-scroll-up"

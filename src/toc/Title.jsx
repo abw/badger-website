@@ -8,7 +8,10 @@ const TocTitle = ({ item }) =>
     onClick={TocClick(item)}
     className={classes({ 'font-mono': item.code })}
   >
-    {item.code || item.title}
+    { item.children
+      ? <span>{item.children}</span>
+      : (item.code || item.title)
+    }
   </h4>
 
 

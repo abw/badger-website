@@ -20,7 +20,7 @@ const useToc = ({
     [title]
   )
 
-  return { id, code, title, ref }
+  return { id, code, title, ref, children: props.children }
 }
 
 export default useToc

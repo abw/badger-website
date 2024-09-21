@@ -8,7 +8,10 @@ const TocLink = ({ item }) =>
     onClick={TocClick(item)}
     className={classes('item', { code: item.code })}
   >
-    {item.code || item.title}
+    { item.children
+      ? <span>{item.children}</span>
+      : (item.code || item.title)
+    }
   </div>
 
 export default TocLink
