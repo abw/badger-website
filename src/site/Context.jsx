@@ -90,7 +90,7 @@ const Context = ({
       })
     )
 
-  if (site.debugPages) {
+  if (props.debugPages) {
     console.log(`menuItems: `, menuItems)
   }
 

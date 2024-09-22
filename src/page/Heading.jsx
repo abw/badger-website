@@ -7,7 +7,7 @@ import { useSite } from '@/site/Context.jsx'
 export const Heading = ({
   site=useSite(),
   linkUpIcon=site.linkUpIcon||'arrow-up',
-  linkUp=site.linkUp,
+  linkUp=site.linkUp??true,
   ...props
 }) => {
   const { id, ref, code, title, children } = useToc({ ...props, heading: true })

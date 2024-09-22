@@ -1,6 +1,30 @@
 import React from 'react'
 import { Link } from '@/ui/Link.jsx'
 
+export const AuthorLink = () =>
+  <Link to="/site/author" code="Author"/>
+
+export const BadgerPowerLink = () =>
+  <Link to="/site/badgerpower" code="BadgerPower"/>
+
+export const BadgerPoweredLink = () =>
+  <Link to="/site/badgerpowered" code="BadgerPowered"/>
+
+export const CopyrightLink = () =>
+  <Link to="/site/copyright" code="Copyright"/>
+
+export const FooterLink = () =>
+  <Link to="/site/footer" code="Footer"/>
+
+export const HeaderLink = () =>
+  <Link to="/site/header" code="Header"/>
+
+export const ReleaseLink = () =>
+  <Link to="/site/release" code="Release"/>
+
+export const RepositoryLink = () =>
+  <Link to="/site/repository" code="Repository"/>
+
 export const HeadingLink = () =>
   <Link to="/page/heading" code="Heading"/>
 
@@ -13,7 +37,7 @@ export const SectionLink = () =>
 export const PageTocLink = () =>
   <Link to="/page/toc" code="PageToc"/>
 
-export const BadgerPowerLink = ({ path='', text='Badger Power' }) =>
+export const BadgerPowerSiteLink = ({ path='', text='Badger Power' }) =>
   <Link href={`https://badgerpower.com/${path}`} text={text} targetBlank />
 
 export const BadgerCSSLink = ({ path='', text='Badger CSS' }) =>

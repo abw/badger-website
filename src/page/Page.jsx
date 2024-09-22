@@ -7,7 +7,14 @@ import { SiteConsumer } from '@/site/Context.jsx'
 import { PageProvider } from './Context.jsx'
 
 export const Page = SiteConsumer(
-  ({ site, isLayout, setPage, page={}, Component }) => {
+  ({
+    isLayout,
+    setPage,
+    page={},
+    Component,
+    prevNext=true,
+    prevNextArrows=false,
+  }) => {
     React.useEffect(
       () => {
         if (! isLayout) {
@@ -19,14 +26,14 @@ export const Page = SiteConsumer(
     )
     return (
       <PageProvider page={page}>
-        { (site.prevNextArrows && (page.prevNext ?? true)) &&
+        { (prevNextArrows && (page.prevNext ?? true)) &&
           <PrevNextArrows/>
         }
         <div id="page">
           <Title/>
           <Intro/>
           <Component/>
-          { (page.prevNext ?? true) &&
+          { (prevNext && (page.prevNext ?? true)) &&
             <PrevNext/>
           }
         </div>

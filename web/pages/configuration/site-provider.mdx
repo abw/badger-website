@@ -1,6 +1,10 @@
 import Snippet from '@/code/Snippet.jsx'
 import PropsTable from '@/ui/PropsTable.jsx'
 import Link from '@/ui/Link.jsx'
+import {
+  CopyrightLink, AuthorLink, BadgerPowerLink, BadgerPoweredLink,
+  HeaderLink, FooterLink, ReleaseLink, RepositoryLink
+} from '@/web/site/Links.jsx'
 
 # `SiteProvider`
 
@@ -15,16 +19,101 @@ import Link from '@/ui/Link.jsx'
 
 ## Properties
 
-{/* The properties for {metadata.titleCode} */}
+### Site Configuration
+
+These are the properties for `SiteProvider` that you'll want to define in
+most cases.
 
 <PropsTable
   items={[
-    ['pages',   '{ }', <>Mapping of page paths to imported components - see <Link to="/configuration/pages" code="pages"/></>],
-    ['site',    '{ }', <>Site configuration - see <Link to="/configuration/site" code="site"/></>],
-    ['sidebar', '{ }', <>Sidebar configuration - see <Link to="/configuration/sidebar" code="sidebar"/></>],
-    ['theme',   '{ }', <>Theme configuration for Badger React UI - see <Link to="/configuration/theme" code="theme"/></>],
+    ['pages',       '{ }', <>Mapping of page paths to imported components - see <Link to="/configuration/pages" code="pages"/></>],
+    ['site',        '{ }', <>Site configuration - see <Link to="/configuration/site" code="site"/></>],
+    ['sidebar',     '{ }', <>Sidebar configuration - see <Link to="/configuration/sidebar" code="sidebar"/></>],
+  ]}
+/>
+
+### Code Examples
+
+These are the additional properties for working with code examples.
+
+<PropsTable
+  items={[
+    ['snippets',    '{ }', <>Source code for snippet files - see <Link to="/code/snippet" code="Snippet"/></>],
+    ['examples',    '{ }', <>Components for example files - see <Link to="/code/example" code="Example"/></>],
+    ['examplesSrc', '{ }', <>Source code for example files - see <Link to="/code/example" code="Example"/></>],
+  ]}
+/>
+
+### Site Customisation
+
+There are various additional properties that allow you to customise the way
+the site is displayed.
+
+<PropsTable
+  items={[
+    [
+      'linkUp',
+      'true',
+      <>Boolean flag to add a link up to the top of the page in each heading - see <Link to="/page/heading" code="Heading"/></>
+    ],
+    [
+      'linkUpIcon',
+      'arrow-up',
+      <>Icon displayed in the link up to the top of the page - see <Link to="/page/heading" code="Heading"/></>
+    ],
+    [
+      'prevNext',
+      'true',
+      <>Boolean flag to generate "Previous Page" and "Next Page" links at the bottom of each page</>
+    ],
+    [
+      'prevNextArrows',
+      'false',
+      <>Boolean flag to generate arrow icons to the previous page and next page at the top of each page</>
+    ],
+    [
+      'sidebarToc',
+      'true',
+      <>Boolean flag to add the table of contents for the current page in the sidebar</>
+    ],
     ['themeStorageKey', 'theme', 'Local storage key for dark/light theme'],
     ['Router', 'PageRouter', 'Site router for pages'],
     ['*', '', 'Any other properties you want to add to the site provider'],
+  ]}
+/>
+
+### Site Components
+
+You can override many of the internal components that are used to generate
+the site.
+
+<PropsTable
+  items={[
+    [
+      'Copyright',
+      <CopyrightLink/>,
+      <>Generates the copyright message in the <FooterLink/></>
+    ],
+    [
+      'Author',
+      <AuthorLink/>,
+      <>Generates the author message in the <FooterLink/></>
+    ],
+    [
+      'Powered',
+      <BadgerPoweredLink/>,
+      <>Generates the "Badger Powered" message in the <FooterLink/></>
+    ],
+    [
+      'Release',
+      <ReleaseLink/>,
+      <>Generates the release message in the <FooterLink/></>
+    ],
+    [
+      'Repository',
+      <RepositoryLink/>,
+      <>Generates the repository link in the <HeaderLink/></>
+    ],
+    ['Router', 'PageRouter', 'Site router for pages'],
   ]}
 />

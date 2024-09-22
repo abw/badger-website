@@ -21,6 +21,7 @@ export const Router = ({
   Layout           = defaultLayout,
   site             = { },
   basename         = site.basename || import.meta.env.BASE_URL,
+  debugRouter,
 } = { }) => {
 
   // Cleanup the path names, removing the leading ./...etc.../pages prefix,
@@ -51,7 +52,7 @@ export const Router = ({
       }
     )
 
-  if (site.debugRouter) {
+  if (debugRouter) {
     console.log(`Scanned paths: `, metas)
   }
 
@@ -68,7 +69,7 @@ export const Router = ({
       { }
     )
 
-  if (site.debugRouter) {
+  if (debugRouter) {
     console.log(`Created path lookup: `, paths)
   }
 
@@ -123,17 +124,17 @@ export const Router = ({
     paths[base] = layout
   }
 
-  if (site.debugRouter) {
+  if (debugRouter) {
     console.log(`Applied layouts: `, paths)
   }
 
-  if (site.debugRouter) {
+  if (debugRouter) {
     console.log(`Final metas: `, metas)
   }
 
   const routes = Object.values(paths).map(makeRoute)
 
-  if (site.debugRouter) {
+  if (debugRouter) {
     console.log(`Routes: `, routes)
   }
 

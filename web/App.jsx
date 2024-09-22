@@ -39,7 +39,12 @@ export const App = () =>
     snippets={snippets}
     examples={examples}
     examplesSrc={examplesSrc}
-    linkUp
+    // prevNext={false}
+    // prevNextArrows
+    // debugPages
+    // debugRouter
+    // linkUp={false}
+    // sidebarToc={false}
     // linkUpIcon='angle-up'
   />
 

@@ -13,6 +13,7 @@ export const SidebarMenuItem = ({
     itemClass=sidebar.menuItemClass ?? 'item',
     Link=UILink,
     className,
+    sidebarToc=true
   } = useSite()
 
   return (
@@ -25,7 +26,9 @@ export const SidebarMenuItem = ({
           >
             {item.display}
           </Link>
-          <Toc item={item}/>
+          { sidebarToc &&
+            <Toc item={item}/>
+          }
         </>
   )
 }
