@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from '@/ui/Link.jsx'
 
+export const SiteProviderLink = () =>
+  <Link to="/configuration/site-provider" code="SiteProvider"/>
+
 export const AuthorLink = () =>
   <Link to="/site/author" code="Author"/>
 

@@ -3,7 +3,7 @@ import HeadComp from './_examples/heading.jsx'
 import HeadCode from './_examples/heading.jsx?raw'
 import MdxComp from './_examples/heading.mdx'
 import MdxCode from './_examples/heading.mdx?raw'
-import { PageTocLink } from '@/web/site/Links.jsx'
+import { PageTocLink, SiteProviderLink } from '@/web/site/Links.jsx'
 
 # Heading
 
@@ -16,6 +16,12 @@ monospaced font.
 
 It also inserts a heading entry in the table of contents which will be
 displayed in the sidebar and any <PageTocLink/> included in the page.
+
+If the `linkUp` configuration option is `true` (which it is by default) then
+a link will be generated on the right side which navigates to the top of the
+page.  This is displayed as an icon determined by the `linkUpIcon`
+configuration option (`arrow-up` by default).  See the <SiteProviderLink/>
+page for further details on setting these options.
 
 <Example
   Component={HeadComp}
