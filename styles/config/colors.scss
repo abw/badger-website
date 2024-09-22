@@ -42,7 +42,9 @@
   --footer-hover:       var(--grey40-75);
 
   // page heading/section
+  --heading-color:      var(--grey-30);
   --heading-background: var(--grey-90);
+  --heading-border:     var(--grey-85);
   --up-background:      var(--grey-95);
   --up-color:           var(--grey-50);
   --up-hover-background:var(--grey-100);
@@ -100,7 +102,9 @@
   --footer-hover:       var(--grey40-70);
 
   // page heading/section
+  --heading-color:      var(--grey-75);
   --heading-background: var(--grey-20);
+  --heading-border:     var(--grey-10);
   --up-background:      var(--grey-15);
   --up-color:           var(--grey-60);
   --up-hover-background:var(--grey-5);
@@ -109,5 +113,4 @@
   // table of contents
   --toc-background:     var(--grey-5);
   --toc-border:         var(--grey-15);
-
 }

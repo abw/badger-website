@@ -25,7 +25,9 @@
     margin-left: calc(0rem - var(--heading-outset));
     margin-right: calc(0rem - var(--heading-outset));
     padding: 0.25rem var(--heading-outset);
+    border: 1px solid var(--heading-border);
     border-radius: 0.25rem;
+    color: var(--heading-color);
     background-color: var(--heading-background);
     .page-heading-scroll-up {
       color: var(--up-color);

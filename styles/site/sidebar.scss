@@ -98,6 +98,9 @@
           cursor: pointer;
           color: var(--submenu-hover-head);
         }
+        &:last-child {
+          margin-bottom: 0.5rem;
+        }
       }
       .item {
         color: var(--submenu-text);
