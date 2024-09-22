@@ -28,10 +28,12 @@
   --menu-hover-back:    var(--grey20-95);
   --menu-active-text:   var(--brand-0);
   --menu-active-back:   var(--grey40-100);
-  --submenu-head:       var(--grey-20);
+  --submenu-head:       var(--grey-30);
   --submenu-back:       var(--grey-85);
-  --submenu-hover-text: var(--grey-10);
-  --submenu-hover-back: var(--grey-90);
+  --submenu-text:       var(--grey-30);
+  --submenu-hover-head: var(--grey-0);
+  --submenu-hover-text: var(--grey-0);
+  --submenu-hover-back: var(--grey-85);
   // footer
   --footer-color:       var(--grey20-55);
   --footer-background:  var(--brand-15);
@@ -40,7 +42,7 @@
   --footer-hover:       var(--grey40-75);
 
   // page heading/section
-  --heading-background: var(--grey-85);
+  --heading-background: var(--grey-90);
   --up-background:      var(--grey-95);
   --up-color:           var(--grey-50);
   --up-hover-background:var(--grey-100);
@@ -85,8 +87,10 @@
   --menu-active-back:   var(--grey-25);
   --submenu-head:       var(--grey-70);
   --submenu-back:       var(--grey-10);
+  --submenu-text:       var(--grey-70);
+  --submenu-hover-head: var(--grey-100);
   --submenu-hover-text: var(--grey-90);
-  --submenu-hover-back: var(--grey-20);
+  --submenu-hover-back: var(--grey-10);
 
   // footer
   --footer-color:       var(--grey20-40);
