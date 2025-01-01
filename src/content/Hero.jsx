@@ -6,9 +6,10 @@ export const Hero = ({
   title,
   tagline,
   overview,
-  underview
+  underview,
+  stack='laptop'
 }) =>
-  <div className="hero grid-2 gap-12 start stack-laptop">
+  <div className={`hero grid-2 gap-12 start stack-${stack}`}>
     <div>
       {logo}
     </div>
