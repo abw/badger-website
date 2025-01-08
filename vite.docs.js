@@ -39,7 +39,7 @@ export default defineConfig({
   server: {
     host: 'badger-website.local.wardley.org',
     port: 3012,
-    https
+    // https
   }
 })
 

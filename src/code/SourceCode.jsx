@@ -20,7 +20,9 @@ const highlighter = getHighlighterCore({
     // 'html', 'javascript', 'jsx', 'json','markdown', 'mdx', 'css', 'scss', 'bash', 'yaml'
     import('shiki/langs/html.mjs'),
     import('shiki/langs/javascript.mjs'),
+    import('shiki/langs/typescript.mjs'),
     import('shiki/langs/jsx.mjs'),
+    import('shiki/langs/tsx.mjs'),
     import('shiki/langs/json.mjs'),
     import('shiki/langs/markdown.mjs'),
     import('shiki/langs/mdx.mjs'),
