@@ -28,18 +28,42 @@
   }
 }
 .prev-next-arrows {
+  --hflow: 0.5rem;
+  // --border: var(--grey-85);
+  --background: var(--grey-95);
+  --hover-background: var(--grey-100);
   margin-top: -2rem;
   margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  a {
+    font-size: 0.9rem;
+    padding: 0.25rem var(--hflow);
+    margin: 0 calc(0rem - var(--hflow));
+    background-color: var(--background);
+    // border: 1px dotted var(--border);
+    // border: 1px solid var(--border);
+    border-radius: 0.25rem;
+    &:hover {
+      background-color: var(--hover-background);
+    }
+  }
 }
 
-#{$dark-theme} .prev-next a {
-  --color:      var(--grey40-50);
-  --background: var(--grey-5);
-  --border:     var(--grey-20);
-  --heading:    var(--grey20-70);
-  &:hover {
-    --color:      var(--brand-60);
-    --background: var(--brand-0);
-    --border:     var(--grey40-25);
+#{$dark-theme} {
+  .prev-next a {
+    --color:      var(--grey40-50);
+    --background: var(--grey-5);
+    --border:     var(--grey-20);
+    --heading:    var(--grey20-70);
+    &:hover {
+      --color:      var(--brand-60);
+      --background: var(--brand-0);
+      --border:     var(--grey40-25);
+    }
+  }
+  .prev-next-arrows {
+    // --border: var(--grey-20);
+    --background: var(--grey-15);
+    --hover-background: var(--grey-10);
   }
 }

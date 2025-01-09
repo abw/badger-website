@@ -40,7 +40,8 @@ export const App = () =>
     examples={examples}
     examplesSrc={examplesSrc}
     // prevNext={false}
-    // prevNextArrows
+    prevNextArrows
+    prevNextArrowsText
     // debugPages
     // debugRouter
     // linkUp={false}
