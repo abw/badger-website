@@ -49,7 +49,7 @@
     "@abw/badger-timestamp": "^1.2.0",
     "@abw/badger-utils": "^1.2.1",
     "@abw/react-context": "^2.0.4",
-    "@abw/react-night-and-day": "^0.0.6",
+    "@abw/react-night-and-day": "1.0.0-alpha-1",
     "@mdx-js/react": "^3.0.1",
     "react-router": "^6.23.0",
     "react-router-dom": "^6.23.0"

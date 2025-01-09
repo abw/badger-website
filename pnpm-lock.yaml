@@ -21,11 +21,11 @@ dependencies:
     specifier: ^2.0.4
     version: 2.0.4
   '@abw/react-night-and-day':
-    specifier: ^0.0.6
-    version: 0.0.6(react-dom@18.3.1)(react@18.3.1)
+    specifier: 1.0.0-alpha-1
+    version: 1.0.0-alpha-1(react-dom@18.3.1)(react@18.3.1)
   '@mdx-js/react':
     specifier: ^3.0.1
-    version: 3.0.1(@types/react@19.0.3)(react@18.3.1)
+    version: 3.0.1(@types/react@19.0.4)(react@18.3.1)
   react:
     specifier: ^18.2.0
     version: 18.3.1
@@ -214,8 +214,8 @@ packages:
       react-dom: 18.3.1(react@18.3.1)
     dev: false
 
-  /@abw/react-night-and-day@0.0.6(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-HVvyYuRxs8soPO1c/AFQqylx6uQqe9OHvxdJVVCzOtEtDYRFyM5NGY5Ob9ugUrSkg7o1Ru8p1vDfAJ+7/nyMvQ==}
+  /@abw/react-night-and-day@1.0.0-alpha-1(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-0MUZTHjD1BM6kV+T1nrvKISGyY7r0JVIXjIvPnVFTx7hPBlI2713ohCy6aE1Or4oZaN6lZiQcVVdB0nStvQgiA==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -940,14 +940,14 @@ packages:
       - supports-color
     dev: true
 
-  /@mdx-js/react@3.0.1(@types/react@19.0.3)(react@18.3.1):
+  /@mdx-js/react@3.0.1(@types/react@19.0.4)(react@18.3.1):
     resolution: {integrity: sha512-9ZrPIU4MGf6et1m1ov3zKf+q9+deetI51zprKB1D/z3NOb+rUxxtEl3mCjW5wTGh6VhRdwPueh1oRzi6ezkA8A==}
     peerDependencies:
       '@types/react': '>=16'
       react: '>=16'
     dependencies:
       '@types/mdx': 2.0.13
-      '@types/react': 19.0.3
+      '@types/react': 19.0.4
       react: 18.3.1
     dev: false
 
@@ -1692,8 +1692,8 @@ packages:
       csstype: 3.1.3
     dev: true
 
-  /@types/react@19.0.3:
-    resolution: {integrity: sha512-UavfHguIjnnuq9O67uXfgy/h3SRJbidAYvNjLceB+2RIKVRBzVsh0QO+Pw6BCSQqFS9xwzKfwstXx0m6AbAREA==}
+  /@types/react@19.0.4:
+    resolution: {integrity: sha512-3O4QisJDYr1uTUMZHA2YswiQZRq+Pd8D+GdVFYikTutYsTz+QZgWkAPnP7rx9txoI6EXKcPiluMqWPFV3tT9Wg==}
     dependencies:
       csstype: 3.1.3
     dev: false
