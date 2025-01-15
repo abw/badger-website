@@ -1,6 +1,6 @@
 {
   "name": "@abw/badger-website",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Badger Powered Website",
   "type": "module",
   "main": "dist/badger-website.cjs",
