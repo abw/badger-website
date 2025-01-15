@@ -56,6 +56,12 @@
   }
 }
 
+.source.no-line-numbers .shiki {
+  code span.line::before {
+    display: none;
+  }
+}
+
 #{$dark-theme} {
   .source .shiki {
     --shiki-foreground: var(--codeblock-text);

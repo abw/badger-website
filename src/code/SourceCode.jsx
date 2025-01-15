@@ -5,6 +5,7 @@ import { transformerNotationHighlight } from '@shikijs/transformers'
 import { lineHighlighter, prepareCode, removeLineEndings } from './Utils.jsx'
 import { sleep } from '@abw/badger-utils'
 import getWasm from 'shiki/wasm'
+import { classes } from '@abw/badger-react-ui'
 
 const cssvars = 'css-variables'
 const cssVarsTheme = createCssVariablesTheme({
@@ -42,6 +43,7 @@ export const SourceCode = ({
   fixed=expand,
   className='',
   highlightLines,
+  lineNumbers=true,
   undent=false,
   raw=false
 }) => {
@@ -81,8 +83,17 @@ export const SourceCode = ({
     [code, language, highlightLines]
   )
 
+  const cls = classes(
+    'source',
+    className,
+    expanded ? 'expanded' : null,
+    fixed ? 'fixed-open' : 'expandable',
+    lineNumbers ? null : 'no-line-numbers'
+  )
+
   return (
-    <div className={`source ${className} ${expanded ? 'expanded' : ''} ${fixed ? 'fixed-open' : 'expandable'}`}>
+    // <div className={`source ${className} ${expanded ? 'expanded' : ''} ${fixed ? 'fixed-open' : 'expandable'}`}>
+    <div className={cls}>
       {Boolean(caption) && <h4 className="caption">{caption}</h4>}
       <div className="controls">
         <div className="expand" onClick={() => setExpanded(! expanded)}>

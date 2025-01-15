@@ -10,6 +10,8 @@ import Highlight    from './_examples/SourceHighlight.jsx'
 import HighlightSrc from './_examples/SourceHighlight.jsx?raw'
 import Undent       from './_examples/SourceUndent.jsx'
 import UndentSrc    from './_examples/SourceUndent.jsx?raw'
+import LineNos      from './_examples/LineNumbers.jsx'
+import LineNosSrc   from './_examples/LineNumbers.jsx?raw'
 import Extract      from './_examples/SourceExtract.jsx'
 import ExtractSrc   from './_examples/SourceExtract.jsx?raw'
 import Split        from '@/content/Split.jsx'
@@ -106,6 +108,18 @@ e.g. `3,6-7`.
   Component={Highlight}
   code={HighlightSrc}
 />
+
+### `lineNumbers`
+
+The `lineNumbers` property determines if line numbers should be displayed.
+It's set to `true` by default but you can explicitly set it to `false` if you
+don't want line numbers.
+
+<Example
+  Component={LineNos}
+  code={LineNosSrc}
+/>
+
 
 ### `undent`
 
