@@ -50,8 +50,9 @@ export const SourceCode = ({
   const [copied, setCopied] = useState(false)
   const [expanded, setExpanded] = useState(expand)
   const [markup, setMarkup] = useState('Loading...')
+  const prepared = raw ? code : prepareCode(code, { undent })
   const copy = () => {
-    navigator.clipboard.writeText(code)
+    navigator?.clipboard?.writeText(prepared)
     setCopied(true)
     sleep(2000).then(() => setCopied(false))
   }
@@ -67,7 +68,7 @@ export const SourceCode = ({
       highlighter.then(
         highlighter => setMarkup(
           highlighter.codeToHtml(
-            raw ? code : prepareCode(code, { undent }),
+            prepared,
             {
               lang: language,
               theme: cssvars,
