@@ -7,10 +7,17 @@ import define           from  './vite.defs.js'
 import fs               from 'node:fs'
 import rehypeCodeProps  from 'rehype-mdx-code-props'
 
-const https = {
-  key:  fs.readFileSync('etc/certs/badger-website.local.wardley.org.key'),
-  cert: fs.readFileSync('etc/certs/badger-website.local.wardley.org.crt'),
-}
+// These are my locally generated self-signed certificates which only work
+// for me.  You can create your own using https://github.com/FiloSottile/mkcert
+// or set the useHttps option below to false.  Note that clipboard copy doesn't
+// work if you're not running under https
+const useHttps = true
+const https = useHttps
+  ? {
+      key:  fs.readFileSync('etc/certs/badger-website.local.wardley.org-key.pem'),
+      cert: fs.readFileSync('etc/certs/badger-website.local.wardley.org.pem'),
+    }
+  : undefined
 
 export default defineConfig({
   plugins: [
@@ -39,7 +46,7 @@ export default defineConfig({
   server: {
     host: 'badger-website.local.wardley.org',
     port: 3012,
-    // https
+    https
   }
 })
 
