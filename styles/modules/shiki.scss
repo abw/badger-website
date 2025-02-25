@@ -32,8 +32,10 @@
     margin: 0 calc(0rem - var(--padding));
     padding: 0 calc(var(--padding) - var(--highlight-border-width));
     border-left: var(--highlight-border-width) solid var(--shiki-highlight-border);
+    min-width: 120%;
+    width: fit-content;
   }
-    code {
+  code {
     counter-reset: step;
     counter-increment: step 0;
   }
